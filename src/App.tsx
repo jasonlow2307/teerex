@@ -1,9 +1,4 @@
 import logo from "./assets/images/logo.svg";
-import taxIcon from "./assets/images/tax-icon.svg";
-import financeIcon from "./assets/images/finance-icon.svg";
-import advisoryIcon from "./assets/images/advisory-icon.svg";
-import bookkeepingIcon from "./assets/images/bookkeeping-icon.svg";
-import payrollIcon from "./assets/images/payroll-icon.svg";
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 
@@ -29,11 +24,6 @@ function App() {
       >
         <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img
-              src={logo}
-              alt="Tee Rex & Associates Logo"
-              className="w-10 h-10 rounded-lg"
-            />
             <div className="text-2xl font-semibold">Tee Rex & Associates</div>
           </div>
           <div className="flex gap-8">
@@ -84,18 +74,22 @@ function App() {
       </div>
 
       {/* Hero Section */}
-      <section className="py-32 flex flex-col items-center text-center bg-[#f2efe8] relative overflow-hidden">
+      <section className=" pb-16 flex flex-col items-center text-center bg-[#f2efe8] relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#f2efe8]/90 to-[#f2efe8]/70 z-10"></div>
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-black/5 blur-xl"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-black/5 blur-3xl"></div>
-        </div>
+
         <div className="max-w-7xl mx-auto px-8 relative z-20">
+          <div className="flex items-center justify-center mb-4">
+            <img
+              src={logo}
+              alt="Tee Rex & Associates Logo"
+              className="w-120 rounded-lg"
+            />
+          </div>
           <h1 className="text-6xl font-bold mx-auto mb-8 max-w-4xl leading-tight">
             Professional Accounting & Business Advisory Services
           </h1>
           <p className="text-2xl mx-auto mb-12 max-w-2xl text-black/70 leading-relaxed">
-            Helping businesses grow through strategic financial management and
+            Helping businesses grow through strategic financial planning and
             expert accounting solutions
           </p>
           <div className="flex gap-6 justify-center">
@@ -110,8 +104,8 @@ function App() {
 
           <div className="mt-20 grid grid-cols-3 gap-8 max-w-3xl mx-auto">
             <div className="text-center p-4">
-              <div className="text-3xl font-bold mb-1">15+</div>
-              <div className="text-black/70">Years of Experience</div>
+              <div className="text-3xl font-bold mb-1">100%</div>
+              <div className="text-black/70">Client Satisfaction</div>
             </div>
             <div className="text-center p-4">
               <div className="text-3xl font-bold mb-1">500+</div>
@@ -145,109 +139,84 @@ function App() {
 
               <div className="mb-6 transform transition-transform duration-500 group-hover:scale-110 relative">
                 <div className="w-20 h-20 bg-[#f2efe8] rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
-                  <img
-                    src={taxIcon}
-                    alt="Tax Planning & Preparation"
-                    className="w-10 h-10 mx-auto"
+                  <Icon
+                    icon="mdi:file-document-outline"
+                    width="40"
+                    height="40"
                   />
                 </div>
               </div>
               <h3 className="text-2xl font-bold mb-4 relative">
-                Tax Planning & Preparation
+                Tax Filing - Form BE, E, M
               </h3>
               <p className="text-black/70 leading-relaxed relative">
-                Strategic tax planning and preparation services for businesses
-                and individuals to minimize tax burden and ensure compliance
-                with changing regulations.
+                Expert assistance with filing Forms BE, E, and M to ensure
+                accurate submissions and compliance with tax regulations for
+                both individuals and businesses.
               </p>
             </div>
 
             <div className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center w-full group">
               <div className="mb-6 transform transition-transform duration-500 group-hover:scale-110">
                 <div className="w-20 h-20 bg-[#f2efe8] rounded-full flex items-center justify-center mx-auto mb-6">
-                  <img
-                    src={financeIcon}
-                    alt="Financial Statements"
-                    className="w-10 h-10 mx-auto"
+                  <Icon
+                    icon="mdi:file-document-multiple"
+                    width="40"
+                    height="40"
                   />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-4">Financial Statements</h3>
+              <h3 className="text-2xl font-bold mb-4">Tax Filing - Form P</h3>
               <p className="text-black/70 leading-relaxed">
-                Preparation of accurate financial statements to provide clear
-                insights into your business's financial health and performance
-                metrics.
+                Expert assistance with filing Form P to ensure compliance with
+                tax regulations and accurate submissions for partnerships and
+                other entities.
               </p>
             </div>
 
             <div className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center w-full group">
               <div className="mb-6 transform transition-transform duration-500 group-hover:scale-110">
                 <div className="w-20 h-20 bg-[#f2efe8] rounded-full flex items-center justify-center mx-auto mb-6">
-                  <img
-                    src={advisoryIcon}
-                    alt="Business Advisory"
-                    className="w-10 h-10 mx-auto"
-                  />
+                  <Icon icon="mdi:file-account" width="40" height="40" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-4">Business Advisory</h3>
+              <h3 className="text-2xl font-bold mb-4">Tax Filing - Form B</h3>
               <p className="text-black/70 leading-relaxed">
-                Expert business consulting to help optimize operations, improve
-                profitability, and achieve strategic goals in a dynamic market.
+                Professional assistance with filing Form B to ensure accurate
+                submissions and compliance with tax regulations for sole
+                proprietors and partnerships.
               </p>
             </div>
-
-            <div className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center w-full group">
-              <div className="mb-6 transform transition-transform duration-500 group-hover:scale-110">
-                <div className="w-20 h-20 bg-[#f2efe8] rounded-full flex items-center justify-center mx-auto mb-6">
-                  <img
-                    src={bookkeepingIcon}
-                    alt="Bookkeeping"
-                    className="w-10 h-10 mx-auto"
-                  />
+            <div className="lg:col-span-3 flex justify-center gap-10">
+              <div className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center w-full group">
+                <div className="mb-6 transform transition-transform duration-500 group-hover:scale-110">
+                  <div className="w-20 h-20 bg-[#f2efe8] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Icon icon="mdi:account-cash" width="40" height="40" />
+                  </div>
                 </div>
+                <h3 className="text-2xl font-bold mb-4">
+                  Form B Account Management
+                </h3>
+                <p className="text-black/70 leading-relaxed">
+                  Expert management of Form B accounts to ensure compliance with
+                  tax regulations and accurate financial reporting for sole
+                  proprietors and partnerships.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold mb-4">Bookkeeping</h3>
-              <p className="text-black/70 leading-relaxed">
-                Comprehensive bookkeeping services to maintain accurate
-                financial records and streamline accounting processes for better
-                decision-making.
-              </p>
-            </div>
 
-            <div className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center w-full group">
-              <div className="mb-6 transform transition-transform duration-500 group-hover:scale-110">
-                <div className="w-20 h-20 bg-[#f2efe8] rounded-full flex items-center justify-center mx-auto mb-6">
-                  <img
-                    src={payrollIcon}
-                    alt="Payroll Services"
-                    className="w-10 h-10 mx-auto"
-                  />
+              <div className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center w-full group">
+                <div className="mb-6 transform transition-transform duration-500 group-hover:scale-110">
+                  <div className="w-20 h-20 bg-[#f2efe8] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Icon icon="mdi:office-building" width="40" height="40" />
+                  </div>
                 </div>
+                <h3 className="text-2xl font-bold mb-4">Form C, Form PT</h3>
+                <p className="text-black/70 leading-relaxed">
+                  Comprehensive assistance with filing Form C and Form PT to
+                  ensure compliance with corporate tax regulations and accurate
+                  submissions for businesses.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold mb-4">Payroll Services</h3>
-              <p className="text-black/70 leading-relaxed">
-                End-to-end payroll processing solutions to ensure timely and
-                accurate compensation management with full regulatory
-                compliance.
-              </p>
-            </div>
-
-            <div className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center w-full group">
-              <div className="mb-6 transform transition-transform duration-500 group-hover:scale-110">
-                <div className="w-20 h-20 bg-[#f2efe8] rounded-full flex items-center justify-center mx-auto mb-6">
-                  <img
-                    src={financeIcon}
-                    alt="Cash Flow Management"
-                    className="w-10 h-10 mx-auto"
-                  />
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Cash Flow Management</h3>
-              <p className="text-black/70 leading-relaxed">
-                Strategic cash flow planning and analysis to optimize your
-                business's financial resources and ensure sustainable growth.
-              </p>
             </div>
           </div>
         </div>
@@ -258,21 +227,13 @@ function App() {
         <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center gap-16">
           <div className="flex-1">
             <div className="relative">
-              <div className="w-full h-96 bg-black/10 rounded-xl overflow-hidden">
-                {/* Placeholder for actual team image */}
-                <div className="w-full h-full bg-[#f2efe8] flex items-center justify-center">
-                  <div className="text-3xl font-light text-black/30">
-                    Team Image
-                  </div>
-                </div>
-              </div>
-              <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-[#f2efe8] rounded-xl shadow-lg flex items-center justify-center p-4">
-                <div className="text-4xl font-bold">15+ Years Experience</div>
+              <div className="w-full  bg-black/10 rounded-xl overflow-hidden">
+                <img src="/src/assets/images/team.png" />
               </div>
             </div>
           </div>
           <div className="flex-1">
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-4xl font-bold mb-6 !text-left">
               About Tee Rex & Associates
             </h2>
             <div className="w-24 h-1 bg-black mb-8"></div>
@@ -558,12 +519,11 @@ function App() {
                       name="service"
                       className="w-full px-4 py-3 border border-black/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/50"
                     >
-                      <option>Tax Planning & Preparation</option>
-                      <option>Financial Statements</option>
-                      <option>Business Advisory</option>
-                      <option>Bookkeeping</option>
-                      <option>Payroll Services</option>
-                      <option>Cash Flow Management</option>
+                      <option>Tax Filing - Form BE, E, M</option>
+                      <option>Tax Filing - Form P</option>
+                      <option>Tax Filing - Form B</option>
+                      <option>Form B Account Management</option>
+                      <option>Form C, Form PT</option>
                     </select>
                   </div>
 
@@ -628,6 +588,15 @@ function App() {
                 >
                   <Icon icon="mdi:instagram" width="25" height="25" />
                 </a>
+                <a
+                  href="https://www.facebook.com/people/Tee-Rex-Associates-Chartered-Accountants-%E9%9C%B8%E7%8E%8B%E7%89%B9%E8%AE%B8%E4%BC%9A%E8%AE%A1%E5%B8%88/61561326090219/"
+                  aria-label="Facebook"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-white flex items-center justify-center  transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                >
+                  <Icon icon="mdi:facebook" width="25" height="25" />
+                </a>
               </div>
             </div>
 
@@ -639,7 +608,7 @@ function App() {
                     href="#tax"
                     className="hover:text-gray-600 transition-colors"
                   >
-                    Tax Planning
+                    Tax Filing - Form BE, E, M
                   </a>
                 </li>
                 <li>
@@ -647,7 +616,7 @@ function App() {
                     href="#statements"
                     className="hover:text-gray-600 transition-colors"
                   >
-                    Financial Statements
+                    Tax Filing - Form P
                   </a>
                 </li>
                 <li>
@@ -655,7 +624,7 @@ function App() {
                     href="#advisory"
                     className="hover:text-gray-600 transition-colors"
                   >
-                    Business Advisory
+                    Tax Filing - Form B
                   </a>
                 </li>
                 <li>
@@ -663,7 +632,7 @@ function App() {
                     href="#bookkeeping"
                     className="hover:text-gray-600 transition-colors"
                   >
-                    Bookkeeping
+                    Form B Account Management
                   </a>
                 </li>
                 <li>
@@ -671,7 +640,7 @@ function App() {
                     href="#payroll"
                     className="hover:text-gray-600 transition-colors"
                   >
-                    Payroll Services
+                    Form C, Form PT
                   </a>
                 </li>
               </ul>
