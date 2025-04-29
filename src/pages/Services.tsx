@@ -303,7 +303,7 @@ const Services = () => {
 
                     <div className="mt-10">
                       <Link
-                        to="/#contact"
+                        to={`/contact?service=${service.id}`}
                         className="px-8 py-4 bg-black !text-white rounded-lg hover:bg-black/80 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium relative overflow-hidden group w-full block text-center"
                       >
                         <span className="absolute inset-0 w-0 bg-white/20 transition-all duration-500 ease-out group-hover:w-full"></span>
@@ -420,7 +420,7 @@ const Services = () => {
                       {service.title} needs.
                     </p>
                     <Link
-                      to="/#contact"
+                      to="/contact"
                       className="px-8 py-4 bg-black !text-white rounded-lg hover:bg-black/80 inline-block transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium"
                     >
                       Schedule a Consultation
@@ -459,7 +459,13 @@ const Services = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-4">{service.title}</h3>
                   <p className="text-black/70 mb-6">{service.description}</p>
-                  <button className="text-black font-medium hover:underline">
+                  <button
+                    className="text-black font-medium hover:underline"
+                    onClick={() => {
+                      setActiveService(service.id);
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                  >
                     Learn More →
                   </button>
                 </div>

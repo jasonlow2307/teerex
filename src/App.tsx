@@ -1,10 +1,9 @@
-import logo from "./assets/images/logo.svg";
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
-import Footer from "./components/Footer";
-import OrderButton from "./components/OrderButton";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+import ContactForm from "./components/ContactForm";
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -20,50 +19,90 @@ function App() {
 
   return (
     <div className="w-full font-sans">
+      {/* Header Section */}
       <Header scrolled={scrolled} />
 
-      <OrderButton />
-
       {/* Hero Section */}
-      <section className=" pb-16 flex flex-col items-center text-center bg-[#f2efe8] relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#f2efe8]/90 to-[#f2efe8]/70 z-10"></div>
+      <section className="pb-16 flex flex-col items-center text-center bg-[#f2efe8] relative overflow-hidden">
+        {/* Dynamic Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f2efe8]/80 to-[#f2efe8]/60 z-10"></div>
+        <div className="absolute top-40 left-10 w-64 h-64 rounded-full bg-black/5 blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-black/5 blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-7xl opacity-5">
+          <div className="absolute top-0 right-0 w-72 h-72 rounded-full border-8 border-black/10"></div>
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 rounded-full border-8 border-black/10"></div>
+        </div>
 
-        <div className="max-w-7xl mx-auto px-8 relative z-20">
-          <div className="flex items-center justify-center mb-4">
+        <div className="max-wp-7xl mx-auto px-8 mt-30 relative z-20">
+          <div className="flex items-center justify-center mb-8 animate-fadeIn">
             <img
-              src={logo}
+              src="/src/assets/images/logo.svg"
               alt="Tee Rex & Associates Logo"
-              className="w-150 py-30 rounded-lg"
+              className="w-150 rounded-lg transform transition-all duration-1000 hover:scale-105"
             />
           </div>
-          <h1 className="text-6xl font-bold mx-auto mb-8 max-w-4xl leading-tight">
-            Professional Accounting & Business Advisory Services
+
+          <h1 className="text-5xl md:text-6xl font-bold mx-auto mb-8 max-w-4xl leading-tight font-spartan animate-slideUp">
+            <span className="bg-gradient-to-r from-black to-gray-700 bg-clip-text text-transparent">
+              Professional Accounting & Business Advisory Services
+            </span>
           </h1>
-          <p className="text-2xl mx-auto mb-12 max-w-2xl text-black/70 leading-relaxed">
+
+          <p className="text-xl md:text-2xl mx-auto mb-12 max-w-2xl text-black/70 leading-relaxed animate-slideUp animation-delay-200 font-quicksand">
             Helping businesses grow through strategic financial planning and
             expert accounting solutions
           </p>
-          <div className="flex gap-6 justify-center">
-            <button className="px-8 py-4 bg-black text-white rounded-lg hover:bg-black/80 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium relative overflow-hidden group">
+
+          <div className="flex flex-wrap gap-6 justify-center animate-slideUp animation-delay-300">
+            <a
+              href="#contact"
+              className="px-10 py-5 bg-black text-white rounded-lg hover:bg-black/80 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium relative overflow-hidden group"
+            >
               <span className="absolute inset-0 w-0 bg-white/20 transition-all duration-500 ease-out group-hover:w-full"></span>
-              <span className="relative">Schedule a Consultation</span>
-            </button>
-            <button className="px-8 py-4 border-2 border-black text-black rounded-lg bg-transparent hover:bg-black/5 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium">
-              Learn More
-            </button>
+              <span className="relative flex items-center gap-2">
+                <span className="text-white">Schedule a Consultation</span>
+                <Icon
+                  icon="mdi:arrow-right"
+                  width="20"
+                  height="20"
+                  className="transform group-hover:translate-x-1 transition-transform text-white"
+                />
+              </span>
+            </a>
+            <a
+              href="#services"
+              className="px-10 py-5 border-2 border-black text-black rounded-lg bg-transparent hover:bg-black/5 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium group"
+            >
+              <span className="flex items-center gap-2">
+                <span>Explore Our Services</span>
+                <Icon
+                  icon="mdi:chevron-down"
+                  width="20"
+                  height="20"
+                  className="transform group-hover:translate-y-1 transition-transform"
+                />
+              </span>
+            </a>
           </div>
 
-          <div className="mt-20 grid grid-cols-3 gap-8 max-w-3xl mx-auto">
-            <div className="text-center p-4">
-              <div className="text-3xl font-bold mb-1">100%</div>
+          <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto animate-fadeIn animation-delay-500">
+            {/* Stats Cards with Hover Effects */}
+            <div className="text-center p-6 bg-white/40 backdrop-blur-sm rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+              <div className="text-4xl font-bold mb-1 group-hover:scale-110 transition-transform duration-300">
+                100%
+              </div>
               <div className="text-black/70">Client Satisfaction</div>
             </div>
-            <div className="text-center p-4">
-              <div className="text-3xl font-bold mb-1">500+</div>
+            <div className="text-center p-6 bg-white/40 backdrop-blur-sm rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+              <div className="text-4xl font-bold mb-1 group-hover:scale-110 transition-transform duration-300">
+                500+
+              </div>
               <div className="text-black/70">Satisfied Clients</div>
             </div>
-            <div className="text-center p-4">
-              <div className="text-3xl font-bold mb-1">100%</div>
+            <div className="text-center p-6 bg-white/40 backdrop-blur-sm rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+              <div className="text-4xl font-bold mb-1 group-hover:scale-110 transition-transform duration-300">
+                100%
+              </div>
               <div className="text-black/70">Dedicated Service</div>
             </div>
           </div>
@@ -355,13 +394,20 @@ function App() {
                   </div>
                   <div>
                     <h3 className="font-bold text-xl mb-2">Our Office</h3>
-                    <p className="text-black/70">
-                      NO.149-G, 1234 Business Avenue
-                      <br />
-                      JALAN MERANTI 3/1,
-                      <br />
-                      47120 Puchong, Malaysia
-                    </p>
+                    <a
+                      href="https://maps.app.goo.gl/jRuDS2H7Ygk19YpT8"
+                      aria-label="Google Maps"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <p className="text-black/70">
+                        NO.149-G, BLOCK J, TANMING BOULEVARD
+                        <br />
+                        JALAN MERANTI 3/1,
+                        <br />
+                        47120 Puchong, Malaysia
+                      </p>
+                    </a>
                   </div>
                 </div>
 
@@ -394,141 +440,7 @@ function App() {
             </div>
 
             <div>
-              <div className="bg-white p-8 rounded-xl shadow-lg">
-                <h3 className="text-2xl font-bold mb-6">
-                  Schedule a Consultation
-                </h3>
-                <form
-                  className="space-y-6"
-                  onSubmit={(e) => {
-                    e.preventDefault();
-
-                    // Get form values
-                    const firstName = e.currentTarget.elements.namedItem(
-                      "firstName"
-                    ) as HTMLInputElement;
-                    const lastName = e.currentTarget.elements.namedItem(
-                      "lastName"
-                    ) as HTMLInputElement;
-                    const email = e.currentTarget.elements.namedItem(
-                      "email"
-                    ) as HTMLInputElement;
-                    const phone = e.currentTarget.elements.namedItem(
-                      "phone"
-                    ) as HTMLInputElement;
-                    const service = e.currentTarget.elements.namedItem(
-                      "service"
-                    ) as HTMLSelectElement;
-                    const message = e.currentTarget.elements.namedItem(
-                      "message"
-                    ) as HTMLTextAreaElement;
-
-                    // Format the WhatsApp message
-                    const whatsappMessage = encodeURIComponent(
-                      `*New Consultation Request*\n\n` +
-                        `*Name:* ${firstName.value} ${lastName.value}\n` +
-                        `*Email:* ${email.value}\n` +
-                        `*Phone:* ${phone.value}\n` +
-                        `*Service:* ${service.value}\n\n` +
-                        `*Message:*\n${message.value}`
-                    );
-
-                    // Open WhatsApp with the pre-typed message
-                    window.open(
-                      `https://wa.me/+60128186343?text=${whatsappMessage}`,
-                      "_blank"
-                    );
-                  }}
-                >
-                  <div className="grid grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium mb-2">
-                        First Name
-                      </label>
-                      <input
-                        type="text"
-                        name="firstName"
-                        required
-                        className="w-full px-4 py-3 border border-black/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/50 transition-all duration-300 hover:border-black/40"
-                        placeholder="Enter your first name"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium mb-2">
-                        Last Name
-                      </label>
-                      <input
-                        type="text"
-                        name="lastName"
-                        required
-                        className="w-full px-4 py-3 border border-black/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/50 transition-all duration-300 hover:border-black/40"
-                        placeholder="Enter your last name"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium mb-2">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      className="w-full px-4 py-3 border border-black/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/50"
-                      placeholder="Enter your email address"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium mb-2">
-                      Phone
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      required
-                      className="w-full px-4 py-3 border border-black/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/50"
-                      placeholder="Enter your phone number"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium mb-2">
-                      Service Interested In
-                    </label>
-                    <select
-                      name="service"
-                      className="w-full px-4 py-3 border border-black/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/50"
-                    >
-                      <option>Tax Filing - Form BE, E, M</option>
-                      <option>Tax Filing - Form P</option>
-                      <option>Tax Filing - Form B</option>
-                      <option>Form B Account Management</option>
-                      <option>Form C, Form PT</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium mb-2">
-                      Message
-                    </label>
-                    <textarea
-                      name="message"
-                      className="w-full px-4 py-3 border border-black/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/50"
-                      rows={4}
-                      placeholder="Tell us about your needs"
-                    ></textarea>
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full px-8 py-4 bg-black text-white rounded-lg hover:bg-black/90 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg font-medium"
-                  >
-                    Submit Request
-                  </button>
-                </form>
-              </div>
+              <ContactForm />
             </div>
           </div>
         </div>
