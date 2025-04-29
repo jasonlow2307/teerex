@@ -18,12 +18,13 @@ function App() {
     <div className="w-full font-sans">
       {/* Header Section */}
       <header
-        className={`py-6 border-b border-black/10 sticky top-0 bg-[#f2efe8] z-50 transition-all duration-300 ${
+        className={`w-full py-6 border-b border-black/10 sticky top-0 bg-[#f2efe8] z-50 transition-all duration-300 ${
           scrolled ? "shadow-md" : ""
         }`}
       >
         <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
           <div className="flex items-center gap-3">
+            <img src="/src/assets/images/dino.png" width={70} />
             <div className="text-2xl font-semibold">Tee Rex & Associates</div>
           </div>
           <div className="flex gap-8">
@@ -559,7 +560,7 @@ function App() {
             <div className="md:col-span-1">
               <div className="flex items-center gap-3 mb-6">
                 <img
-                  src={logo}
+                  src="/src/assets/images/dino.png"
                   alt="Tee Rex & Associates Logo"
                   className="w-12 h-12 rounded-lg"
                 />
