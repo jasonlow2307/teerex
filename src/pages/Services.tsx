@@ -44,7 +44,7 @@ const ServiceDetails = [
       "Electronic submission to LHDN",
       "Post-filing support and representation",
     ],
-    pricing: "Starting from RM 300, depending on complexity",
+    pricing: "Starting from RM 50, depending on complexity",
   },
   {
     id: "form-p",
@@ -80,7 +80,7 @@ const ServiceDetails = [
       "Coordination with individual partners' tax filings",
     ],
     pricing:
-      "Starting from RM 500, based on partnership complexity and number of partners",
+      "Starting from RM 150, based on partnership complexity and number of partners",
   },
   {
     id: "form-b",
@@ -115,7 +115,7 @@ const ServiceDetails = [
       "Preparation and filing of Form B",
       "Year-round tax planning and consultation",
     ],
-    pricing: "Starting from RM 400, dependent on business size and complexity",
+    pricing: "Starting from RM 50, dependent on business size and complexity",
   },
   {
     id: "form-b-account",
@@ -157,7 +157,7 @@ const ServiceDetails = [
       "Form B preparation based on managed financial records",
     ],
     pricing:
-      "Monthly retainer starting from RM 800, based on transaction volume and business complexity",
+      "Starting from RM 300, based on transaction volume and business complexity",
   },
   {
     id: "form-c-pt",
@@ -198,7 +198,7 @@ const ServiceDetails = [
       "Electronic submission to Inland Revenue Board",
       "Corporate tax planning for future periods",
     ],
-    pricing: "Starting from RM 1,500, based on company size and complexity",
+    pricing: "To be determined, based on company size and complexity",
   },
 ];
 

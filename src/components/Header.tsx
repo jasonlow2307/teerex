@@ -30,13 +30,13 @@ const Header = ({ scrolled }: HeaderProps) => {
             Services
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
           </Link>
-          <a
-            href="/#about"
+          <Link
+            to="/about"
             className="hover:text-gray-600 text-base font-medium transition-colors duration-200 relative group"
           >
             About Us
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
-          </a>
+          </Link>
           <a
             href="/#testimonials"
             className="hover:text-gray-600 text-base font-medium transition-colors duration-200 relative group"
