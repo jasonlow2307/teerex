@@ -1,6 +1,10 @@
 import logo from "./assets/images/logo.svg";
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
+import { Link } from "react-router-dom";
+import Footer from "./components/Footer";
+import OrderButton from "./components/OrderButton";
+import Header from "./components/Header";
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -16,63 +20,9 @@ function App() {
 
   return (
     <div className="w-full font-sans">
-      {/* Header Section */}
-      <header
-        className={`w-full py-6 border-b border-black/10 sticky top-0 bg-[#f2efe8] z-50 transition-all duration-300 ${
-          scrolled ? "shadow-md" : ""
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img src="/src/assets/images/dino.png" width={70} />
-            <div className="text-2xl font-semibold">Tee Rex & Associates</div>
-          </div>
-          <div className="flex gap-8">
-            <a
-              href="#services"
-              className="hover:text-gray-600 text-base font-medium transition-colors duration-200 relative group"
-            >
-              Services
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
-            </a>
-            <a
-              href="#about"
-              className="hover:text-gray-600 text-base font-medium transition-colors duration-200 relative group"
-            >
-              About Us
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
-            </a>
-            <a
-              href="#testimonials"
-              className="hover:text-gray-600 text-base font-medium transition-colors duration-200 relative group"
-            >
-              Testimonials
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
-            </a>
-            <a
-              href="#contact"
-              className="hover:text-gray-600 text-base font-medium transition-colors duration-200 relative group"
-            >
-              Contact
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
-            </a>
-          </div>
-        </div>
-      </header>
+      <Header scrolled={scrolled} />
 
-      {/* Floating Order Button */}
-      <div className="fixed bottom-6 right-6 group z-50">
-        <button className="w-14 h-14 bg-black text-white rounded-full shadow-lg flex items-center justify-center hover:bg-black/90 transition-all duration-300 group-hover:scale-105">
-          <Icon
-            icon="mdi:order-bool-descending-variant"
-            width="24"
-            height="24"
-          />
-        </button>
-        <div className="absolute -top-10 right-0 bg-black text-white text-sm rounded-md py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-          Place an order
-        </div>
-      </div>
+      <OrderButton />
 
       {/* Hero Section */}
       <section className=" pb-16 flex flex-col items-center text-center bg-[#f2efe8] relative overflow-hidden">
@@ -83,7 +33,7 @@ function App() {
             <img
               src={logo}
               alt="Tee Rex & Associates Logo"
-              className="w-120 rounded-lg"
+              className="w-150 py-30 rounded-lg"
             />
           </div>
           <h1 className="text-6xl font-bold mx-auto mb-8 max-w-4xl leading-tight">
@@ -134,7 +84,14 @@ function App() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
-            <div className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center w-full group relative overflow-hidden">
+            {/* First service card */}
+            <Link
+              to="/services"
+              onClick={() =>
+                localStorage.setItem("activeService", "form-be-e-m")
+              }
+              className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center w-full group relative overflow-hidden block"
+            >
               {/* Add subtle hover effect background */}
               <div className="absolute inset-0 bg-gradient-to-b from-[#f2efe8]/0 to-[#f2efe8]/0 group-hover:from-[#f2efe8]/50 group-hover:to-[#f2efe8]/10 transition-all duration-500"></div>
 
@@ -155,9 +112,14 @@ function App() {
                 accurate submissions and compliance with tax regulations for
                 both individuals and businesses.
               </p>
-            </div>
+            </Link>
 
-            <div className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center w-full group">
+            {/* Second service card */}
+            <Link
+              to="/services"
+              onClick={() => localStorage.setItem("activeService", "form-p")}
+              className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center w-full group block"
+            >
               <div className="mb-6 transform transition-transform duration-500 group-hover:scale-110">
                 <div className="w-20 h-20 bg-[#f2efe8] rounded-full flex items-center justify-center mx-auto mb-6">
                   <Icon
@@ -173,9 +135,14 @@ function App() {
                 tax regulations and accurate submissions for partnerships and
                 other entities.
               </p>
-            </div>
+            </Link>
 
-            <div className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center w-full group">
+            {/* Third service card */}
+            <Link
+              to="/services"
+              onClick={() => localStorage.setItem("activeService", "form-b")}
+              className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center w-full group block"
+            >
               <div className="mb-6 transform transition-transform duration-500 group-hover:scale-110">
                 <div className="w-20 h-20 bg-[#f2efe8] rounded-full flex items-center justify-center mx-auto mb-6">
                   <Icon icon="mdi:file-account" width="40" height="40" />
@@ -187,9 +154,16 @@ function App() {
                 submissions and compliance with tax regulations for sole
                 proprietors and partnerships.
               </p>
-            </div>
+            </Link>
             <div className="lg:col-span-3 flex justify-center gap-10">
-              <div className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center w-full group">
+              {/* Fourth service card */}
+              <Link
+                to="/services"
+                onClick={() =>
+                  localStorage.setItem("activeService", "form-b-account")
+                }
+                className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center w-full group block"
+              >
                 <div className="mb-6 transform transition-transform duration-500 group-hover:scale-110">
                   <div className="w-20 h-20 bg-[#f2efe8] rounded-full flex items-center justify-center mx-auto mb-6">
                     <Icon icon="mdi:account-cash" width="40" height="40" />
@@ -203,9 +177,16 @@ function App() {
                   tax regulations and accurate financial reporting for sole
                   proprietors and partnerships.
                 </p>
-              </div>
+              </Link>
 
-              <div className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center w-full group">
+              {/* Fifth service card */}
+              <Link
+                to="/services"
+                onClick={() =>
+                  localStorage.setItem("activeService", "form-c-pt")
+                }
+                className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center w-full group block"
+              >
                 <div className="mb-6 transform transition-transform duration-500 group-hover:scale-110">
                   <div className="w-20 h-20 bg-[#f2efe8] rounded-full flex items-center justify-center mx-auto mb-6">
                     <Icon icon="mdi:office-building" width="40" height="40" />
@@ -217,7 +198,7 @@ function App() {
                   ensure compliance with corporate tax regulations and accurate
                   submissions for businesses.
                 </p>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -552,186 +533,7 @@ function App() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="pt-24 pb-12 bg-white border-t border-black/10">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="grid md:grid-cols-4 gap-12">
-            <div className="md:col-span-1">
-              <div className="flex items-center gap-3 mb-6">
-                <img
-                  src="/src/assets/images/dino.png"
-                  alt="Tee Rex & Associates Logo"
-                  className="w-12 h-12 rounded-lg"
-                />
-                <div className="text-xl font-bold">Tee Rex & Associates</div>
-              </div>
-              <p className="text-black/70 mb-6">
-                Professional accounting and business advisory services for
-                businesses of all sizes.
-              </p>
-              <div className="flex gap-4">
-                <a
-                  href="https://wa.me/+60128186343"
-                  aria-label="Whatsapp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-white flex items-center justify-center  transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-                >
-                  <Icon icon="mdi:whatsapp" width="25" height="25" />
-                </a>
-                <a
-                  href="https://www.instagram.com/teerexassociates/"
-                  aria-label="Instagram"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-white flex items-center justify-center  transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-                >
-                  <Icon icon="mdi:instagram" width="25" height="25" />
-                </a>
-                <a
-                  href="https://www.facebook.com/people/Tee-Rex-Associates-Chartered-Accountants-%E9%9C%B8%E7%8E%8B%E7%89%B9%E8%AE%B8%E4%BC%9A%E8%AE%A1%E5%B8%88/61561326090219/"
-                  aria-label="Facebook"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-white flex items-center justify-center  transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-                >
-                  <Icon icon="mdi:facebook" width="25" height="25" />
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-bold text-xl mb-6">Services</h3>
-              <ul className="list-none p-0 space-y-4">
-                <li>
-                  <a
-                    href="#tax"
-                    className="hover:text-gray-600 transition-colors"
-                  >
-                    Tax Filing - Form BE, E, M
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#statements"
-                    className="hover:text-gray-600 transition-colors"
-                  >
-                    Tax Filing - Form P
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#advisory"
-                    className="hover:text-gray-600 transition-colors"
-                  >
-                    Tax Filing - Form B
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#bookkeeping"
-                    className="hover:text-gray-600 transition-colors"
-                  >
-                    Form B Account Management
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#payroll"
-                    className="hover:text-gray-600 transition-colors"
-                  >
-                    Form C, Form PT
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-bold text-xl mb-6">Company</h3>
-              <ul className="list-none p-0 space-y-4">
-                <li>
-                  <a
-                    href="#about"
-                    className="hover:text-gray-600 transition-colors"
-                  >
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#team"
-                    className="hover:text-gray-600 transition-colors"
-                  >
-                    Our Team
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#careers"
-                    className="hover:text-gray-600 transition-colors"
-                  >
-                    Careers
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#contact"
-                    className="hover:text-gray-600 transition-colors"
-                  >
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-bold text-xl mb-6">Resources</h3>
-              <ul className="list-none p-0 space-y-4">
-                <li>
-                  <a
-                    href="#blog"
-                    className="hover:text-gray-600 transition-colors"
-                  >
-                    Blog
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#news"
-                    className="hover:text-gray-600 transition-colors"
-                  >
-                    News
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#faq"
-                    className="hover:text-gray-600 transition-colors"
-                  >
-                    FAQ
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#privacy"
-                    className="hover:text-gray-600 transition-colors"
-                  >
-                    Privacy Policy
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-16 pt-8 border-t border-black/10 text-center text-black/60">
-            <p>
-              © {new Date().getFullYear()} Tee Rex & Associates. All rights
-              reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
