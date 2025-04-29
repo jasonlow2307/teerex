@@ -296,7 +296,7 @@ const Services = () => {
                       {service.description}
                     </p>
 
-                    <div className="p-6 bg-[#f2efe8] rounded-xl">
+                    <div className="p-6 bg-white rounded-xl shadow-md">
                       <h3 className="text-xl font-bold mb-4">Pricing</h3>
                       <p className="text-lg">{service.pricing}</p>
                     </div>
@@ -335,7 +335,7 @@ const Services = () => {
 
                   {/* Benefits */}
                   <div className="p-8 bg-[#f2efe8]/50 rounded-xl">
-                    <h3 className="text-2xl font-bold mb-6">Benefits</h3>
+                    <h3 className="text-2xl font-bold mb-4">Benefits</h3>
                     <div className="grid md:grid-cols-2 gap-6">
                       {service.benefits.map((benefit, index) => (
                         <div key={index} className="flex items-start gap-3">
@@ -349,7 +349,7 @@ const Services = () => {
                   </div>
 
                   {/* Process */}
-                  <div>
+                  <div className="p-8 bg-[#f2efe8]/50 rounded-xl">
                     <h3 className="text-2xl font-bold mb-6">Our Process</h3>
                     <div className="space-y-6">
                       {service.process.map((step, index) => (
@@ -358,7 +358,9 @@ const Services = () => {
                             {index + 1}
                           </div>
                           <div>
-                            <p className="text-lg">{step}</p>
+                            <p className="text-base leading-relaxed mt-2">
+                              {step}
+                            </p>
                           </div>
                         </div>
                       ))}
