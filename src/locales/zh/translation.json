@@ -17,7 +17,8 @@
     "lastName": "姓",
     "message": "留言",
     "serviceInterestedIn": "感兴趣的服务",
-    "learnMore": "了解更多"
+    "learnMore": "了解更多",
+    "language": "语言"
   },
   "home": {
     "hero": {

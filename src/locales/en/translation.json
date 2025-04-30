@@ -17,7 +17,8 @@
     "lastName": "Last Name",
     "message": "Message",
     "serviceInterestedIn": "Service Interested In",
-    "learnMore": "Learn More"
+    "learnMore": "Learn More",
+    "language": "Language"
   },
   "home": {
     "hero": {
