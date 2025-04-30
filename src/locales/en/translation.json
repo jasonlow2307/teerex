@@ -15,7 +15,8 @@
     "firstName": "First Name",
     "lastName": "Last Name",
     "message": "Message",
-    "serviceInterestedIn": "Service Interested In"
+    "serviceInterestedIn": "Service Interested In",
+    "learnMore": "Learn More"
   },
   "home": {
     "hero": {
@@ -27,12 +28,15 @@
     },
     "services": {
       "title": "Our Services",
-      "subtitle": "Comprehensive accounting and business advisory services to help your business thrive in today's competitive market"
+      "subtitle": "Comprehensive accounting and business advisory services to help your business thrive in today's competitive market",
+      "service1Description": "Tax filing for individual income including employment, business, and mixed income sources.",
+      "service2Description": "Comprehensive tax filing service for sole proprietors and partnerships.",
+      "service3Description": "Tax filing and compliance solutions for companies and corporate entities."
     },
     "about": {
       "title": "About Tee Rex & Associates",
       "desc1": "At Tee Rex & Associates, we combine expertise with a personalized approach to accounting and business advisory services. Our team of certified professionals is dedicated to helping your business achieve financial success.",
-      "desc2": "With over 15 years of experience serving businesses across multiple industries, we understand the unique challenges and opportunities that come with financial management in today's dynamic business environment.",
+      "desc2": "Having served businesses across multiple industries, we understand the unique challenges and opportunities that come with financial management in today's dynamic business environment.",
       "desc3": "Our mission is to provide clear, strategic financial guidance that empowers businesses to make informed decisions and achieve their goals.",
       "certifiedProfessionals": "Certified Professionals",
       "industryExpertise": "Industry Expertise",
@@ -45,7 +49,8 @@
     },
     "contact": {
       "title": "Get in Touch",
-      "subtitle": "Ready to take your business's financial management to the next level? Contact us today to schedule a consultation."
+      "subtitle": "Ready to take your business's financial management to the next level? Contact us today to schedule a consultation.",
+      "infoTitle": "Contact Information"
     }
   },
   "services": {
@@ -87,7 +92,7 @@
     "founder": "Founder & Managing Director",
     "founderDesc": "With over 20 years of experience, Sarah leads our team with expertise in complex tax matters and business advisory.",
     "taxDirector": "Tax Director",
-    "taxDirectorDesc": "Michael specializes in corporate tax planning and compliance, helping businesses optimize their tax positions.",
+    "taxDirectorDesc": "Darren specializes in corporate tax planning and compliance, helping businesses optimize their tax positions.",
     "accountingManager": "Accounting Manager",
     "accountingManagerDesc": "Jessica oversees our accounting services, ensuring accurate financial reporting and insightful business analysis.",
     "ourApproach": "Our Approach",

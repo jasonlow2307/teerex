@@ -6,14 +6,13 @@ const Footer = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-  // Custom navigation function that handles both navigation and smooth scrolling
+  // Modified navigation function to use query parameters instead of localStorage
   const handleNavigation = (path: string, serviceId?: string) => {
-    if (serviceId) {
-      localStorage.setItem("activeService", serviceId);
-    }
+    // If a service ID is provided, append it as a query parameter
+    const finalPath = serviceId ? `${path}?service=${serviceId}` : path;
 
-    // First navigate to the page
-    navigate(path);
+    // Navigate to the page
+    navigate(finalPath);
 
     // Then smoothly scroll to the top
     window.scrollTo({

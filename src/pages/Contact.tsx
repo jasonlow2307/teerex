@@ -4,10 +4,16 @@ import { useTranslation } from "react-i18next";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
+import { useLocation } from "react-router-dom";
 
 const Contact = () => {
   const [scrolled, setScrolled] = useState(false);
   const { t } = useTranslation();
+  const location = useLocation();
+
+  // Extract service from URL query parameters
+  const queryParams = new URLSearchParams(location.search);
+  const serviceParam = queryParams.get("service");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,7 +46,7 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid lg:grid-cols-5 gap-10">
             <div className="col-span-3 flex flex-col justify-center">
-              <ContactForm />
+              <ContactForm service={serviceParam || undefined} />
             </div>
 
             <div className="lg:col-span-2 bg-white p-8 rounded-xl shadow-lg">
@@ -97,8 +103,9 @@ const Contact = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        1st Floor, No. 7, Jalan Setia Perdana AY U13/AY, Setia
-                        Alam, Seksyen U13, 40170 Shah Alam, Selangor
+                        No.149-G, Block J, Tanming Boulevard, <br />
+                        Jalan Meranti Jaya 3/1, Taman Meranti Jaya, <br />
+                        47120, Puchong, Selangor
                       </a>
                     </p>
                   </div>

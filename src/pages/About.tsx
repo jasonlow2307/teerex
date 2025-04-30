@@ -150,7 +150,7 @@ const About = () => {
                   />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-2">Michael Lee</h3>
+              <h3 className="text-2xl font-bold mb-2">Darren Yap</h3>
               <p className="text-black/70 mb-4">{t("about.taxDirector")}</p>
               <p className="text-black/70 max-w-xs mx-auto">
                 {t("about.taxDirectorDesc")}

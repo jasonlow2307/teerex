@@ -75,14 +75,13 @@ function App() {
                 {t("contactForm.taxFilingBE")}
               </h3>
               <p className="text-black/70 mb-6">
-                Tax filing for individual income including employment, business,
-                and mixed income sources.
+                {t("home.services.service1Description")}
               </p>
               <a
-                href="/services"
+                href="/services?service=form-be-e-m"
                 className="inline-flex items-center text-black font-medium hover:text-gray-600 transition-colors"
               >
-                <span>Learn More</span>
+                <span>{t("common.learnMore")}</span>
                 <Icon icon="mdi:arrow-right" className="ml-2" />
               </a>
             </div>
@@ -96,14 +95,13 @@ function App() {
                 {t("contactForm.taxFilingB")}
               </h3>
               <p className="text-black/70 mb-6">
-                Comprehensive tax filing service for sole proprietors and
-                partnerships.
+                {t("home.services.service2Description")}
               </p>
               <a
-                href="/services"
+                href="/services?service=form-b"
                 className="inline-flex items-center text-black font-medium hover:text-gray-600 transition-colors"
               >
-                <span>Learn More</span>
+                <span>{t("common.learnMore")}</span>{" "}
                 <Icon icon="mdi:arrow-right" className="ml-2" />
               </a>
             </div>
@@ -121,14 +119,13 @@ function App() {
                 {t("contactForm.formCPT")}
               </h3>
               <p className="text-black/70 mb-6">
-                Tax filing and compliance solutions for companies and corporate
-                entities.
+                {t("home.services.service3Description")}
               </p>
               <a
-                href="/services"
+                href="/services?service=form-c-pt"
                 className="inline-flex items-center text-black font-medium hover:text-gray-600 transition-colors"
               >
-                <span>Learn More</span>
+                <span>{t("common.learnMore")}</span>{" "}
                 <Icon icon="mdi:arrow-right" className="ml-2" />
               </a>
             </div>
@@ -317,7 +314,9 @@ function App() {
             </div>
 
             <div className="lg:col-span-2 bg-white p-8 rounded-xl shadow-md">
-              <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+              <h3 className="text-2xl font-bold mb-6">
+                {t("home.contact.infoTitle")}
+              </h3>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -364,8 +363,16 @@ function App() {
                       {t("common.office")}
                     </p>
                     <p className="hover:underline">
-                      1st Floor, No. 7, Jalan Setia Perdana AY U13/AY, Setia
-                      Alam, Seksyen U13, 40170 Shah Alam, Selangor
+                      <a
+                        href="https://maps.app.goo.gl/4gSdgCccToUMcBNx9"
+                        aria-label="Google Maps"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        No.149-G, Block J, Tanming Boulevard, <br />
+                        Jalan Meranti Jaya 3/1, Taman Meranti Jaya, <br />
+                        47120, Puchong, Selangor
+                      </a>
                     </p>
                   </div>
                 </div>
