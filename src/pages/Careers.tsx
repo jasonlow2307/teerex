@@ -26,7 +26,7 @@ const Careers = () => {
       <Header scrolled={scrolled} />
 
       {/* Hero Section */}
-      <section className="pb-12 pt-24 flex flex-col items-center text-center bg-[#f2efe8] relative overflow-hidden">
+      <section className="pb-12 pt-30 md:pt-24 flex flex-col items-center text-center bg-[#f2efe8] relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#f2efe8]/90 to-[#f2efe8]/70 z-10"></div>
         <div className="absolute top-40 right-10 w-64 h-64 rounded-full bg-black/5 blur-3xl"></div>
         <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full bg-black/5 blur-3xl"></div>
@@ -98,56 +98,85 @@ const Careers = () => {
       </section>
 
       {/* Our Culture Section */}
-      <section className="py-16 bg-[#f2efe8]/50">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+      <section className="py-10 md:py-16 bg-[#f2efe8]/50">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold mb-4 !text-left">
+              <h2 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4 text-center md:!text-left">
                 {t("careers.ourCulture")}
               </h2>
-              <div className="w-24 h-1 bg-black mb-8"></div>
-              <p className="mb-6 text-lg">{t("careers.cultureDesc1")}</p>
-              <p className="mb-6 text-lg">{t("careers.cultureDesc2")}</p>
+              <div className="w-20 md:w-24 h-1 bg-black mb-5 md:mb-8 mx-auto md:mx-0"></div>
+              <p className="mb-4 md:mb-6 text-base md:text-lg text-center md:text-left">
+                {t("careers.cultureDesc1")}
+              </p>
+              <p className="mb-4 md:mb-6 text-base md:text-lg text-center md:text-left">
+                {t("careers.cultureDesc2")}
+              </p>
 
-              <div className="grid grid-cols-2 gap-6 mt-10">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white">
-                    <Icon icon="mdi:check" width="24" height="24" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 pl-5 gap-4 md:gap-6 mt-6 md:mt-10">
+                <div className="flex flex-row md:items-center gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black flex items-center justify-center text-white flex-shrink-0">
+                    <Icon
+                      icon="mdi:check"
+                      width="20"
+                      height="20"
+                      className="md:w-6 md:h-6"
+                    />
                   </div>
-                  <div className="font-semibold">{t("careers.profDev")}</div>
+                  <div className="font-semibold text-md md:text-base flex items-center">
+                    {t("careers.profDev")}
+                  </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white">
-                    <Icon icon="mdi:check" width="24" height="24" />
+                <div className="flex flex-row md:items-center gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black flex items-center justify-center text-white flex-shrink-0">
+                    <Icon
+                      icon="mdi:check"
+                      width="20"
+                      height="20"
+                      className="md:w-6 md:h-6"
+                    />
                   </div>
-                  <div className="font-semibold">
+                  <div className="font-semibold text-md md:text-base flex items-center">
                     {t("careers.workLifeBalance")}
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white">
-                    <Icon icon="mdi:check" width="24" height="24" />
+                <div className="flex flex-row md:items-center gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black flex items-center justify-center text-white flex-shrink-0">
+                    <Icon
+                      icon="mdi:check"
+                      width="20"
+                      height="20"
+                      className="md:w-6 md:h-6"
+                    />
                   </div>
-                  <div className="font-semibold">{t("careers.teamCollab")}</div>
+                  <div className="font-semibold text-md md:text-base flex items-center">
+                    {t("careers.teamCollab")}
+                  </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white">
-                    <Icon icon="mdi:check" width="24" height="24" />
+                <div className="flex flex-row md:items-center gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black flex items-center justify-center text-white flex-shrink-0">
+                    <Icon
+                      icon="mdi:check"
+                      width="20"
+                      height="20"
+                      className="md:w-6 md:h-6"
+                    />
                   </div>
-                  <div className="font-semibold">
+                  <div className="font-semibold text-md md:text-base flex items-center">
                     {t("careers.recognition")}
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative mt-8 md:mt-0 order-first md:order-last">
               <img
                 src="/team.png"
                 alt="Team at Tee Rex & Associates"
-                className="rounded-xl shadow-lg"
+                className="rounded-xl shadow-lg w-full object-cover"
+                loading="lazy"
               />
-              <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-black/10 rounded-xl -z-10"></div>
+              <div className="absolute -bottom-4 md:-bottom-6 -left-4 md:-left-6 w-24 md:w-48 h-24 md:h-48 bg-black/10 rounded-xl -z-10"></div>
             </div>
           </div>
         </div>

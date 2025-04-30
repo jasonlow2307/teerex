@@ -27,7 +27,7 @@ function App() {
       <Header scrolled={scrolled} />
 
       {/* Hero Section */}
-      <section className="pb-12 pt-24 flex flex-col items-center text-center bg-[#f2efe8] relative overflow-hidden">
+      <section className="pb-12 pt-30 md:pt-24 flex flex-col items-center text-center bg-[#f2efe8] relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#f2efe8]/90 to-[#f2efe8]/70 z-10"></div>
         <div className="absolute top-40 right-10 w-64 h-64 rounded-full bg-black/5 blur-3xl"></div>
         <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full bg-black/5 blur-3xl"></div>
@@ -146,62 +146,89 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section className="py-16 bg-[#f2efe8]/50">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-4 !text-left">
+      <section className="py-10 md:py-16 bg-[#f2efe8]/50">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+            <div className="order-2 md:order-1">
+              <h2 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4 text-center md:!text-left">
                 {t("home.about.title")}
               </h2>
-              <div className="w-24 h-1 bg-black mb-8"></div>
-              <p className="mb-6 text-lg">{t("home.about.desc1")}</p>
-              <p className="mb-6 text-lg">{t("home.about.desc2")}</p>
-              <p className="text-lg">{t("home.about.desc3")}</p>
+              <div className="w-20 md:w-24 h-1 bg-black mb-5 md:mb-8 mx-auto md:mx-0"></div>
+              <p className="mb-4 md:mb-6 text-base md:text-lg text-center md:text-left">
+                {t("home.about.desc1")}
+              </p>
+              <p className="mb-4 md:mb-6 text-base md:text-lg text-center md:text-left">
+                {t("home.about.desc2")}
+              </p>
+              <p className="text-base md:text-lg text-center md:text-left">
+                {t("home.about.desc3")}
+              </p>
 
-              <div className="grid grid-cols-2 gap-6 mt-10">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white">
-                    <Icon icon="mdi:check" width="24" height="24" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 pl-5 mt-8 md:mt-10">
+                <div className="flex items-center gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black flex items-center justify-center text-white flex-shrink-0">
+                    <Icon
+                      icon="mdi:check"
+                      width="18"
+                      height="18"
+                      className="md:w-6 md:h-6"
+                    />
                   </div>
-                  <div className="font-semibold">
+                  <div className="font-semibold text-md md:text-base">
                     {t("home.about.certifiedProfessionals")}
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white">
-                    <Icon icon="mdi:check" width="24" height="24" />
+                <div className="flex items-center gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black flex items-center justify-center text-white flex-shrink-0">
+                    <Icon
+                      icon="mdi:check"
+                      width="18"
+                      height="18"
+                      className="md:w-6 md:h-6"
+                    />
                   </div>
-                  <div className="font-semibold">
+                  <div className="font-semibold text-md md:text-base">
                     {t("home.about.industryExpertise")}
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white">
-                    <Icon icon="mdi:check" width="24" height="24" />
+                <div className="flex items-center gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black flex items-center justify-center text-white flex-shrink-0">
+                    <Icon
+                      icon="mdi:check"
+                      width="18"
+                      height="18"
+                      className="md:w-6 md:h-6"
+                    />
                   </div>
-                  <div className="font-semibold">
+                  <div className="font-semibold text-md md:text-base">
                     {t("home.about.personalizedService")}
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white">
-                    <Icon icon="mdi:check" width="24" height="24" />
+                <div className="flex items-center gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black flex items-center justify-center text-white flex-shrink-0">
+                    <Icon
+                      icon="mdi:check"
+                      width="18"
+                      height="18"
+                      className="md:w-6 md:h-6"
+                    />
                   </div>
-                  <div className="font-semibold">
+                  <div className="font-semibold text-md md:text-base">
                     {t("home.about.timelyDelivery")}
                   </div>
                 </div>
               </div>
             </div>
-            <div className="relative">
-              <div className="w-full bg-white p-4 rounded-xl shadow-lg">
+            <div className="relative order-1 md:order-2 mb-8 md:mb-0">
+              <div className="w-full bg-white p-3 md:p-4 rounded-xl shadow-lg">
                 <img
                   src="/team.png"
                   alt="Tee Rex Team"
                   className="w-full h-auto rounded-lg"
+                  loading="lazy"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-black/10 rounded-xl -z-10"></div>
+              <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-24 h-24 md:w-48 md:h-48 bg-black/10 rounded-xl -z-10"></div>
             </div>
           </div>
         </div>
@@ -308,78 +335,93 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 bg-[#f2efe8]/50" id="contact">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">
+      <section className="py-10 md:py-16 bg-[#f2efe8]/50" id="contact">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 md:mb-4">
               {t("home.contact.title")}
             </h2>
-            <div className="w-24 h-1 bg-black mx-auto mb-6"></div>
-            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+            <div className="w-20 md:w-24 h-1 bg-black mx-auto mb-4 md:mb-6"></div>
+            <p className="text-base md:text-xl text-black/70 max-w-3xl mx-auto">
               {t("home.contact.subtitle")}
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-10">
-            <div className="col-span-3 flex flex-col justify-center">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 md:gap-10">
+            <div className="col-span-1 lg:col-span-3 flex flex-col justify-center order-2 lg:order-1">
               <ContactForm />
             </div>
 
-            <div className="lg:col-span-2 bg-white p-8 rounded-xl shadow-md">
-              <h3 className="text-2xl font-bold mb-6">
+            <div className="col-span-1 lg:col-span-2 bg-white p-6 md:p-8 rounded-xl shadow-md order-1 lg:order-2 mb-6 lg:mb-0">
+              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">
                 {t("home.contact.infoTitle")}
               </h3>
 
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
+              <div className="space-y-4 md:space-y-6">
+                <div className="flex items-start gap-3 md:gap-4">
                   <div className="w-10 h-10 rounded-lg bg-[#f2efe8] flex items-center justify-center flex-shrink-0">
-                    <Icon icon="mdi:email-outline" width="24" height="24" />
+                    <Icon
+                      icon="mdi:email-outline"
+                      width="20"
+                      height="20"
+                      className="md:w-6 md:h-6"
+                    />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-black/60 mb-1">
+                    <p className="text-xs md:text-sm font-medium text-black/60 mb-1">
                       {t("common.email")}
                     </p>
                     <a
                       href="mailto:office@teerexassociates.com"
-                      className="hover:underline"
+                      className="text-sm md:text-base hover:underline break-words"
                     >
                       office@teerexassociates.com
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-3 md:gap-4">
                   <div className="w-10 h-10 rounded-lg bg-[#f2efe8] flex items-center justify-center flex-shrink-0">
-                    <Icon icon="mdi:phone-outline" width="24" height="24" />
+                    <Icon
+                      icon="mdi:phone-outline"
+                      width="20"
+                      height="20"
+                      className="md:w-6 md:h-6"
+                    />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-black/60 mb-1">
+                    <p className="text-xs md:text-sm font-medium text-black/60 mb-1">
                       {t("common.phone")}
                     </p>
-                    <a href="tel:+60128186343" className="hover:underline">
+                    <a
+                      href="tel:+60128186343"
+                      className="text-sm md:text-base hover:underline"
+                    >
                       +60 12-818 6343
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-3 md:gap-4">
                   <div className="w-10 h-10 rounded-lg bg-[#f2efe8] flex items-center justify-center flex-shrink-0">
                     <Icon
                       icon="mdi:map-marker-outline"
-                      width="24"
-                      height="24"
+                      width="20"
+                      height="20"
+                      className="md:w-6 md:h-6"
                     />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-black/60 mb-1">
+                    <p className="text-xs md:text-sm font-medium text-black/60 mb-1">
                       {t("common.office")}
                     </p>
-                    <p className="hover:underline">
+                    <p className="text-sm md:text-base">
                       <a
                         href="https://maps.app.goo.gl/4gSdgCccToUMcBNx9"
                         aria-label="Google Maps"
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="hover:underline"
                       >
                         No.149-G, Block J, Tanming Boulevard, <br />
                         Jalan Meranti Jaya 3/1, Taman Meranti Jaya, <br />
@@ -389,7 +431,7 @@ function App() {
                   </div>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-black/10 flex gap-3">
+                <div className="pt-4 md:pt-6 mt-4 md:mt-6 border-t border-black/10 flex gap-3 justify-center md:justify-start">
                   <a
                     href="https://wa.me/+60128186343"
                     aria-label="Whatsapp"

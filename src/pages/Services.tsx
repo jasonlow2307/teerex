@@ -166,22 +166,22 @@ const Services = () => {
       <Header scrolled={scrolled} />
 
       {/* Hero Section */}
-      <section className="pb-12 pt-24 flex flex-col items-center text-center bg-[#f2efe8] relative overflow-hidden">
+      <section className="pb-8 md:pb-12 pt-30 md:pt-24 flex flex-col items-center text-center bg-[#f2efe8] relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#f2efe8]/90 to-[#f2efe8]/70 z-10"></div>
-        <div className="max-w-7xl mx-auto px-8 relative z-20">
-          <h1 className="text-5xl font-bold mx-auto mb-6 max-w-3xl leading-tight">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-20">
+          <h1 className="text-3xl md:text-5xl font-bold mx-auto mb-4 md:mb-6 max-w-3xl leading-tight">
             {t("services.title")}
           </h1>
-          <p className="text-xl mx-auto mb-10 max-w-2xl text-black/70 leading-relaxed">
+          <p className="text-base md:text-xl mx-auto mb-6 md:mb-10 max-w-2xl text-black/70 leading-relaxed">
             {t("services.subtitle")}
           </p>
         </div>
       </section>
 
       {/* Services Navigation - with consistent icon coloring */}
-      <section className="pt-6 pb-4 sticky top-[104px] bg-[#f2efe8]/95 backdrop-blur-sm z-40 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="flex flex-nowrap gap-4 justify-center overflow-x-auto pb-2 scrollbar-hide">
+      <section className="pt-4 md:pt-6 pb-2 md:pb-4 sticky top-[66px] md:top-[104px] bg-[#f2efe8]/95 backdrop-blur-sm z-40 transition-all duration-300">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="flex flex-nowrap gap-2 md:gap-4 justify-start md:justify-center overflow-x-auto pb-2 scrollbar-hide">
             {serviceIds.map((serviceId) => {
               const service = getTranslatedService(
                 serviceId as keyof typeof serviceTranslationKeys
@@ -189,7 +189,7 @@ const Services = () => {
               return (
                 <button
                   key={serviceId}
-                  className={`px-6 py-3 rounded-lg transition-all duration-300 whitespace-nowrap font-medium ${
+                  className={`px-3 md:px-6 py-2 md:py-3 rounded-lg transition-all duration-300 whitespace-nowrap text-sm md:text-base font-medium ${
                     activeService === serviceId
                       ? "bg-black text-white shadow-md transform -translate-y-1 border-2 border-white"
                       : "bg-white/80 hover:bg-white hover:shadow-md text-black/80 hover:text-black border border-black/10"
@@ -200,8 +200,8 @@ const Services = () => {
                     {activeService === serviceId && (
                       <Icon
                         icon={service.icon}
-                        width="18"
-                        height="18"
+                        width="16"
+                        height="16"
                         className="text-white/70"
                       />
                     )}
@@ -215,14 +215,14 @@ const Services = () => {
       </section>
 
       {/* Service Details Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-8">
+      <section className="py-8 md:py-16">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div
             ref={contentRef}
             className={`transition-opacity duration-200 ease-in-out ${
               isTransitioning ? "opacity-0" : "opacity-100"
             }`}
-            style={{ minHeight: "800px" }} // Ensure consistent height to prevent layout shifts
+            style={{ minHeight: "600px" }} // Ensure consistent height to prevent layout shifts
           >
             {serviceIds.map((serviceId) => {
               const service = getTranslatedService(
@@ -235,32 +235,39 @@ const Services = () => {
                     visibleService === serviceId ? "block" : "hidden"
                   }`}
                 >
-                  <div className="flex flex-col md:flex-row gap-16 items-start">
-                    <div className="md:w-1/3">
-                      <div className="sticky top-[220px]">
-                        <div className="mb-8 flex items-center justify-center md:justify-start">
-                          <div className="w-24 h-24 bg-[#f2efe8] rounded-full flex items-center justify-center shadow-md">
-                            <Icon icon={service.icon} width="60" height="60" />
+                  <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
+                    <div className="w-full md:w-1/3">
+                      <div className="md:sticky md:top-[220px]">
+                        <div className="mb-6 md:mb-8 flex items-center justify-center md:justify-start">
+                          <div className="w-16 h-16 md:w-24 md:h-24 bg-[#f2efe8] rounded-full flex items-center justify-center shadow-md">
+                            <Icon
+                              icon={service.icon}
+                              width="40"
+                              height="40"
+                              className="md:w-[60px] md:h-[60px]"
+                            />
                           </div>
                         </div>
-                        <h2 className="text-4xl font-bold mb-6">
+                        <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6 text-center md:text-left">
                           {service.title}
                         </h2>
-                        <p className="text-lg text-black/70 mb-8">
+                        <p className="text-base md:text-lg text-black/70 mb-6 md:mb-8 text-center md:text-left">
                           {service.description}
                         </p>
 
-                        <div className="p-6 bg-white rounded-xl shadow-md">
-                          <h3 className="text-xl font-bold mb-4">
+                        <div className="p-4 md:p-6 bg-white rounded-xl shadow-md mb-6 md:mb-0">
+                          <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">
                             {t("services.pricing")}
                           </h3>
-                          <p className="text-lg">{service.pricing}</p>
+                          <p className="text-base md:text-lg">
+                            {service.pricing}
+                          </p>
                         </div>
 
-                        <div className="mt-10">
+                        <div className="mt-6 md:mt-10 hidden md:block">
                           <Link
                             to={`/contact?service=${serviceId}`}
-                            className="px-8 py-4 bg-black !text-white rounded-lg hover:bg-black/80 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium relative overflow-hidden group w-full block text-center"
+                            className="px-6 md:px-8 py-3 md:py-4 bg-black !text-white rounded-lg hover:bg-black/80 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium relative overflow-hidden group w-full block text-center"
                           >
                             <span className="absolute inset-0 w-0 bg-white/20 transition-all duration-500 ease-out group-hover:w-full"></span>
                             <span className="relative">
@@ -272,30 +279,30 @@ const Services = () => {
                     </div>
 
                     {/* Service content */}
-                    <div className="md:w-2/3 space-y-12">
+                    <div className="md:w-2/3 space-y-8 md:space-y-12">
                       {/* Service Details */}
-                      <div className="space-y-8">
+                      <div className="space-y-6 md:space-y-8">
                         {Array.isArray(service.details) &&
                         service.details.length > 0 ? (
                           service.details.map((detail, index) => (
                             <div
                               key={index}
-                              className="p-8 bg-white rounded-xl shadow-md"
+                              className="p-5 md:p-8 bg-white rounded-xl shadow-md"
                             >
-                              <h3 className="text-2xl font-bold mb-4">
+                              <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">
                                 {detail.heading}
                               </h3>
-                              <p className="text-lg text-black/70">
+                              <p className="text-base md:text-lg text-black/70">
                                 {detail.content}
                               </p>
                             </div>
                           ))
                         ) : (
-                          <div className="p-8 bg-white rounded-xl shadow-md">
-                            <h3 className="text-2xl font-bold mb-4">
+                          <div className="p-5 md:p-8 bg-white rounded-xl shadow-md">
+                            <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">
                               {service.title}
                             </h3>
-                            <p className="text-lg text-black/70">
+                            <p className="text-base md:text-lg text-black/70">
                               {service.description}
                             </p>
                           </div>
@@ -303,21 +310,21 @@ const Services = () => {
                       </div>
 
                       {/* Benefits */}
-                      <div className="p-8 bg-[#f2efe8]/50 rounded-xl">
-                        <h3 className="text-2xl font-bold mb-4">
+                      <div className="p-5 md:p-8 bg-[#f2efe8]/50 rounded-xl">
+                        <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">
                           {t("services.benefits")}
                         </h3>
-                        <div className="grid md:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                           {Array.isArray(service.benefits) &&
                             service.benefits.map((benefit, index) => (
                               <div
                                 key={index}
                                 className="flex items-start gap-3"
                               >
-                                <div className="w-8 h-8 rounded-full bg-black flex-shrink-0 flex items-center justify-center text-white text-sm mt-0.5">
+                                <div className="w-6 md:w-8 h-6 md:h-8 rounded-full bg-black flex-shrink-0 flex items-center justify-center text-white text-xs md:text-sm mt-0.5">
                                   ✓
                                 </div>
-                                <p className="text-base leading-relaxed">
+                                <p className="text-sm md:text-base leading-relaxed">
                                   {benefit}
                                 </p>
                               </div>
@@ -326,22 +333,22 @@ const Services = () => {
                       </div>
 
                       {/* Process */}
-                      <div className="p-8 bg-[#f2efe8]/50 rounded-xl">
-                        <h3 className="text-2xl font-bold mb-6">
+                      <div className="p-5 md:p-8 bg-[#f2efe8]/50 rounded-xl">
+                        <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">
                           {t("services.process")}
                         </h3>
-                        <div className="space-y-6">
+                        <div className="space-y-4 md:space-y-6">
                           {Array.isArray(service.process) &&
                             service.process.map((step, index) => (
                               <div
                                 key={index}
-                                className="flex items-start gap-4"
+                                className="flex items-start gap-3 md:gap-4"
                               >
-                                <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center flex-shrink-0 mt-1">
+                                <div className="w-8 md:w-10 h-8 md:h-10 rounded-full bg-black text-white flex items-center justify-center flex-shrink-0 mt-0.5 md:mt-1">
                                   {index + 1}
                                 </div>
                                 <div>
-                                  <p className="text-base leading-relaxed mt-2">
+                                  <p className="text-sm md:text-base leading-relaxed mt-1 md:mt-2">
                                     {step}
                                   </p>
                                 </div>
@@ -351,32 +358,32 @@ const Services = () => {
                       </div>
 
                       {/* FAQ */}
-                      <div className="p-8 bg-white rounded-xl shadow-md">
-                        <h3 className="text-2xl font-bold mb-6">
+                      <div className="p-5 md:p-8 bg-white rounded-xl shadow-md">
+                        <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">
                           {t("services.faq")}
                         </h3>
-                        <div className="space-y-6">
+                        <div className="space-y-4 md:space-y-6">
                           <div>
-                            <h4 className="text-xl font-semibold mb-2">
+                            <h4 className="text-lg md:text-xl font-semibold mb-2">
                               {t("services.deadline")}
                             </h4>
-                            <p className="text-black/70">
+                            <p className="text-sm md:text-base text-black/70">
                               {t("services.deadlineAnswer")}
                             </p>
                           </div>
                           <div>
-                            <h4 className="text-xl font-semibold mb-2">
+                            <h4 className="text-lg md:text-xl font-semibold mb-2">
                               {t("services.documents")}
                             </h4>
-                            <p className="text-black/70">
+                            <p className="text-sm md:text-base text-black/70">
                               {t("services.documentsAnswer")}
                             </p>
                           </div>
                           <div>
-                            <h4 className="text-xl font-semibold mb-2">
+                            <h4 className="text-lg md:text-xl font-semibold mb-2">
                               {t("services.timeProcess")}
                             </h4>
-                            <p className="text-black/70">
+                            <p className="text-sm md:text-base text-black/70">
                               {t("services.timeProcessAnswer")}
                             </p>
                           </div>
@@ -384,16 +391,16 @@ const Services = () => {
                       </div>
 
                       {/* CTA */}
-                      <div className="p-8 bg-[#f2efe8] rounded-xl text-center">
-                        <h3 className="text-2xl font-bold mb-4">
+                      <div className="p-5 md:p-8 bg-[#f2efe8] rounded-xl text-center">
+                        <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">
                           {t("services.readyStart")}
                         </h3>
-                        <p className="mb-6 text-lg">
+                        <p className="mb-4 md:mb-6 text-base md:text-lg">
                           {t("services.contactForService")}
                         </p>
                         <Link
                           to={`/contact?service=${serviceId}`}
-                          className="px-8 py-4 bg-black !text-white rounded-lg hover:bg-black/80 inline-block transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium"
+                          className="px-6 md:px-8 py-3 md:py-4 bg-black !text-white rounded-lg hover:bg-black/80 inline-block transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium"
                         >
                           {t("common.scheduleConsultation")}
                         </Link>
@@ -408,13 +415,13 @@ const Services = () => {
       </section>
 
       {/* Related Services */}
-      <section className="py-16 bg-[#f2efe8]/30">
-        <div className="max-w-7xl mx-auto px-8">
-          <h2 className="text-3xl font-bold mb-12 text-center">
+      <section className="py-10 md:py-16 bg-[#f2efe8]/30">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center">
             {t("services.otherServices")}
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             {serviceIds
               .filter((serviceId) => serviceId !== activeService)
               .slice(0, 3)
@@ -425,21 +432,30 @@ const Services = () => {
                 return (
                   <div
                     key={serviceId}
-                    className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center cursor-pointer"
+                    className="p-5 md:p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center cursor-pointer"
                     onClick={() => {
                       handleServiceChange(serviceId);
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
                   >
-                    <div className="mb-6">
-                      <div className="w-16 h-16 bg-[#f2efe8] rounded-full flex items-center justify-center mx-auto">
-                        <Icon icon={service.icon} width="32" height="32" />
+                    <div className="mb-4 md:mb-6">
+                      <div className="w-12 h-12 md:w-16 md:h-16 bg-[#f2efe8] rounded-full flex items-center justify-center mx-auto">
+                        <Icon
+                          icon={service.icon}
+                          width="24"
+                          height="24"
+                          className="md:w-8 md:h-8"
+                        />
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold mb-4">{service.title}</h3>
-                    <p className="text-black/70 mb-6">{service.description}</p>
+                    <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm md:text-base text-black/70 mb-4 md:mb-6">
+                      {service.description}
+                    </p>
                     <button
-                      className="text-black font-medium hover:underline"
+                      className="text-black font-medium text-sm md:text-base hover:underline"
                       onClick={(e) => {
                         e.stopPropagation(); // Prevent double event firing
                         handleServiceChange(serviceId);
