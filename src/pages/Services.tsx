@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -48,6 +48,7 @@ const Services = () => {
   const [activeService, setActiveService] = useState("form-be-e-m");
   const { t } = useTranslation();
   const location = useLocation();
+  const navigate = useNavigate();
 
   // List of available service IDs
   const serviceIds = Object.keys(serviceTranslationKeys);
@@ -124,6 +125,14 @@ const Services = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [location.search, serviceIds]);
 
+  // Function to update active service and URL
+  const handleServiceChange = (serviceId: string) => {
+    setActiveService(serviceId);
+
+    // Update URL without full page reload
+    navigate(`/services?service=${serviceId}`, { replace: true });
+  };
+
   return (
     <div className="w-full font-sans">
       {/* Header Section */}
@@ -158,7 +167,7 @@ const Services = () => {
                       ? "bg-black text-white shadow-md transform -translate-y-1 border-2 border-white"
                       : "bg-white/80 hover:bg-white hover:shadow-md text-black/80 hover:text-black border border-black/10"
                   }`}
-                  onClick={() => setActiveService(serviceId)}
+                  onClick={() => handleServiceChange(serviceId)}
                 >
                   <div className="flex items-center gap-2">
                     {activeService === serviceId && (
@@ -376,7 +385,7 @@ const Services = () => {
                     key={serviceId}
                     className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center cursor-pointer"
                     onClick={() => {
-                      setActiveService(serviceId);
+                      handleServiceChange(serviceId);
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
                   >
@@ -389,8 +398,9 @@ const Services = () => {
                     <p className="text-black/70 mb-6">{service.description}</p>
                     <button
                       className="text-black font-medium hover:underline"
-                      onClick={() => {
-                        setActiveService(serviceId);
+                      onClick={(e) => {
+                        e.stopPropagation(); // Prevent double event firing
+                        handleServiceChange(serviceId);
                         window.scrollTo({ top: 0, behavior: "smooth" });
                       }}
                     >

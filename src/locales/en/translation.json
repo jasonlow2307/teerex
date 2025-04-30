@@ -70,7 +70,173 @@
     "readyStart": "Ready to get started?",
     "contactForService": "Contact us today to schedule a consultation about your service needs.",
     "otherServices": "Other Services You Might Need",
-    "learnMore": "Learn More"
+    "learnMore": "Learn More",
+    "serviceDetails": {
+      "formBEM": {
+        "title": "Tax Filing - Form BE, E, M",
+        "description": "Professional assistance with filing BE, E, and M forms, ensuring accurate submission and compliance with tax regulations for individuals and businesses.",
+        "details": [
+          {
+            "heading": "Form BE (For Self-Employed Individuals)",
+            "content": "Form BE is for resident individuals with business income sources. Our professional tax service ensures your Form BE is accurately completed and submitted on time, maximizing eligible deductions while maintaining full compliance with Malaysian tax law."
+          },
+          {
+            "heading": "Form E (For Employees)",
+            "content": "Form E is the Employer's Return of Remuneration, which must be submitted by every employer with employees in Malaysia. We help businesses accurately prepare and submit Form E to ensure compliance with employment tax regulations."
+          },
+          {
+            "heading": "Form M (For Non-Residents)",
+            "content": "Form M applies to non-resident individuals with Malaysian-sourced income. Our tax experts understand the complexities of international taxation and can help navigate the specific requirements for non-residents."
+          }
+        ],
+        "benefits": [
+          "Maximization of tax deductions and reliefs",
+          "Compliance with latest tax regulations",
+          "Minimization of penalties and audit risks",
+          "Professional handling of complex tax situations",
+          "E-filing for faster processing"
+        ],
+        "process": [
+          "Initial consultation to understand your financial situation",
+          "Collection and organization of all relevant financial documents",
+          "Identification of applicable deductions and tax credits",
+          "Preparation and verification of tax forms",
+          "E-filing with LHDN",
+          "Post-submission support and representation"
+        ],
+        "pricing": "Starting from RM 50, depending on complexity"
+      },
+      "formP": {
+        "title": "Tax Filing - Form P",
+        "description": "Professional assistance with filing Form P, ensuring compliance with tax regulations and accurate submission for partnerships and other entities.",
+        "details": [
+          {
+            "heading": "Partnership Income Declaration",
+            "content": "Form P is designed for partnerships to report their business income and allocation of profits or losses to the respective partners. Our professional tax advisors ensure accurate distribution of partnership income among partners and proper documentation of all business deductions."
+          },
+          {
+            "heading": "Partnership Tax Compliance",
+            "content": "We help partnerships understand and fulfill their tax obligations, ensuring that all income is properly declared and that partnership agreements are appropriately reflected in tax filings."
+          }
+        ],
+        "benefits": [
+          "Accurate allocation of partnership profits and losses",
+          "Proper documentation of partner contributions and distributions",
+          "Strategic tax planning for partnerships",
+          "Compliance with partnership tax regulations",
+          "Minimizing tax burden through legal optimization"
+        ],
+        "process": [
+          "Review of partnership agreement and structure",
+          "Detailed analysis of partnership income and expenditure",
+          "Allocation of income and losses according to partnership interests",
+          "Preparation and verification of Form P",
+          "E-filing with tax authorities",
+          "Coordination of individual partner tax filings"
+        ],
+        "pricing": "Starting from RM 150, based on partnership complexity and number of partners"
+      },
+      "formB": {
+        "title": "Tax Filing - Form B",
+        "description": "Professional assistance with filing Form B for sole proprietors and partnerships, ensuring accurate submission and compliance with tax regulations.",
+        "details": [
+          {
+            "heading": "Business Income Reporting",
+            "content": "Form B is for resident individuals with business income, including sole proprietors, partnership partners, and freelancers. Our comprehensive Form B filing service ensures all business income and expenses are accurately reported while maximizing legitimate deductions."
+          },
+          {
+            "heading": "Self-Employment Tax Management",
+            "content": "We provide expertise in handling the unique tax situations faced by self-employed individuals, including proper categorization of expenses, home office deductions, and depreciation of business assets."
+          }
+        ],
+        "benefits": [
+          "Comprehensive business expense deductions",
+          "Accurate reporting of income from multiple business sources",
+          "Strategic tax planning for business owners",
+          "Proper documentation to support claimed deductions",
+          "Guidance on estimated tax payments and planning"
+        ],
+        "process": [
+          "Business financial review and analysis",
+          "Categorization and verification of business expenses",
+          "Income calculation and documentation",
+          "Identification of applicable business deductions",
+          "Preparation and submission of Form B",
+          "Year-round tax planning and consultation"
+        ],
+        "pricing": "Starting from RM 50, depending on business size and complexity"
+      },
+      "formBAccount": {
+        "title": "Form B Account Management",
+        "description": "Professional management of Form B accounts, ensuring compliance with tax regulations and accurate financial reporting for sole proprietors and partnerships.",
+        "details": [
+          {
+            "heading": "Financial Statement Preparation",
+            "content": "We prepare comprehensive financial statements for your business that comply with accounting standards and clearly show your business's financial health. These statements serve as the foundation for accurate Form B submission."
+          },
+          {
+            "heading": "Accounting and Financial Management",
+            "content": "Our account management services include year-round bookkeeping, expense tracking, revenue recognition, and financial analysis, ensuring your business records are always accurate and ready for tax filing."
+          },
+          {
+            "heading": "Business Advisory Services",
+            "content": "In addition to managing your Form B accounts, we provide valuable business insights, profitability analysis, and financial planning to help your business grow and optimize its tax position."
+          }
+        ],
+        "benefits": [
+          "Real-time financial visibility for better business decisions",
+          "Well-maintained financial records that stand up to scrutiny",
+          "Reduced tax preparation time and costs",
+          "Early identification of tax-saving opportunities",
+          "Professionally prepared financial statements for financing applications",
+          "Year-round tax and financial planning support"
+        ],
+        "process": [
+          "Initial financial system setup and organization",
+          "Regular bookkeeping and transaction categorization",
+          "Quarterly financial statement preparation and review",
+          "Ongoing tax planning and consultation",
+          "Year-end financial statement preparation",
+          "Form B preparation based on managed financial records"
+        ],
+        "pricing": "Starting from RM 300, based on transaction volume and business complexity"
+      },
+      "formCPT": {
+        "title": "Form C, Form PT",
+        "description": "Comprehensive assistance with filing Form C and Form PT, ensuring compliance with corporate tax regulations and accurate submission for companies.",
+        "details": [
+          {
+            "heading": "Corporate Tax Filing (Form C)",
+            "content": "Form C is for companies registered in Malaysia. Our corporate tax specialists ensure accurate preparation and submission of Form C, including proper treatment of business income, capital allowances, and tax incentives applicable to your industry."
+          },
+          {
+            "heading": "Petroleum Tax Filing (Form PT)",
+            "content": "Form PT is designed for companies engaged in petroleum operations. We have specialized expertise in managing the complex tax regulations for the petroleum industry, ensuring full compliance with industry-specific requirements."
+          },
+          {
+            "heading": "Corporate Tax Planning",
+            "content": "We work proactively with our corporate clients to implement tax-efficient structures, identify applicable tax incentives, and develop strategies to minimize tax burden while maintaining full compliance."
+          }
+        ],
+        "benefits": [
+          "Professional handling of complex corporate tax matters",
+          "Industry-specific tax knowledge and incentive identification",
+          "Strategic corporate tax planning and optimization",
+          "Compliance with corporate filing requirements",
+          "Representation during corporate tax audits",
+          "Reduced risk of penalties and compliance issues"
+        ],
+        "process": [
+          "Comprehensive review of corporate financial statements",
+          "Analysis of tax provisions and applicable incentives",
+          "Calculation of capital allowances and tax adjustments",
+          "Preparation and verification of Form C or Form PT",
+          "E-filing with the Inland Revenue Board",
+          "Corporate tax planning for future periods"
+        ],
+        "pricing": "Determined based on company size and complexity"
+      }
+    }
   },
   "about": {
     "title": "About Tee Rex & Associates",
