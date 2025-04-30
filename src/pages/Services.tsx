@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Icon } from "@iconify/react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -46,9 +46,12 @@ interface TranslatedService {
 const Services = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeService, setActiveService] = useState("form-be-e-m");
+  const [visibleService, setVisibleService] = useState("form-be-e-m");
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
+  const contentRef = useRef<HTMLDivElement>(null);
 
   // List of available service IDs
   const serviceIds = Object.keys(serviceTranslationKeys);
@@ -107,30 +110,51 @@ const Services = () => {
     };
   };
 
+  // Handle URL query parameters for initial service
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const serviceParam = queryParams.get("service");
+
+    if (
+      serviceParam &&
+      serviceIds.includes(serviceParam) &&
+      serviceParam !== activeService
+    ) {
+      setActiveService(serviceParam);
+      setVisibleService(serviceParam);
+    }
+  }, [location.search, serviceIds, activeService]);
+
+  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Extract service from URL query parameters instead of localStorage
-    const queryParams = new URLSearchParams(location.search);
-    const serviceParam = queryParams.get("service");
-
-    if (serviceParam && serviceIds.includes(serviceParam)) {
-      setActiveService(serviceParam);
-    }
-
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [location.search, serviceIds]);
+  }, []);
 
   // Function to update active service and URL
   const handleServiceChange = (serviceId: string) => {
-    setActiveService(serviceId);
+    if (serviceId === activeService) return; // Skip if already on this service
 
-    // Update URL without full page reload
+    // Start transition - fade out
+    setIsTransitioning(true);
+
+    // Update URL immediately
     navigate(`/services?service=${serviceId}`, { replace: true });
+
+    // After fade out completes, change the actual content
+    setTimeout(() => {
+      setVisibleService(serviceId);
+      setActiveService(serviceId);
+
+      // After content is changed, start fade in
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 50);
+    }, 200);
   };
 
   return (
@@ -190,178 +214,193 @@ const Services = () => {
       {/* Service Details Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-8">
-          {serviceIds.map((serviceId) => {
-            const service = getTranslatedService(
-              serviceId as keyof typeof serviceTranslationKeys
-            );
-            return (
-              <div
-                key={serviceId}
-                className={`${
-                  activeService === serviceId ? "block" : "hidden"
-                }`}
-              >
-                <div className="flex flex-col md:flex-row gap-16 items-start">
-                  <div className="md:w-1/3">
-                    <div className="sticky top-[220px]">
-                      <div className="mb-8 flex items-center justify-center md:justify-start">
-                        <div className="w-24 h-24 bg-[#f2efe8] rounded-full flex items-center justify-center shadow-md">
-                          <Icon icon={service.icon} width="60" height="60" />
+          <div
+            ref={contentRef}
+            className={`transition-opacity duration-200 ease-in-out ${
+              isTransitioning ? "opacity-0" : "opacity-100"
+            }`}
+            style={{ minHeight: "800px" }} // Ensure consistent height to prevent layout shifts
+          >
+            {serviceIds.map((serviceId) => {
+              const service = getTranslatedService(
+                serviceId as keyof typeof serviceTranslationKeys
+              );
+              return (
+                <div
+                  key={serviceId}
+                  className={`${
+                    visibleService === serviceId ? "block" : "hidden"
+                  }`}
+                >
+                  <div className="flex flex-col md:flex-row gap-16 items-start">
+                    <div className="md:w-1/3">
+                      <div className="sticky top-[220px]">
+                        <div className="mb-8 flex items-center justify-center md:justify-start">
+                          <div className="w-24 h-24 bg-[#f2efe8] rounded-full flex items-center justify-center shadow-md">
+                            <Icon icon={service.icon} width="60" height="60" />
+                          </div>
+                        </div>
+                        <h2 className="text-4xl font-bold mb-6">
+                          {service.title}
+                        </h2>
+                        <p className="text-lg text-black/70 mb-8">
+                          {service.description}
+                        </p>
+
+                        <div className="p-6 bg-white rounded-xl shadow-md">
+                          <h3 className="text-xl font-bold mb-4">
+                            {t("services.pricing")}
+                          </h3>
+                          <p className="text-lg">{service.pricing}</p>
+                        </div>
+
+                        <div className="mt-10">
+                          <Link
+                            to={`/contact?service=${serviceId}`}
+                            className="px-8 py-4 bg-black !text-white rounded-lg hover:bg-black/80 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium relative overflow-hidden group w-full block text-center"
+                          >
+                            <span className="absolute inset-0 w-0 bg-white/20 transition-all duration-500 ease-out group-hover:w-full"></span>
+                            <span className="relative">
+                              {t("services.inquireService")}
+                            </span>
+                          </Link>
                         </div>
                       </div>
-                      <h2 className="text-4xl font-bold mb-6">
-                        {service.title}
-                      </h2>
-                      <p className="text-lg text-black/70 mb-8">
-                        {service.description}
-                      </p>
+                    </div>
 
-                      <div className="p-6 bg-white rounded-xl shadow-md">
-                        <h3 className="text-xl font-bold mb-4">
-                          {t("services.pricing")}
-                        </h3>
-                        <p className="text-lg">{service.pricing}</p>
+                    {/* Service content */}
+                    <div className="md:w-2/3 space-y-12">
+                      {/* Service Details */}
+                      <div className="space-y-8">
+                        {Array.isArray(service.details) &&
+                        service.details.length > 0 ? (
+                          service.details.map((detail, index) => (
+                            <div
+                              key={index}
+                              className="p-8 bg-white rounded-xl shadow-md"
+                            >
+                              <h3 className="text-2xl font-bold mb-4">
+                                {detail.heading}
+                              </h3>
+                              <p className="text-lg text-black/70">
+                                {detail.content}
+                              </p>
+                            </div>
+                          ))
+                        ) : (
+                          <div className="p-8 bg-white rounded-xl shadow-md">
+                            <h3 className="text-2xl font-bold mb-4">
+                              {service.title}
+                            </h3>
+                            <p className="text-lg text-black/70">
+                              {service.description}
+                            </p>
+                          </div>
+                        )}
                       </div>
 
-                      <div className="mt-10">
+                      {/* Benefits */}
+                      <div className="p-8 bg-[#f2efe8]/50 rounded-xl">
+                        <h3 className="text-2xl font-bold mb-4">
+                          {t("services.benefits")}
+                        </h3>
+                        <div className="grid md:grid-cols-2 gap-6">
+                          {Array.isArray(service.benefits) &&
+                            service.benefits.map((benefit, index) => (
+                              <div
+                                key={index}
+                                className="flex items-start gap-3"
+                              >
+                                <div className="w-8 h-8 rounded-full bg-black flex-shrink-0 flex items-center justify-center text-white text-sm mt-0.5">
+                                  ✓
+                                </div>
+                                <p className="text-base leading-relaxed">
+                                  {benefit}
+                                </p>
+                              </div>
+                            ))}
+                        </div>
+                      </div>
+
+                      {/* Process */}
+                      <div className="p-8 bg-[#f2efe8]/50 rounded-xl">
+                        <h3 className="text-2xl font-bold mb-6">
+                          {t("services.process")}
+                        </h3>
+                        <div className="space-y-6">
+                          {Array.isArray(service.process) &&
+                            service.process.map((step, index) => (
+                              <div
+                                key={index}
+                                className="flex items-start gap-4"
+                              >
+                                <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center flex-shrink-0 mt-1">
+                                  {index + 1}
+                                </div>
+                                <div>
+                                  <p className="text-base leading-relaxed mt-2">
+                                    {step}
+                                  </p>
+                                </div>
+                              </div>
+                            ))}
+                        </div>
+                      </div>
+
+                      {/* FAQ */}
+                      <div className="p-8 bg-white rounded-xl shadow-md">
+                        <h3 className="text-2xl font-bold mb-6">
+                          {t("services.faq")}
+                        </h3>
+                        <div className="space-y-6">
+                          <div>
+                            <h4 className="text-xl font-semibold mb-2">
+                              {t("services.deadline")}
+                            </h4>
+                            <p className="text-black/70">
+                              {t("services.deadlineAnswer")}
+                            </p>
+                          </div>
+                          <div>
+                            <h4 className="text-xl font-semibold mb-2">
+                              {t("services.documents")}
+                            </h4>
+                            <p className="text-black/70">
+                              {t("services.documentsAnswer")}
+                            </p>
+                          </div>
+                          <div>
+                            <h4 className="text-xl font-semibold mb-2">
+                              {t("services.timeProcess")}
+                            </h4>
+                            <p className="text-black/70">
+                              {t("services.timeProcessAnswer")}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* CTA */}
+                      <div className="p-8 bg-[#f2efe8] rounded-xl text-center">
+                        <h3 className="text-2xl font-bold mb-4">
+                          {t("services.readyStart")}
+                        </h3>
+                        <p className="mb-6 text-lg">
+                          {t("services.contactForService")}
+                        </p>
                         <Link
                           to={`/contact?service=${serviceId}`}
-                          className="px-8 py-4 bg-black !text-white rounded-lg hover:bg-black/80 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium relative overflow-hidden group w-full block text-center"
+                          className="px-8 py-4 bg-black !text-white rounded-lg hover:bg-black/80 inline-block transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium"
                         >
-                          <span className="absolute inset-0 w-0 bg-white/20 transition-all duration-500 ease-out group-hover:w-full"></span>
-                          <span className="relative">
-                            {t("services.inquireService")}
-                          </span>
+                          {t("common.scheduleConsultation")}
                         </Link>
                       </div>
                     </div>
                   </div>
-
-                  <div className="md:w-2/3 space-y-12">
-                    {/* Service Details */}
-                    <div className="space-y-8">
-                      {Array.isArray(service.details) &&
-                      service.details.length > 0 ? (
-                        service.details.map((detail, index) => (
-                          <div
-                            key={index}
-                            className="p-8 bg-white rounded-xl shadow-md"
-                          >
-                            <h3 className="text-2xl font-bold mb-4">
-                              {detail.heading}
-                            </h3>
-                            <p className="text-lg text-black/70">
-                              {detail.content}
-                            </p>
-                          </div>
-                        ))
-                      ) : (
-                        <div className="p-8 bg-white rounded-xl shadow-md">
-                          <h3 className="text-2xl font-bold mb-4">
-                            {service.title}
-                          </h3>
-                          <p className="text-lg text-black/70">
-                            {service.description}
-                          </p>
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Benefits */}
-                    <div className="p-8 bg-[#f2efe8]/50 rounded-xl">
-                      <h3 className="text-2xl font-bold mb-4">
-                        {t("services.benefits")}
-                      </h3>
-                      <div className="grid md:grid-cols-2 gap-6">
-                        {Array.isArray(service.benefits) &&
-                          service.benefits.map((benefit, index) => (
-                            <div key={index} className="flex items-start gap-3">
-                              <div className="w-8 h-8 rounded-full bg-black flex-shrink-0 flex items-center justify-center text-white text-sm mt-0.5">
-                                ✓
-                              </div>
-                              <p className="text-base leading-relaxed">
-                                {benefit}
-                              </p>
-                            </div>
-                          ))}
-                      </div>
-                    </div>
-
-                    {/* Process */}
-                    <div className="p-8 bg-[#f2efe8]/50 rounded-xl">
-                      <h3 className="text-2xl font-bold mb-6">
-                        {t("services.process")}
-                      </h3>
-                      <div className="space-y-6">
-                        {Array.isArray(service.process) &&
-                          service.process.map((step, index) => (
-                            <div key={index} className="flex items-start gap-4">
-                              <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center flex-shrink-0 mt-1">
-                                {index + 1}
-                              </div>
-                              <div>
-                                <p className="text-base leading-relaxed mt-2">
-                                  {step}
-                                </p>
-                              </div>
-                            </div>
-                          ))}
-                      </div>
-                    </div>
-
-                    {/* FAQ */}
-                    <div className="p-8 bg-white rounded-xl shadow-md">
-                      <h3 className="text-2xl font-bold mb-6">
-                        {t("services.faq")}
-                      </h3>
-                      <div className="space-y-6">
-                        <div>
-                          <h4 className="text-xl font-semibold mb-2">
-                            {t("services.deadline")}
-                          </h4>
-                          <p className="text-black/70">
-                            {t("services.deadlineAnswer")}
-                          </p>
-                        </div>
-                        <div>
-                          <h4 className="text-xl font-semibold mb-2">
-                            {t("services.documents")}
-                          </h4>
-                          <p className="text-black/70">
-                            {t("services.documentsAnswer")}
-                          </p>
-                        </div>
-                        <div>
-                          <h4 className="text-xl font-semibold mb-2">
-                            {t("services.timeProcess")}
-                          </h4>
-                          <p className="text-black/70">
-                            {t("services.timeProcessAnswer")}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* CTA */}
-                    <div className="p-8 bg-[#f2efe8] rounded-xl text-center">
-                      <h3 className="text-2xl font-bold mb-4">
-                        {t("services.readyStart")}
-                      </h3>
-                      <p className="mb-6 text-lg">
-                        {t("services.contactForService")}
-                      </p>
-                      <Link
-                        to={`/contact?service=${serviceId}`}
-                        className="px-8 py-4 bg-black !text-white rounded-lg hover:bg-black/80 inline-block transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium"
-                      >
-                        {t("common.scheduleConsultation")}
-                      </Link>
-                    </div>
-                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </section>
 
