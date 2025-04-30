@@ -4,10 +4,13 @@ import { useTranslation } from "react-i18next";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ContactForm from "./components/ContactForm";
+import { useDocumentTitle } from "./hooks/useDocumentTitle";
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
   const { t } = useTranslation();
+
+  useDocumentTitle();
 
   useEffect(() => {
     const handleScroll = () => {

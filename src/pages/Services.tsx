@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 
 // Define service translation keys mapping
 const serviceTranslationKeys = {
@@ -52,6 +53,8 @@ const Services = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const contentRef = useRef<HTMLDivElement>(null);
+
+  useDocumentTitle();
 
   // List of available service IDs
   const serviceIds = Object.keys(serviceTranslationKeys);

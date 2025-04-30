@@ -3,10 +3,13 @@ import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 
 const About = () => {
   const [scrolled, setScrolled] = useState(false);
   const { t } = useTranslation();
+
+  useDocumentTitle();
 
   useEffect(() => {
     const handleScroll = () => {

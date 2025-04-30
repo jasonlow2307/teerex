@@ -5,11 +5,14 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
 import { useLocation } from "react-router-dom";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 
 const Contact = () => {
   const [scrolled, setScrolled] = useState(false);
   const { t } = useTranslation();
   const location = useLocation();
+
+  useDocumentTitle();
 
   // Extract service from URL query parameters
   const queryParams = new URLSearchParams(location.search);
