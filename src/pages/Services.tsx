@@ -256,17 +256,15 @@ const Services = () => {
                 onClick={() => setActiveService(service.id)}
               >
                 <div className="flex items-center gap-2">
-                  <Icon
-                    icon={service.icon}
-                    width="18"
-                    height="18"
-                    className="text-white/70" // Consistent icon color
-                  />
-                  <span>
-                    {activeService === service.id
-                      ? `• ${service.title} •`
-                      : service.title}
-                  </span>
+                  {activeService === service.id && (
+                    <Icon
+                      icon={service.icon}
+                      width="18"
+                      height="18"
+                      className="text-white/70" // Consistent icon color
+                    />
+                  )}
+                  <span>{service.title}</span>
                 </div>
               </button>
             ))}
