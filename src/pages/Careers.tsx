@@ -140,7 +140,7 @@ const Careers = () => {
 
             <div className="relative">
               <img
-                src="/src/assets/images/team.png"
+                src="/team.png"
                 alt="Team at Tee Rex & Associates"
                 className="rounded-xl shadow-lg"
               />

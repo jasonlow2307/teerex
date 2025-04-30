@@ -34,11 +34,7 @@ const Header = ({ scrolled }: HeaderProps) => {
             className="flex items-center gap-3 cursor-pointer"
             onClick={() => handleNavigation("/")}
           >
-            <img
-              src="/src/assets/images/dino.png"
-              width={70}
-              alt="Tee Rex Logo"
-            />
+            <img src="/dino.png" width={70} alt="Tee Rex Logo" />
             <div className="text-2xl font-semibold">{t("common.title")}</div>
           </div>
         </div>

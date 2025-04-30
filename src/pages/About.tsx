@@ -42,7 +42,7 @@ const About = () => {
             <div className="relative">
               <div className="w-full bg-black/5 rounded-xl overflow-hidden">
                 <img
-                  src="/src/assets/images/team.png"
+                  src="/team.png"
                   alt="Tee Rex Team"
                   className="w-full h-auto rounded-xl"
                 />

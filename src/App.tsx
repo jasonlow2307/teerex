@@ -193,7 +193,7 @@ function App() {
             <div className="relative">
               <div className="w-full bg-white p-4 rounded-xl shadow-lg">
                 <img
-                  src="/src/assets/images/team.png"
+                  src="/team.png"
                   alt="Tee Rex Team"
                   className="w-full h-auto rounded-lg"
                 />
