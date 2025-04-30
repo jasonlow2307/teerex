@@ -431,7 +431,7 @@ function App() {
                   </div>
                 </div>
 
-                <div className="pt-4 md:pt-6 mt-4 md:mt-6 border-t border-black/10 flex gap-3 justify-center md:justify-start">
+                <div className="pt-4 md:pt-6 mt-4 md:mt-6 border-t border-black/10 flex gap-3 justify-center">
                   <a
                     href="https://wa.me/+60128186343"
                     aria-label="Whatsapp"

@@ -23,8 +23,8 @@ const Footer = () => {
 
   return (
     <footer className="pt-24 pb-12 bg-white border-t border-black/10">
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="grid md:grid-cols-3 gap-20">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-20">
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-6">
               <img
@@ -48,27 +48,27 @@ const Footer = () => {
                 aria-label="Whatsapp"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
               >
-                <Icon icon="mdi:whatsapp" width="25" height="25" />
+                <Icon icon="mdi:whatsapp" width="22" height="22" />
               </a>
               <a
                 href="https://www.instagram.com/teerexassociates/"
                 aria-label="Instagram"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
               >
-                <Icon icon="mdi:instagram" width="25" height="25" />
+                <Icon icon="mdi:instagram" width="22" height="22" />
               </a>
               <a
                 href="https://www.facebook.com/people/Tee-Rex-Associates-Chartered-Accountants-%E9%9C%B8%E7%8E%8B%E7%89%B9%E8%AE%B8%E4%BC%9A%E8%AE%A1%E5%B8%88/61561326090219/"
                 aria-label="Facebook"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
               >
-                <Icon icon="mdi:facebook" width="25" height="25" />
+                <Icon icon="mdi:facebook" width="22" height="22" />
               </a>
             </div>
           </div>
@@ -78,44 +78,49 @@ const Footer = () => {
             <ul className="list-none p-0 space-y-4">
               <li>
                 <span
-                  className="hover:text-gray-600 transition-colors cursor-pointer"
+                  className="relative group cursor-pointer inline-block"
                   onClick={() => handleNavigation("/services", "form-be-e-m")}
                 >
                   {t("contactForm.taxFilingBE")}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
                 </span>
               </li>
               <li>
                 <span
-                  className="hover:text-gray-600 transition-colors cursor-pointer"
+                  className="relative group cursor-pointer inline-block"
                   onClick={() => handleNavigation("/services", "form-p")}
                 >
                   {t("contactForm.taxFilingP")}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
                 </span>
               </li>
               <li>
                 <span
-                  className="hover:text-gray-600 transition-colors cursor-pointer"
+                  className="relative group cursor-pointer inline-block"
                   onClick={() => handleNavigation("/services", "form-b")}
                 >
                   {t("contactForm.taxFilingB")}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
                 </span>
               </li>
               <li>
                 <span
-                  className="hover:text-gray-600 transition-colors cursor-pointer"
+                  className="relative group cursor-pointer inline-block"
                   onClick={() =>
                     handleNavigation("/services", "form-b-account")
                   }
                 >
                   {t("contactForm.formBAccount")}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
                 </span>
               </li>
               <li>
                 <span
-                  className="hover:text-gray-600 transition-colors cursor-pointer"
+                  className="relative group cursor-pointer inline-block"
                   onClick={() => handleNavigation("/services", "form-c-pt")}
                 >
                   {t("contactForm.formCPT")}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
                 </span>
               </li>
             </ul>
@@ -126,26 +131,29 @@ const Footer = () => {
             <ul className="list-none p-0 space-y-4">
               <li>
                 <span
-                  className="hover:text-gray-600 transition-colors cursor-pointer"
+                  className="relative group cursor-pointer inline-block"
                   onClick={() => handleNavigation("/about")}
                 >
                   {t("common.aboutUs")}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
                 </span>
               </li>
               <li>
                 <span
-                  className="hover:text-gray-600 transition-colors cursor-pointer"
+                  className="relative group cursor-pointer inline-block"
                   onClick={() => handleNavigation("/careers")}
                 >
                   {t("common.careers")}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
                 </span>
               </li>
               <li>
                 <span
-                  className="hover:text-gray-600 transition-colors cursor-pointer"
+                  className="relative group cursor-pointer inline-block"
                   onClick={() => handleNavigation("/contact")}
                 >
                   {t("common.contact")}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
                 </span>
               </li>
             </ul>
