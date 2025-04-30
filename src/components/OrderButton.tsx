@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
+import { useTranslation } from "react-i18next";
 import ContactForm from "./ContactForm";
 
 const OrderButton = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+  const { t } = useTranslation();
 
   // Close modal with ESC key
   useEffect(() => {
@@ -56,7 +58,7 @@ const OrderButton = () => {
           <Icon icon="mdi:calendar-text" width="24" height="24" />
         </button>
         <div className="absolute -top-10 right-0 bg-black text-white text-sm rounded-md py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-          Schedule A Consultation
+          {t("orderButton.scheduleConsultation")}
         </div>
       </div>
 
@@ -83,7 +85,7 @@ const OrderButton = () => {
                 <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center">
                   <Icon icon="mdi:calendar-text" width="20" height="20" />
                 </div>
-                <h2 className="text-2xl font-bold">Schedule a Consultation</h2>
+                <h2 className="text-2xl font-bold">{t("orderButton.title")}</h2>
               </div>
               <button
                 onClick={handleClose}

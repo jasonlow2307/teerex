@@ -1,0 +1,76 @@
+{
+  "common": {
+    "services": "Services",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "careers": "Careers",
+    "testimonials": "Testimonials",
+    "scheduleConsultation": "Schedule a Consultation",
+    "exploreServices": "Explore Our Services",
+    "email": "Email",
+    "phone": "Phone",
+    "office": "Our Office",
+    "submit": "Submit Request",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "message": "Message",
+    "serviceInterestedIn": "Service Interested In"
+  },
+  "home": {
+    "hero": {
+      "title": "Professional Accounting & Business Advisory Services",
+      "subtitle": "Helping businesses grow through strategic financial planning and expert accounting solutions",
+      "clientSatisfaction": "Client Satisfaction",
+      "satisfiedClients": "Satisfied Clients",
+      "dedicatedService": "Dedicated Service"
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "Comprehensive accounting and business advisory services to help your business thrive in today's competitive market"
+    },
+    "about": {
+      "title": "About Tee Rex & Associates",
+      "desc1": "At Tee Rex & Associates, we combine expertise with a personalized approach to accounting and business advisory services. Our team of certified professionals is dedicated to helping your business achieve financial success.",
+      "desc2": "With over 15 years of experience serving businesses across multiple industries, we understand the unique challenges and opportunities that come with financial management in today's dynamic business environment.",
+      "desc3": "Our mission is to provide clear, strategic financial guidance that empowers businesses to make informed decisions and achieve their goals.",
+      "certifiedProfessionals": "Certified Professionals",
+      "industryExpertise": "Industry Expertise",
+      "personalizedService": "Personalized Service",
+      "timelyDelivery": "Timely Delivery"
+    },
+    "testimonials": {
+      "title": "What Our Clients Say",
+      "subtitle": "Don't just take our word for it. Here's what our clients have to say about our services."
+    },
+    "contact": {
+      "title": "Get in Touch",
+      "subtitle": "Ready to take your business's financial management to the next level? Contact us today to schedule a consultation."
+    }
+  },
+  "orderButton": {
+    "scheduleConsultation": "Schedule A Consultation",
+    "title": "Schedule a Consultation"
+  },
+  "contactForm": {
+    "enterFirstName": "Enter your first name",
+    "enterLastName": "Enter your last name",
+    "enterEmail": "Enter your email address",
+    "enterPhone": "Enter your phone number",
+    "messagePlaceholder": "Tell us about your needs",
+    "taxFilingBE": "Tax Filing - Form BE, E, M",
+    "taxFilingP": "Tax Filing - Form P",
+    "taxFilingB": "Tax Filing - Form B",
+    "formBAccount": "Form B Account Management",
+    "formCPT": "Form C, Form PT"
+  },
+  "footer": {
+    "description": "Professional accounting and business advisory services for businesses of all sizes.",
+    "services": "Services",
+    "company": "Company",
+    "copyright": "© {{year}} Tee Rex & Associates. All rights reserved."
+  },
+  "languageSwitcher": {
+    "english": "English",
+    "mandarin": "中文"
+  }
+}

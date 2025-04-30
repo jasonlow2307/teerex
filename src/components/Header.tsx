@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 interface HeaderProps {
   scrolled: boolean;
@@ -6,6 +8,7 @@ interface HeaderProps {
 
 const Header = ({ scrolled }: HeaderProps) => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   // Custom navigation function that handles both navigation and smooth scrolling
   const handleNavigation = (path: string) => {
@@ -39,36 +42,36 @@ const Header = ({ scrolled }: HeaderProps) => {
             <div className="text-2xl font-semibold">Tee Rex & Associates</div>
           </div>
         </div>
-        <div className="flex gap-8">
+        <div className="flex items-center gap-8">
           <span
             onClick={() => handleNavigation("/services")}
             className="hover:text-gray-600 text-base font-medium transition-colors duration-200 relative group cursor-pointer"
           >
-            Services
+            {t("common.services")}
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
           </span>
           <span
             onClick={() => handleNavigation("/about")}
             className="hover:text-gray-600 text-base font-medium transition-colors duration-200 relative group cursor-pointer"
           >
-            About Us
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
-          </span>
-
-          <span
-            onClick={() => handleNavigation("/contact")}
-            className="hover:text-gray-600 text-base font-medium transition-colors duration-200 relative group cursor-pointer"
-          >
-            Contact
+            {t("common.aboutUs")}
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
           </span>
           <span
             onClick={() => handleNavigation("/careers")}
             className="hover:text-gray-600 text-base font-medium transition-colors duration-200 relative group cursor-pointer"
           >
-            Careers
+            {t("common.careers")}
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
           </span>
+          <span
+            onClick={() => handleNavigation("/contact")}
+            className="hover:text-gray-600 text-base font-medium transition-colors duration-200 relative group cursor-pointer"
+          >
+            {t("common.contact")}
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
+          </span>
+          <LanguageSwitcher />
         </div>
       </div>
     </header>

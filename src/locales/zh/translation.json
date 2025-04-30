@@ -1,0 +1,76 @@
+{
+  "common": {
+    "services": "服务",
+    "aboutUs": "关于我们",
+    "contact": "联系我们",
+    "careers": "招聘信息",
+    "testimonials": "客户评价",
+    "scheduleConsultation": "预约咨询",
+    "exploreServices": "探索我们的服务",
+    "email": "电子邮件",
+    "phone": "电话",
+    "office": "办公地点",
+    "submit": "提交请求",
+    "firstName": "名",
+    "lastName": "姓",
+    "message": "留言",
+    "serviceInterestedIn": "感兴趣的服务"
+  },
+  "home": {
+    "hero": {
+      "title": "专业会计与商业咨询服务",
+      "subtitle": "通过战略财务规划和专业会计解决方案帮助企业成长",
+      "clientSatisfaction": "客户满意度",
+      "satisfiedClients": "满意客户",
+      "dedicatedService": "专注服务"
+    },
+    "services": {
+      "title": "我们的服务",
+      "subtitle": "全面的会计和商业咨询服务，帮助您的企业在当今竞争激烈的市场中蓬勃发展"
+    },
+    "about": {
+      "title": "关于 Tee Rex & Associates",
+      "desc1": "在 Tee Rex & Associates，我们将专业知识与个性化方法相结合，提供会计和商业咨询服务。我们的专业团队致力于帮助您的企业取得财务成功。",
+      "desc2": "凭借超过15年为各行业企业服务的经验，我们了解当今动态商业环境中财务管理所面临的独特挑战和机遇。",
+      "desc3": "我们的使命是提供清晰的战略财务指导，使企业能够做出明智的决策并实现其目标。",
+      "certifiedProfessionals": "认证专业人士",
+      "industryExpertise": "行业专长",
+      "personalizedService": "个性化服务",
+      "timelyDelivery": "及时交付"
+    },
+    "testimonials": {
+      "title": "客户评价",
+      "subtitle": "不只是相信我们的话。这是我们的客户对我们服务的评价。"
+    },
+    "contact": {
+      "title": "联系我们",
+      "subtitle": "准备好提升您企业的财务管理水平了吗？立即联系我们安排咨询。"
+    }
+  },
+  "orderButton": {
+    "scheduleConsultation": "预约咨询",
+    "title": "预约咨询"
+  },
+  "contactForm": {
+    "enterFirstName": "输入您的名",
+    "enterLastName": "输入您的姓",
+    "enterEmail": "输入您的电子邮件地址",
+    "enterPhone": "输入您的电话号码",
+    "messagePlaceholder": "告诉我们您的需求",
+    "taxFilingBE": "报税 - 表格 BE, E, M",
+    "taxFilingP": "报税 - 表格 P",
+    "taxFilingB": "报税 - 表格 B",
+    "formBAccount": "表格 B 账户管理",
+    "formCPT": "表格 C, 表格 PT"
+  },
+  "footer": {
+    "description": "为各种规模的企业提供专业会计和商业咨询服务。",
+    "services": "服务",
+    "company": "公司",
+    "copyright": "© {{year}} Tee Rex & Associates. 版权所有。"
+  },
+  "languageSwitcher": {
+    "english": "English",
+    "mandarin": "中文"
+  }
+}

@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
-import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ContactForm from "./components/ContactForm";
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,432 +20,392 @@ function App() {
 
   return (
     <div className="w-full font-sans">
-      {/* Header Section */}
+      {/* Header */}
       <Header scrolled={scrolled} />
 
       {/* Hero Section */}
-      <section className="pb-16 flex flex-col items-center text-center bg-[#f2efe8] relative overflow-hidden">
-        {/* Dynamic Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#f2efe8]/80 to-[#f2efe8]/60 z-10"></div>
-        <div className="absolute top-40 left-10 w-64 h-64 rounded-full bg-black/5 blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-black/5 blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-7xl opacity-5">
-          <div className="absolute top-0 right-0 w-72 h-72 rounded-full border-8 border-black/10"></div>
-          <div className="absolute bottom-0 left-1/4 w-96 h-96 rounded-full border-8 border-black/10"></div>
-        </div>
-
-        <div className="max-wp-7xl mx-auto px-8 mt-30 relative z-20">
-          <div className="flex items-center justify-center mb-8 animate-fadeIn">
-            <img
-              src="/src/assets/images/logo.svg"
-              alt="Tee Rex & Associates Logo"
-              className="w-150 rounded-lg transform transition-all duration-1000 hover:scale-105"
-            />
-          </div>
-
-          <h1 className="text-5xl md:text-6xl font-bold mx-auto mb-8 max-w-4xl leading-tight font-spartan animate-slideUp">
-            <span className="bg-gradient-to-r from-black to-gray-700 bg-clip-text text-transparent">
-              Professional Accounting & Business Advisory Services
-            </span>
+      <section className="pb-12 pt-24 flex flex-col items-center text-center bg-[#f2efe8] relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f2efe8]/90 to-[#f2efe8]/70 z-10"></div>
+        <div className="absolute top-40 right-10 w-64 h-64 rounded-full bg-black/5 blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full bg-black/5 blur-3xl"></div>
+        <div className="max-w-7xl mx-auto px-8 relative z-20">
+          <h1 className="text-5xl font-bold mx-auto mb-6 max-w-3xl leading-tight">
+            {t("home.hero.title")}
           </h1>
-
-          <p className="text-xl md:text-2xl mx-auto mb-12 max-w-2xl text-black/70 leading-relaxed animate-slideUp animation-delay-200 font-quicksand">
-            Helping businesses grow through strategic financial planning and
-            expert accounting solutions
+          <p className="text-xl mx-auto mb-10 max-w-2xl text-black/70 leading-relaxed">
+            {t("home.hero.subtitle")}
           </p>
-
-          <div className="flex flex-wrap gap-6 justify-center animate-slideUp animation-delay-300">
+          <div className="flex flex-wrap gap-6 justify-center">
             <a
-              href="#contact"
-              className="px-10 py-5 bg-black text-white rounded-lg hover:bg-black/80 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium relative overflow-hidden group"
+              href="/contact"
+              className="px-10 py-5 bg-black !text-white rounded-lg hover:bg-black/90 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium"
             >
-              <span className="absolute inset-0 w-0 bg-white/20 transition-all duration-500 ease-out group-hover:w-full"></span>
-              <span className="relative flex items-center gap-2">
-                <span className="text-white">Schedule a Consultation</span>
-                <Icon
-                  icon="mdi:arrow-right"
-                  width="20"
-                  height="20"
-                  className="transform group-hover:translate-x-1 transition-transform text-white"
-                />
-              </span>
+              {t("common.scheduleConsultation")}
             </a>
             <a
-              href="#services"
-              className="px-10 py-5 border-2 border-black text-black rounded-lg bg-transparent hover:bg-black/5 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium group"
+              href="/services"
+              className="px-10 py-5 border-2 border-black text-black rounded-lg hover:bg-black/5 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium"
             >
-              <span className="flex items-center gap-2">
-                <span>Explore Our Services</span>
-                <Icon
-                  icon="mdi:chevron-down"
-                  width="20"
-                  height="20"
-                  className="transform group-hover:translate-y-1 transition-transform"
-                />
-              </span>
+              {t("common.exploreServices")}
             </a>
-          </div>
-
-          <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto animate-fadeIn animation-delay-500">
-            {/* Stats Cards with Hover Effects */}
-            <div className="text-center p-6 bg-white/40 backdrop-blur-sm rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
-              <div className="text-4xl font-bold mb-1 group-hover:scale-110 transition-transform duration-300">
-                100%
-              </div>
-              <div className="text-black/70">Client Satisfaction</div>
-            </div>
-            <div className="text-center p-6 bg-white/40 backdrop-blur-sm rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
-              <div className="text-4xl font-bold mb-1 group-hover:scale-110 transition-transform duration-300">
-                500+
-              </div>
-              <div className="text-black/70">Satisfied Clients</div>
-            </div>
-            <div className="text-center p-6 bg-white/40 backdrop-blur-sm rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
-              <div className="text-4xl font-bold mb-1 group-hover:scale-110 transition-transform duration-300">
-                100%
-              </div>
-              <div className="text-black/70">Dedicated Service</div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-24 text-center relative" id="services">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-black/10 blur-3xl"></div>
-        </div>
-        <div className="max-w-7xl mx-auto px-8 relative z-10">
-          <h2 className="text-4xl font-bold mb-4">Our Services</h2>
-          <div className="w-24 h-1 bg-black mx-auto mb-6"></div>
-          <p className="mb-16 text-black/70 text-xl max-w-3xl mx-auto">
-            Comprehensive accounting and business advisory services to help your
-            business thrive in today's competitive market
-          </p>
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">
+              {t("home.services.title")}
+            </h2>
+            <div className="w-24 h-1 bg-black mx-auto mb-6"></div>
+            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+              {t("home.services.subtitle")}
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
-            {/* First service card */}
-            <Link
-              to="/services"
-              onClick={() =>
-                localStorage.setItem("activeService", "form-be-e-m")
-              }
-              className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center w-full group relative overflow-hidden block"
-            >
-              {/* Add subtle hover effect background */}
-              <div className="absolute inset-0 bg-gradient-to-b from-[#f2efe8]/0 to-[#f2efe8]/0 group-hover:from-[#f2efe8]/50 group-hover:to-[#f2efe8]/10 transition-all duration-500"></div>
-
-              <div className="mb-6 transform transition-transform duration-500 group-hover:scale-110 relative">
-                <div className="w-20 h-20 bg-[#f2efe8] rounded-full flex items-center justify-center mx-auto mb-6 shadow-md">
-                  <Icon
-                    icon="mdi:file-document-outline"
-                    width="40"
-                    height="40"
-                  />
-                </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Service Card 1 */}
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div className="w-16 h-16 bg-[#f2efe8] rounded-full flex items-center justify-center mb-6">
+                <Icon icon="mdi:file-document-outline" width="32" height="32" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 relative">
-                Tax Filing - Form BE, E, M
+              <h3 className="text-2xl font-bold mb-4">
+                {t("contactForm.taxFilingBE")}
               </h3>
-              <p className="text-black/70 leading-relaxed relative">
-                Expert assistance with filing Forms BE, E, and M to ensure
-                accurate submissions and compliance with tax regulations for
-                both individuals and businesses.
+              <p className="text-black/70 mb-6">
+                Tax filing for individual income including employment, business,
+                and mixed income sources.
               </p>
-            </Link>
-
-            {/* Second service card */}
-            <Link
-              to="/services"
-              onClick={() => localStorage.setItem("activeService", "form-p")}
-              className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center w-full group block"
-            >
-              <div className="mb-6 transform transition-transform duration-500 group-hover:scale-110">
-                <div className="w-20 h-20 bg-[#f2efe8] rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Icon
-                    icon="mdi:file-document-multiple"
-                    width="40"
-                    height="40"
-                  />
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Tax Filing - Form P</h3>
-              <p className="text-black/70 leading-relaxed">
-                Expert assistance with filing Form P to ensure compliance with
-                tax regulations and accurate submissions for partnerships and
-                other entities.
-              </p>
-            </Link>
-
-            {/* Third service card */}
-            <Link
-              to="/services"
-              onClick={() => localStorage.setItem("activeService", "form-b")}
-              className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center w-full group block"
-            >
-              <div className="mb-6 transform transition-transform duration-500 group-hover:scale-110">
-                <div className="w-20 h-20 bg-[#f2efe8] rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Icon icon="mdi:file-account" width="40" height="40" />
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Tax Filing - Form B</h3>
-              <p className="text-black/70 leading-relaxed">
-                Professional assistance with filing Form B to ensure accurate
-                submissions and compliance with tax regulations for sole
-                proprietors and partnerships.
-              </p>
-            </Link>
-            <div className="lg:col-span-3 flex justify-center gap-10">
-              {/* Fourth service card */}
-              <Link
-                to="/services"
-                onClick={() =>
-                  localStorage.setItem("activeService", "form-b-account")
-                }
-                className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center w-full group block"
+              <a
+                href="/services"
+                className="inline-flex items-center text-black font-medium hover:text-gray-600 transition-colors"
               >
-                <div className="mb-6 transform transition-transform duration-500 group-hover:scale-110">
-                  <div className="w-20 h-20 bg-[#f2efe8] rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Icon icon="mdi:account-cash" width="40" height="40" />
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold mb-4">
-                  Form B Account Management
-                </h3>
-                <p className="text-black/70 leading-relaxed">
-                  Expert management of Form B accounts to ensure compliance with
-                  tax regulations and accurate financial reporting for sole
-                  proprietors and partnerships.
-                </p>
-              </Link>
+                <span>Learn More</span>
+                <Icon icon="mdi:arrow-right" className="ml-2" />
+              </a>
+            </div>
 
-              {/* Fifth service card */}
-              <Link
-                to="/services"
-                onClick={() =>
-                  localStorage.setItem("activeService", "form-c-pt")
-                }
-                className="p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center w-full group block"
+            {/* Service Card 2 */}
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div className="w-16 h-16 bg-[#f2efe8] rounded-full flex items-center justify-center mb-6">
+                <Icon icon="mdi:account-tie-outline" width="32" height="32" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">
+                {t("contactForm.taxFilingB")}
+              </h3>
+              <p className="text-black/70 mb-6">
+                Comprehensive tax filing service for sole proprietors and
+                partnerships.
+              </p>
+              <a
+                href="/services"
+                className="inline-flex items-center text-black font-medium hover:text-gray-600 transition-colors"
               >
-                <div className="mb-6 transform transition-transform duration-500 group-hover:scale-110">
-                  <div className="w-20 h-20 bg-[#f2efe8] rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Icon icon="mdi:office-building" width="40" height="40" />
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold mb-4">Form C, Form PT</h3>
-                <p className="text-black/70 leading-relaxed">
-                  Comprehensive assistance with filing Form C and Form PT to
-                  ensure compliance with corporate tax regulations and accurate
-                  submissions for businesses.
-                </p>
-              </Link>
+                <span>Learn More</span>
+                <Icon icon="mdi:arrow-right" className="ml-2" />
+              </a>
+            </div>
+
+            {/* Service Card 3 */}
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div className="w-16 h-16 bg-[#f2efe8] rounded-full flex items-center justify-center mb-6">
+                <Icon
+                  icon="mdi:office-building-outline"
+                  width="32"
+                  height="32"
+                />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">
+                {t("contactForm.formCPT")}
+              </h3>
+              <p className="text-black/70 mb-6">
+                Tax filing and compliance solutions for companies and corporate
+                entities.
+              </p>
+              <a
+                href="/services"
+                className="inline-flex items-center text-black font-medium hover:text-gray-600 transition-colors"
+              >
+                <span>Learn More</span>
+                <Icon icon="mdi:arrow-right" className="ml-2" />
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="py-24 bg-[#f2efe8]/50" id="about">
-        <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center gap-16">
-          <div className="flex-1">
-            <div className="relative">
-              <div className="w-full  bg-black/10 rounded-xl overflow-hidden">
-                <img src="/src/assets/images/team.png" />
+      <section className="py-16 bg-[#f2efe8]/50">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl font-bold mb-4 !text-left">
+                {t("home.about.title")}
+              </h2>
+              <div className="w-24 h-1 bg-black mb-8"></div>
+              <p className="mb-6 text-lg">{t("home.about.desc1")}</p>
+              <p className="mb-6 text-lg">{t("home.about.desc2")}</p>
+              <p className="text-lg">{t("home.about.desc3")}</p>
+
+              <div className="grid grid-cols-2 gap-6 mt-10">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white">
+                    <Icon icon="mdi:check" width="24" height="24" />
+                  </div>
+                  <div className="font-semibold">
+                    {t("home.about.certifiedProfessionals")}
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white">
+                    <Icon icon="mdi:check" width="24" height="24" />
+                  </div>
+                  <div className="font-semibold">
+                    {t("home.about.industryExpertise")}
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white">
+                    <Icon icon="mdi:check" width="24" height="24" />
+                  </div>
+                  <div className="font-semibold">
+                    {t("home.about.personalizedService")}
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white">
+                    <Icon icon="mdi:check" width="24" height="24" />
+                  </div>
+                  <div className="font-semibold">
+                    {t("home.about.timelyDelivery")}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="flex-1">
-            <h2 className="text-4xl font-bold mb-6 !text-left">
-              About Tee Rex & Associates
-            </h2>
-            <div className="w-24 h-1 bg-black mb-8"></div>
-            <p className="mb-6 text-lg">
-              At Tee Rex & Associates, we combine expertise with a personalized
-              approach to accounting and business advisory services. Our team of
-              certified professionals is dedicated to helping your business
-              achieve financial success.
-            </p>
-            <p className="mb-6 text-lg">
-              With over 15 years of experience serving businesses across
-              multiple industries, we understand the unique challenges and
-              opportunities that come with financial management in today's
-              dynamic business environment.
-            </p>
-            <p className="mb-8 text-lg">
-              Our mission is to provide clear, strategic financial guidance that
-              empowers businesses to make informed decisions and achieve their
-              goals.
-            </p>
-
-            <div className="grid grid-cols-2 gap-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white">
-                  ✓
-                </div>
-                <div className="font-semibold">Certified Professionals</div>
+            <div className="relative">
+              <div className="w-full bg-white p-4 rounded-xl shadow-lg">
+                <img
+                  src="/src/assets/images/team.png"
+                  alt="Tee Rex Team"
+                  className="w-full h-auto rounded-lg"
+                />
               </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white">
-                  ✓
-                </div>
-                <div className="font-semibold">Industry Expertise</div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white">
-                  ✓
-                </div>
-                <div className="font-semibold">Personalized Service</div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white">
-                  ✓
-                </div>
-                <div className="font-semibold">Timely Delivery</div>
-              </div>
+              <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-black/10 rounded-xl -z-10"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-white relative" id="testimonials">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-black/10 blur-3xl"></div>
-        </div>
-        <div className="max-w-7xl mx-auto px-8 relative z-10">
+      <section className="py-16" id="testimonials">
+        <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">What Our Clients Say</h2>
+            <h2 className="text-4xl font-bold mb-4">
+              {t("home.testimonials.title")}
+            </h2>
             <div className="w-24 h-1 bg-black mx-auto mb-6"></div>
             <p className="text-xl text-black/70 max-w-3xl mx-auto">
-              Don't just take our word for it. Here's what our clients have to
-              say about our services.
+              {t("home.testimonials.subtitle")}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-10">
-            <div className="p-10 bg-[#f2efe8] rounded-xl shadow-md hover:shadow-xl transition-all duration-300 relative hover:-translate-y-2 cursor-default">
-              <div className="absolute -top-4 left-10 text-6xl text-black/20 transition-transform duration-300 group-hover:scale-110">
-                "
-              </div>
-              <p className="mb-8 text-lg relative z-10">
-                Tee Rex & Associates transformed our financial processes and
-                provided strategic tax planning that saved our business
-                thousands. Their team is responsive, knowledgeable, and truly
-                cares about our success.
-              </p>
-              <div className="flex items-center gap-6 mt-8">
-                <div className="w-16 h-16 rounded-full bg-black/10 flex items-center justify-center text-lg font-medium">
-                  JD
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Testimonial 1 */}
+            <div className="bg-white p-8 rounded-xl shadow-md">
+              <div className="flex items-center mb-6">
+                <div className="mr-4">
+                  <div className="w-12 h-12 rounded-full bg-[#f2efe8] flex items-center justify-center text-2xl font-bold">
+                    L
+                  </div>
                 </div>
                 <div>
-                  <h3 className="font-bold text-xl">Jane Doe</h3>
-                  <p className="text-black/70">CEO, Tech Innovations Inc.</p>
+                  <h4 className="font-bold">Lee Siao Mei</h4>
+                  <p className="text-black/60 text-sm">Small Business Owner</p>
                 </div>
+              </div>
+              <p className="text-black/80 italic">
+                "Tee Rex has been handling my business taxes for 5 years now.
+                Their team is always professional, prompt, and helps me maximize
+                my tax savings. Highly recommended!"
+              </p>
+              <div className="mt-4 flex">
+                <Icon icon="mdi:star" className="text-yellow-500" />
+                <Icon icon="mdi:star" className="text-yellow-500" />
+                <Icon icon="mdi:star" className="text-yellow-500" />
+                <Icon icon="mdi:star" className="text-yellow-500" />
+                <Icon icon="mdi:star" className="text-yellow-500" />
               </div>
             </div>
 
-            <div className="p-10 bg-[#f2efe8] rounded-xl shadow-md hover:shadow-xl transition-all duration-300 relative hover:-translate-y-2 cursor-default">
-              <div className="absolute -top-4 left-10 text-6xl text-black/20 transition-transform duration-300 group-hover:scale-110">
-                "
-              </div>
-              <p className="mb-8 text-lg relative z-10">
-                Working with Tee Rex has been a game-changer for our business.
-                Their accounting expertise and business advisory services have
-                helped us navigate complex financial challenges and set us up
-                for sustainable growth.
-              </p>
-              <div className="flex items-center gap-6 mt-8">
-                <div className="w-16 h-16 rounded-full bg-black/10 flex items-center justify-center text-lg font-medium">
-                  MS
+            {/* Testimonial 2 */}
+            <div className="bg-white p-8 rounded-xl shadow-md">
+              <div className="flex items-center mb-6">
+                <div className="mr-4">
+                  <div className="w-12 h-12 rounded-full bg-[#f2efe8] flex items-center justify-center text-2xl font-bold">
+                    T
+                  </div>
                 </div>
                 <div>
-                  <h3 className="font-bold text-xl">Michael Smith</h3>
-                  <p className="text-black/70">Founder, Smith Manufacturing</p>
+                  <h4 className="font-bold">Tan Wei Ming</h4>
+                  <p className="text-black/60 text-sm">Corporate Client</p>
                 </div>
+              </div>
+              <p className="text-black/80 italic">
+                "Our company switched to Tee Rex last year, and we couldn't be
+                happier. Their attention to detail and strategic tax planning
+                advice has saved us significant amounts. They're not just
+                accountants; they're business partners."
+              </p>
+              <div className="mt-4 flex">
+                <Icon icon="mdi:star" className="text-yellow-500" />
+                <Icon icon="mdi:star" className="text-yellow-500" />
+                <Icon icon="mdi:star" className="text-yellow-500" />
+                <Icon icon="mdi:star" className="text-yellow-500" />
+                <Icon icon="mdi:star" className="text-yellow-500" />
+              </div>
+            </div>
+
+            {/* Testimonial 3 */}
+            <div className="bg-white p-8 rounded-xl shadow-md">
+              <div className="flex items-center mb-6">
+                <div className="mr-4">
+                  <div className="w-12 h-12 rounded-full bg-[#f2efe8] flex items-center justify-center text-2xl font-bold">
+                    R
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-bold">Rajesh Kumar</h4>
+                  <p className="text-black/60 text-sm">Individual Client</p>
+                </div>
+              </div>
+              <p className="text-black/80 italic">
+                "Filing taxes used to be such a headache for me until I found
+                Tee Rex. They make the process painless and are always available
+                to answer my questions. The peace of mind they provide is
+                priceless."
+              </p>
+              <div className="mt-4 flex">
+                <Icon icon="mdi:star" className="text-yellow-500" />
+                <Icon icon="mdi:star" className="text-yellow-500" />
+                <Icon icon="mdi:star" className="text-yellow-500" />
+                <Icon icon="mdi:star" className="text-yellow-500" />
+                <Icon icon="mdi:star-half" className="text-yellow-500" />
               </div>
             </div>
           </div>
-
-          {/* <div className="text-center mt-16">
-            <button className="px-8 py-4 border-2 border-black text-black rounded-lg bg-transparent hover:bg-black/5 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg font-medium">
-              View More Testimonials
-            </button>
-          </div> */}
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 bg-[#f2efe8]/70" id="contact">
+      <section className="py-16 bg-[#f2efe8]/50" id="contact">
         <div className="max-w-7xl mx-auto px-8">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-4 !text-left">
-                Get in Touch
-              </h2>
-              <div className="w-24 h-1 bg-black mb-8"></div>
-              <p className="mb-8 text-lg">
-                Ready to take your business's financial management to the next
-                level? Contact us today to schedule a consultation.
-              </p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">
+              {t("home.contact.title")}
+            </h2>
+            <div className="w-24 h-1 bg-black mx-auto mb-6"></div>
+            <p className="text-xl text-black/70 max-w-3xl mx-auto">
+              {t("home.contact.subtitle")}
+            </p>
+          </div>
 
-              <div className="space-y-8">
-                <div className="flex items-start gap-6">
-                  <div className="mt-9">
-                    <Icon icon={"mdi:map-marker"} width="30" height="30" />
+          <div className="grid lg:grid-cols-5 gap-10">
+            <div className="col-span-3 flex flex-col justify-center">
+              <ContactForm />
+            </div>
+
+            <div className="lg:col-span-2 bg-white p-8 rounded-xl shadow-md">
+              <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-[#f2efe8] flex items-center justify-center flex-shrink-0">
+                    <Icon icon="mdi:email-outline" width="24" height="24" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-xl mb-2">Our Office</h3>
+                    <p className="text-sm font-medium text-black/60 mb-1">
+                      {t("common.email")}
+                    </p>
                     <a
-                      href="https://maps.app.goo.gl/jRuDS2H7Ygk19YpT8"
-                      aria-label="Google Maps"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="mailto:office@teerexassociates.com"
+                      className="hover:underline"
                     >
-                      <p className="text-black/70">
-                        NO.149-G, BLOCK J, TANMING BOULEVARD
-                        <br />
-                        JALAN MERANTI 3/1,
-                        <br />
-                        47120 Puchong, Malaysia
-                      </p>
+                      office@teerexassociates.com
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-6">
-                  <div className="mt-4">
-                    <Icon icon={"mdi:phone"} width="30" height="30" />
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-[#f2efe8] flex items-center justify-center flex-shrink-0">
+                    <Icon icon="mdi:phone-outline" width="24" height="24" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-xl mb-2">Phone</h3>
-                    <p className="text-black/70">
-                      <a href="tel:+60128186343">+6012 818 6343</a>
+                    <p className="text-sm font-medium text-black/60 mb-1">
+                      {t("common.phone")}
+                    </p>
+                    <a href="tel:+60128186343" className="hover:underline">
+                      +60 12-818 6343
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-[#f2efe8] flex items-center justify-center flex-shrink-0">
+                    <Icon
+                      icon="mdi:map-marker-outline"
+                      width="24"
+                      height="24"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-black/60 mb-1">
+                      {t("common.office")}
+                    </p>
+                    <p className="hover:underline">
+                      1st Floor, No. 7, Jalan Setia Perdana AY U13/AY, Setia
+                      Alam, Seksyen U13, 40170 Shah Alam, Selangor
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-6">
-                  <div className="mt-4">
-                    <Icon icon={"mdi:email"} width="30" height="30" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-xl mb-2">Email</h3>
-                    <p className="text-black/70">
-                      <a href="mailto:office@teerexassociates.com">
-                        office@teerexassociates.com
-                      </a>
-                    </p>
-                  </div>
+                <div className="pt-6 mt-6 border-t border-black/10 flex gap-3">
+                  <a
+                    href="https://wa.me/+60128186343"
+                    aria-label="Whatsapp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-[#f2efe8] flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                  >
+                    <Icon icon="mdi:whatsapp" width="20" height="20" />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/teerexassociates/"
+                    aria-label="Instagram"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-[#f2efe8] flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                  >
+                    <Icon icon="mdi:instagram" width="20" height="20" />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/people/Tee-Rex-Associates-Chartered-Accountants-%E9%9C%B8%E7%8E%8B%E7%89%B9%E8%AE%B8%E4%BC%9A%E8%AE%A1%E5%B8%88/61561326090219/"
+                    aria-label="Facebook"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-[#f2efe8] flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                  >
+                    <Icon icon="mdi:facebook" width="20" height="20" />
+                  </a>
                 </div>
               </div>
-            </div>
-
-            <div>
-              <ContactForm />
             </div>
           </div>
         </div>
       </section>
+
+      {/* Footer */}
       <Footer />
     </div>
   );

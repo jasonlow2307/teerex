@@ -1,8 +1,13 @@
+import { useTranslation } from "react-i18next";
+
 interface ContactFormProps {
   service?: string;
 }
 
 const ContactForm = ({ service }: ContactFormProps) => {
+  const { t } = useTranslation();
+
+  // Map service IDs to select option values
   const serviceOptions = {
     "form-be-e-m": "BE",
     "form-p": "P",
@@ -19,7 +24,9 @@ const ContactForm = ({ service }: ContactFormProps) => {
 
   return (
     <div className="bg-white p-8 rounded-xl shadow-lg">
-      <h3 className="text-2xl font-bold mb-6">Schedule a Consultation</h3>
+      <h3 className="text-2xl font-bold mb-6">
+        {t("common.scheduleConsultation")}
+      </h3>
       <form
         className="space-y-6"
         onSubmit={(e) => {
@@ -62,83 +69,95 @@ const ContactForm = ({ service }: ContactFormProps) => {
           );
         }}
       >
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-2">First Name</label>
+            <label className="block text-sm font-medium mb-2">
+              {t("common.firstName")}
+            </label>
             <input
               type="text"
               name="firstName"
               required
-              className="w-full px-4 py-3 border border-black/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/50 transition-all duration-300 hover:border-black/40"
-              placeholder="Enter your first name"
+              placeholder={t("contactForm.enterFirstName")}
+              className="w-full px-4 py-3 border border-black/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/50"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-2">Last Name</label>
+            <label className="block text-sm font-medium mb-2">
+              {t("common.lastName")}
+            </label>
             <input
               type="text"
               name="lastName"
               required
-              className="w-full px-4 py-3 border border-black/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/50 transition-all duration-300 hover:border-black/40"
-              placeholder="Enter your last name"
+              placeholder={t("contactForm.enterLastName")}
+              className="w-full px-4 py-3 border border-black/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/50"
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-medium mb-2">
+              {t("common.email")}
+            </label>
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder={t("contactForm.enterEmail")}
+              className="w-full px-4 py-3 border border-black/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/50"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-2">
+              {t("common.phone")}
+            </label>
+            <input
+              type="tel"
+              name="phone"
+              required
+              placeholder={t("contactForm.enterPhone")}
+              className="w-full px-4 py-3 border border-black/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/50"
             />
           </div>
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">Email</label>
-          <input
-            type="email"
-            name="email"
-            required
-            className="w-full px-4 py-3 border border-black/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/50"
-            placeholder="Enter your email address"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium mb-2">Phone</label>
-          <input
-            type="tel"
-            name="phone"
-            required
-            className="w-full px-4 py-3 border border-black/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/50"
-            placeholder="Enter your phone number"
-          />
-        </div>
-
-        <div>
           <label className="block text-sm font-medium mb-2">
-            Service Interested In
+            {t("common.serviceInterestedIn")}
           </label>
           <select
             name="service"
             className="w-full px-4 py-3 border border-black/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/50"
-            defaultValue={selectedValue || "BE"}
+            defaultValue={selectedValue}
           >
-            <option value="BE">Tax Filing - Form BE, E, M</option>
-            <option value="P">Tax Filing - Form P</option>
-            <option value="B">Tax Filing - Form B</option>
-            <option value="BA">Form B Account Management</option>
-            <option value="C">Form C, Form PT</option>
+            <option value="BE">{t("contactForm.taxFilingBE")}</option>
+            <option value="P">{t("contactForm.taxFilingP")}</option>
+            <option value="B">{t("contactForm.taxFilingB")}</option>
+            <option value="BA">{t("contactForm.formBAccount")}</option>
+            <option value="C">{t("contactForm.formCPT")}</option>
           </select>
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">Message</label>
+          <label className="block text-sm font-medium mb-2">
+            {t("common.message")}
+          </label>
           <textarea
             name="message"
-            className="w-full px-4 py-3 border border-black/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/50"
             rows={4}
-            placeholder="Tell us about your needs"
+            required
+            placeholder={t("contactForm.messagePlaceholder")}
+            className="w-full px-4 py-3 border border-black/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/50 resize-none"
           ></textarea>
         </div>
 
         <button
           type="submit"
-          className="w-full px-8 py-4 bg-black text-white rounded-lg hover:bg-black/90 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg font-medium"
+          className="w-full py-3 bg-black text-white rounded-lg hover:bg-black/90 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-md font-medium"
         >
-          Submit Request
+          {t("common.submit")}
         </button>
       </form>
     </div>

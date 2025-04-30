@@ -1,8 +1,10 @@
 import { Icon } from "@iconify/react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   // Custom navigation function that handles both navigation and smooth scrolling
   const handleNavigation = (path: string, serviceId?: string) => {
@@ -40,10 +42,7 @@ const Footer = () => {
                 Tee Rex & Associates
               </div>
             </div>
-            <p className="text-black/70 mb-6">
-              Professional accounting and business advisory services for
-              businesses of all sizes.
-            </p>
+            <p className="text-black/70 mb-6">{t("footer.description")}</p>
             <div className="flex gap-4">
               <a
                 href="https://wa.me/+60128186343"
@@ -76,14 +75,14 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-bold text-xl mb-6">Services</h3>
+            <h3 className="font-bold text-xl mb-6">{t("footer.services")}</h3>
             <ul className="list-none p-0 space-y-4">
               <li>
                 <span
                   className="hover:text-gray-600 transition-colors cursor-pointer"
                   onClick={() => handleNavigation("/services", "form-be-e-m")}
                 >
-                  Tax Filing - Form BE, E, M
+                  {t("contactForm.taxFilingBE")}
                 </span>
               </li>
               <li>
@@ -91,7 +90,7 @@ const Footer = () => {
                   className="hover:text-gray-600 transition-colors cursor-pointer"
                   onClick={() => handleNavigation("/services", "form-p")}
                 >
-                  Tax Filing - Form P
+                  {t("contactForm.taxFilingP")}
                 </span>
               </li>
               <li>
@@ -99,7 +98,7 @@ const Footer = () => {
                   className="hover:text-gray-600 transition-colors cursor-pointer"
                   onClick={() => handleNavigation("/services", "form-b")}
                 >
-                  Tax Filing - Form B
+                  {t("contactForm.taxFilingB")}
                 </span>
               </li>
               <li>
@@ -109,7 +108,7 @@ const Footer = () => {
                     handleNavigation("/services", "form-b-account")
                   }
                 >
-                  Form B Account Management
+                  {t("contactForm.formBAccount")}
                 </span>
               </li>
               <li>
@@ -117,21 +116,21 @@ const Footer = () => {
                   className="hover:text-gray-600 transition-colors cursor-pointer"
                   onClick={() => handleNavigation("/services", "form-c-pt")}
                 >
-                  Form C, Form PT
+                  {t("contactForm.formCPT")}
                 </span>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-bold text-xl mb-6">Company</h3>
+            <h3 className="font-bold text-xl mb-6">{t("footer.company")}</h3>
             <ul className="list-none p-0 space-y-4">
               <li>
                 <span
                   className="hover:text-gray-600 transition-colors cursor-pointer"
                   onClick={() => handleNavigation("/about")}
                 >
-                  About Us
+                  {t("common.aboutUs")}
                 </span>
               </li>
               <li>
@@ -139,7 +138,7 @@ const Footer = () => {
                   className="hover:text-gray-600 transition-colors cursor-pointer"
                   onClick={() => handleNavigation("/careers")}
                 >
-                  Careers
+                  {t("common.careers")}
                 </span>
               </li>
               <li>
@@ -147,7 +146,7 @@ const Footer = () => {
                   className="hover:text-gray-600 transition-colors cursor-pointer"
                   onClick={() => handleNavigation("/contact")}
                 >
-                  Contact
+                  {t("common.contact")}
                 </span>
               </li>
             </ul>
@@ -155,10 +154,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-16 pt-8 border-t border-black/10 text-center text-black/60">
-          <p>
-            © {new Date().getFullYear()} Tee Rex & Associates. All rights
-            reserved.
-          </p>
+          <p>{t("footer.copyright", { year: new Date().getFullYear() })}</p>
         </div>
       </div>
     </footer>
