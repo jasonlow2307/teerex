@@ -7,7 +7,7 @@ const OrderButton = () => {
         <Icon icon="mdi:order-bool-descending-variant" width="24" height="24" />
       </button>
       <div className="absolute -top-10 right-0 bg-black text-white text-sm rounded-md py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-        Place an order
+        Schedule A Consultation
       </div>
     </div>
   );

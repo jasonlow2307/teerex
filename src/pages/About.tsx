@@ -367,7 +367,7 @@ const About = () => {
             </a>
             <a
               href="/services"
-              className="px-10 py-5 border-2 border-white text-white rounded-lg bg-transparent hover:bg-white/10 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium"
+              className="px-10 py-5 border-2 border-white !text-white rounded-lg bg-transparent hover:bg-white/10 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium"
             >
               Explore Our Services
             </a>

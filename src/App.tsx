@@ -365,11 +365,11 @@ function App() {
             </div>
           </div>
 
-          <div className="text-center mt-16">
+          {/* <div className="text-center mt-16">
             <button className="px-8 py-4 border-2 border-black text-black rounded-lg bg-transparent hover:bg-black/5 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg font-medium">
               View More Testimonials
             </button>
-          </div>
+          </div> */}
         </div>
       </section>
 

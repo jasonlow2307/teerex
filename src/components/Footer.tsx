@@ -1,19 +1,44 @@
 import { Icon } from "@iconify/react";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  // Custom navigation function that handles both navigation and smooth scrolling
+  const handleNavigation = (path: string, serviceId?: string) => {
+    if (serviceId) {
+      localStorage.setItem("activeService", serviceId);
+    }
+
+    // First navigate to the page
+    navigate(path);
+
+    // Then smoothly scroll to the top
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    // Removed the curly braces that were wrapping all content
     <footer className="pt-24 pb-12 bg-white border-t border-black/10">
       <div className="max-w-7xl mx-auto px-8">
-        <div className="grid md:grid-cols-4 gap-12">
+        <div className="grid md:grid-cols-3 gap-20">
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-6">
               <img
                 src="/src/assets/images/dino.png"
                 alt="Tee Rex & Associates Logo"
                 className="w-12 h-12 rounded-lg"
+                onClick={() => handleNavigation("/")}
+                style={{ cursor: "pointer" }}
               />
-              <div className="text-xl font-bold">Tee Rex & Associates</div>
+              <div
+                className="text-xl font-bold cursor-pointer"
+                onClick={() => handleNavigation("/")}
+              >
+                Tee Rex & Associates
+              </div>
             </div>
             <p className="text-black/70 mb-6">
               Professional accounting and business advisory services for
@@ -54,44 +79,46 @@ const Footer = () => {
             <h3 className="font-bold text-xl mb-6">Services</h3>
             <ul className="list-none p-0 space-y-4">
               <li>
-                <a
-                  href="#tax"
-                  className="hover:text-gray-600 transition-colors"
+                <span
+                  className="hover:text-gray-600 transition-colors cursor-pointer"
+                  onClick={() => handleNavigation("/services", "form-be-e-m")}
                 >
                   Tax Filing - Form BE, E, M
-                </a>
+                </span>
               </li>
               <li>
-                <a
-                  href="#statements"
-                  className="hover:text-gray-600 transition-colors"
+                <span
+                  className="hover:text-gray-600 transition-colors cursor-pointer"
+                  onClick={() => handleNavigation("/services", "form-p")}
                 >
                   Tax Filing - Form P
-                </a>
+                </span>
               </li>
               <li>
-                <a
-                  href="#advisory"
-                  className="hover:text-gray-600 transition-colors"
+                <span
+                  className="hover:text-gray-600 transition-colors cursor-pointer"
+                  onClick={() => handleNavigation("/services", "form-b")}
                 >
                   Tax Filing - Form B
-                </a>
+                </span>
               </li>
               <li>
-                <a
-                  href="#bookkeeping"
-                  className="hover:text-gray-600 transition-colors"
+                <span
+                  className="hover:text-gray-600 transition-colors cursor-pointer"
+                  onClick={() =>
+                    handleNavigation("/services", "form-b-account")
+                  }
                 >
                   Form B Account Management
-                </a>
+                </span>
               </li>
               <li>
-                <a
-                  href="#payroll"
-                  className="hover:text-gray-600 transition-colors"
+                <span
+                  className="hover:text-gray-600 transition-colors cursor-pointer"
+                  onClick={() => handleNavigation("/services", "form-c-pt")}
                 >
                   Form C, Form PT
-                </a>
+                </span>
               </li>
             </ul>
           </div>
@@ -100,74 +127,28 @@ const Footer = () => {
             <h3 className="font-bold text-xl mb-6">Company</h3>
             <ul className="list-none p-0 space-y-4">
               <li>
-                <a
-                  href="#about"
-                  className="hover:text-gray-600 transition-colors"
+                <span
+                  className="hover:text-gray-600 transition-colors cursor-pointer"
+                  onClick={() => handleNavigation("/about")}
                 >
                   About Us
-                </a>
+                </span>
               </li>
               <li>
-                <a
-                  href="#team"
-                  className="hover:text-gray-600 transition-colors"
-                >
-                  Our Team
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#careers"
-                  className="hover:text-gray-600 transition-colors"
+                <span
+                  className="hover:text-gray-600 transition-colors cursor-pointer"
+                  onClick={() => handleNavigation("/careers")}
                 >
                   Careers
-                </a>
+                </span>
               </li>
               <li>
-                <a
-                  href="#contact"
-                  className="hover:text-gray-600 transition-colors"
+                <span
+                  className="hover:text-gray-600 transition-colors cursor-pointer"
+                  onClick={() => handleNavigation("/contact")}
                 >
                   Contact
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-bold text-xl mb-6">Resources</h3>
-            <ul className="list-none p-0 space-y-4">
-              <li>
-                <a
-                  href="#blog"
-                  className="hover:text-gray-600 transition-colors"
-                >
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#news"
-                  className="hover:text-gray-600 transition-colors"
-                >
-                  News
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#faq"
-                  className="hover:text-gray-600 transition-colors"
-                >
-                  FAQ
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#privacy"
-                  className="hover:text-gray-600 transition-colors"
-                >
-                  Privacy Policy
-                </a>
+                </span>
               </li>
             </ul>
           </div>

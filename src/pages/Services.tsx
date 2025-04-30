@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
-import OrderButton from "../components/OrderButton";
 import Header from "../components/Header";
 
 const ServiceDetails = [
@@ -475,7 +474,6 @@ const Services = () => {
       </section>
 
       <Footer />
-      <OrderButton />
     </div>
   );
 };

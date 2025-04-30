@@ -6,6 +6,8 @@ import App from "./App.tsx";
 import Services from "./pages/Services.tsx";
 import Contact from "./pages/Contact.tsx";
 import About from "./pages/About.tsx";
+import Careers from "./pages/Careers.tsx";
+import OrderButton from "./components/OrderButton.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -15,7 +17,9 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
+        <Route path="/careers" element={<Careers />} />
       </Routes>
+      <OrderButton />
     </BrowserRouter>
   </StrictMode>
 );
