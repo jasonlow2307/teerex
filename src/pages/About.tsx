@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
+import { useTranslation } from "react-i18next";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 const About = () => {
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,11 +27,10 @@ const About = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-[#f2efe8]/90 to-[#f2efe8]/70 z-10"></div>
         <div className="max-w-7xl mx-auto px-8 relative z-20">
           <h1 className="text-5xl font-bold mx-auto mb-6 max-w-3xl leading-tight">
-            About Tee Rex & Associates
+            {t("about.title")}
           </h1>
           <p className="text-xl mx-auto mb-10 max-w-2xl text-black/70 leading-relaxed">
-            Professional accounting and financial services with over 15 years of
-            experience helping businesses thrive
+            {t("about.subtitle")}
           </p>
         </div>
       </section>
@@ -50,29 +51,16 @@ const About = () => {
             </div>
 
             <div>
-              <h2 className="text-4xl font-bold mb-4 !text-left">Our Story</h2>
+              <h2 className="text-4xl font-bold mb-4 !text-left">
+                {t("about.ourStory")}
+              </h2>
               <div className="w-24 h-1 bg-black mb-8"></div>
 
-              <p className="mb-6 text-lg">
-                Founded in 2010, Tee Rex & Associates began with a simple
-                mission: to provide businesses with clear, strategic financial
-                guidance that empowers informed decision-making and sustainable
-                growth.
-              </p>
+              <p className="mb-6 text-lg">{t("about.storyPart1")}</p>
 
-              <p className="mb-6 text-lg">
-                What started as a small practice has grown into a trusted
-                financial partner for businesses across various industries. Our
-                growth stems from our unwavering commitment to personalized
-                service and technical excellence.
-              </p>
+              <p className="mb-6 text-lg">{t("about.storyPart2")}</p>
 
-              <p className="text-lg">
-                Today, Tee Rex & Associates continues to uphold these founding
-                principles while adapting to the ever-changing financial
-                landscape and embracing innovative technologies to better serve
-                our clients.
-              </p>
+              <p className="text-lg">{t("about.storyPart3")}</p>
             </div>
           </div>
         </div>
@@ -82,11 +70,10 @@ const About = () => {
       <section className="py-16 bg-[#f2efe8]/50">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Our Core Values</h2>
+            <h2 className="text-4xl font-bold mb-4">{t("about.ourValues")}</h2>
             <div className="w-24 h-1 bg-black mx-auto mb-6"></div>
             <p className="text-xl text-black/70 max-w-3xl mx-auto">
-              These principles guide everything we do and shape the way we serve
-              our clients
+              {t("about.valuesSubtitle")}
             </p>
           </div>
 
@@ -95,36 +82,30 @@ const About = () => {
               <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mb-6 text-white">
                 <Icon icon="mdi:shield-check" width="32" height="32" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Integrity</h3>
-              <p className="text-black/70">
-                We uphold the highest ethical standards in all our dealings,
-                providing honest advice and maintaining confidentiality of
-                client information.
-              </p>
+              <h3 className="text-2xl font-bold mb-4">
+                {t("about.integrity")}
+              </h3>
+              <p className="text-black/70">{t("about.integrityDesc")}</p>
             </div>
 
             <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mb-6 text-white">
                 <Icon icon="mdi:account-group" width="32" height="32" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Client Focus</h3>
-              <p className="text-black/70">
-                We prioritize understanding each client's unique needs and
-                goals, crafting personalized solutions that align with their
-                specific circumstances.
-              </p>
+              <h3 className="text-2xl font-bold mb-4">
+                {t("about.clientFocus")}
+              </h3>
+              <p className="text-black/70">{t("about.clientFocusDesc")}</p>
             </div>
 
             <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mb-6 text-white">
                 <Icon icon="mdi:star" width="32" height="32" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Excellence</h3>
-              <p className="text-black/70">
-                We strive for excellence in all aspects of our service,
-                continuously improving our knowledge, processes, and client
-                experience.
-              </p>
+              <h3 className="text-2xl font-bold mb-4">
+                {t("about.excellence")}
+              </h3>
+              <p className="text-black/70">{t("about.excellenceDesc")}</p>
             </div>
           </div>
         </div>
@@ -134,11 +115,10 @@ const About = () => {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Meet Our Team</h2>
+            <h2 className="text-4xl font-bold mb-4">{t("about.meetTeam")}</h2>
             <div className="w-24 h-1 bg-black mx-auto mb-6"></div>
             <p className="text-xl text-black/70 max-w-3xl mx-auto">
-              Our team of certified professionals brings expertise and
-              dedication to every client engagement
+              {t("about.teamSubtitle")}
             </p>
           </div>
 
@@ -154,10 +134,9 @@ const About = () => {
                 </div>
               </div>
               <h3 className="text-2xl font-bold mb-2">Sarah Johnson</h3>
-              <p className="text-black/70 mb-4">Founder & Managing Director</p>
+              <p className="text-black/70 mb-4">{t("about.founder")}</p>
               <p className="text-black/70 max-w-xs mx-auto">
-                With over 20 years of experience, Sarah leads our team with
-                expertise in complex tax matters and business advisory.
+                {t("about.founderDesc")}
               </p>
             </div>
 
@@ -172,10 +151,9 @@ const About = () => {
                 </div>
               </div>
               <h3 className="text-2xl font-bold mb-2">Michael Lee</h3>
-              <p className="text-black/70 mb-4">Tax Director</p>
+              <p className="text-black/70 mb-4">{t("about.taxDirector")}</p>
               <p className="text-black/70 max-w-xs mx-auto">
-                Michael specializes in corporate tax planning and compliance,
-                helping businesses optimize their tax positions.
+                {t("about.taxDirectorDesc")}
               </p>
             </div>
 
@@ -190,10 +168,11 @@ const About = () => {
                 </div>
               </div>
               <h3 className="text-2xl font-bold mb-2">Jessica Tan</h3>
-              <p className="text-black/70 mb-4">Accounting Manager</p>
+              <p className="text-black/70 mb-4">
+                {t("about.accountingManager")}
+              </p>
               <p className="text-black/70 max-w-xs mx-auto">
-                Jessica oversees our accounting services, ensuring accurate
-                financial reporting and insightful business analysis.
+                {t("about.accountingManagerDesc")}
               </p>
             </div>
           </div>
@@ -206,7 +185,7 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl font-bold mb-4 !text-left">
-                Our Approach
+                {t("about.ourApproach")}
               </h2>
               <div className="w-24 h-1 bg-black mb-8"></div>
 
@@ -217,12 +196,9 @@ const About = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-2">
-                      Understanding Your Needs
+                      {t("about.step1")}
                     </h3>
-                    <p className="text-black/70">
-                      We begin by listening carefully to understand your unique
-                      business context, goals, and challenges.
-                    </p>
+                    <p className="text-black/70">{t("about.step1Desc")}</p>
                   </div>
                 </div>
 
@@ -232,12 +208,9 @@ const About = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-2">
-                      Tailored Solutions
+                      {t("about.step2")}
                     </h3>
-                    <p className="text-black/70">
-                      Our team develops customized strategies and solutions
-                      aligned with your specific requirements and objectives.
-                    </p>
+                    <p className="text-black/70">{t("about.step2Desc")}</p>
                   </div>
                 </div>
 
@@ -246,11 +219,10 @@ const About = () => {
                     3
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2">Implementation</h3>
-                    <p className="text-black/70">
-                      We execute with precision, ensuring all financial and tax
-                      matters are handled accurately and efficiently.
-                    </p>
+                    <h3 className="text-xl font-bold mb-2">
+                      {t("about.step3")}
+                    </h3>
+                    <p className="text-black/70">{t("about.step3Desc")}</p>
                   </div>
                 </div>
 
@@ -259,11 +231,10 @@ const About = () => {
                     4
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2">Ongoing Support</h3>
-                    <p className="text-black/70">
-                      We provide continuous guidance, keeping you updated on
-                      relevant changes and helping you adapt as needed.
-                    </p>
+                    <h3 className="text-xl font-bold mb-2">
+                      {t("about.step4")}
+                    </h3>
+                    <p className="text-black/70">{t("about.step4Desc")}</p>
                   </div>
                 </div>
               </div>
@@ -294,11 +265,12 @@ const About = () => {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Our Credentials</h2>
+            <h2 className="text-4xl font-bold mb-4">
+              {t("about.credentials")}
+            </h2>
             <div className="w-24 h-1 bg-black mx-auto mb-6"></div>
             <p className="text-xl text-black/70 max-w-3xl mx-auto">
-              Our team maintains the highest professional standards through
-              ongoing education and certification
+              {t("about.credentialsSubtitle")}
             </p>
           </div>
 
@@ -353,23 +325,22 @@ const About = () => {
       {/* CTA Section */}
       <section className="py-16 bg-black text-white text-center">
         <div className="max-w-7xl mx-auto px-8">
-          <h2 className="text-4xl font-bold mb-6">Ready to Work With Us?</h2>
+          <h2 className="text-4xl font-bold mb-6">{t("about.readyToWork")}</h2>
           <p className="text-xl mb-10 max-w-2xl mx-auto text-white/80">
-            Let's discuss how our professional services can help your business
-            succeed
+            {t("about.readyToWorkDesc")}
           </p>
           <div className="flex flex-wrap gap-6 justify-center">
             <a
               href="/contact"
               className="px-10 py-5 bg-white text-black rounded-lg hover:bg-white/90 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium"
             >
-              Schedule a Consultation
+              {t("common.scheduleConsultation")}
             </a>
             <a
               href="/services"
               className="px-10 py-5 border-2 border-white !text-white rounded-lg bg-transparent hover:bg-white/10 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium"
             >
-              Explore Our Services
+              {t("about.exploreServices")}
             </a>
           </div>
         </div>

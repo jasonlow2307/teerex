@@ -39,7 +39,7 @@ const Header = ({ scrolled }: HeaderProps) => {
               width={70}
               alt="Tee Rex Logo"
             />
-            <div className="text-2xl font-semibold">Tee Rex & Associates</div>
+            <div className="text-2xl font-semibold">{t("common.title")}</div>
           </div>
         </div>
         <div className="flex items-center gap-8">
