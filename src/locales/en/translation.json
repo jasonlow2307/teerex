@@ -48,7 +48,27 @@
     },
     "testimonials": {
       "title": "What Our Clients Say",
-      "subtitle": "Don't just take our word for it. Here's what our clients have to say about our services."
+      "subtitle": "Don't just take our word for it. Here's what our clients have to say about our services.",
+      "clients": [
+        {
+          "name": "Lee Siao Mei",
+          "position": "Small Business Owner",
+          "initial": "L",
+          "text": "Tee Rex has been handling my business taxes for 5 years now. Their team is always professional, prompt, and helps me maximize my tax savings. Highly recommended!"
+        },
+        {
+          "name": "Tan Wei Ming",
+          "position": "Corporate Client",
+          "initial": "T",
+          "text": "Our company switched to Tee Rex last year, and we couldn't be happier. Their attention to detail and strategic tax planning advice has saved us significant amounts. They're not just accountants; they're business partners."
+        },
+        {
+          "name": "Rajesh Kumar",
+          "position": "Individual Client",
+          "initial": "R",
+          "text": "Filing taxes used to be such a headache for me until I found Tee Rex. They make the process painless and are always available to answer my questions. The peace of mind they provide is priceless."
+        }
+      ]
     },
     "contact": {
       "title": "Get in Touch",

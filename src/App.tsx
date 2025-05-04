@@ -21,6 +21,17 @@ function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  interface Client {
+    initial: string;
+    name: string;
+    position: string;
+    text: string;
+  }
+
+  const clients: Client[] = t("home.testimonials.clients", {
+    returnObjects: true,
+  }) as Client[];
+
   return (
     <div className="w-full font-sans">
       {/* Header */}
@@ -248,88 +259,35 @@ function App() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Testimonial 1 */}
-            <div className="bg-white p-8 rounded-xl shadow-md">
-              <div className="flex items-center mb-6">
-                <div className="mr-4">
-                  <div className="w-12 h-12 rounded-full bg-[#f2efe8] flex items-center justify-center text-2xl font-bold">
-                    L
-                  </div>
-                </div>
-                <div>
-                  <h4 className="font-bold">Lee Siao Mei</h4>
-                  <p className="text-black/60 text-sm">Small Business Owner</p>
-                </div>
-              </div>
-              <p className="text-black/80 italic">
-                "Tee Rex has been handling my business taxes for 5 years now.
-                Their team is always professional, prompt, and helps me maximize
-                my tax savings. Highly recommended!"
-              </p>
-              <div className="mt-4 flex">
-                <Icon icon="mdi:star" className="text-yellow-500" />
-                <Icon icon="mdi:star" className="text-yellow-500" />
-                <Icon icon="mdi:star" className="text-yellow-500" />
-                <Icon icon="mdi:star" className="text-yellow-500" />
-                <Icon icon="mdi:star" className="text-yellow-500" />
-              </div>
-            </div>
+            {/* Map through testimonials from translations */}
 
-            {/* Testimonial 2 */}
-            <div className="bg-white p-8 rounded-xl shadow-md">
-              <div className="flex items-center mb-6">
-                <div className="mr-4">
-                  <div className="w-12 h-12 rounded-full bg-[#f2efe8] flex items-center justify-center text-2xl font-bold">
-                    T
+            {clients.map((client: Client, index: number) => (
+              <div key={index} className="bg-white p-8 rounded-xl shadow-md">
+                <div className="flex items-center mb-6">
+                  <div className="mr-4">
+                    <div className="w-12 h-12 rounded-full bg-[#f2efe8] flex items-center justify-center text-2xl font-bold">
+                      {client.initial}
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-bold">{client.name}</h4>
+                    <p className="text-black/60 text-sm">{client.position}</p>
                   </div>
                 </div>
-                <div>
-                  <h4 className="font-bold">Tan Wei Ming</h4>
-                  <p className="text-black/60 text-sm">Corporate Client</p>
+                <p className="text-black/80 italic">"{client.text}"</p>
+                <div className="mt-4 flex">
+                  <Icon icon="mdi:star" className="text-yellow-500" />
+                  <Icon icon="mdi:star" className="text-yellow-500" />
+                  <Icon icon="mdi:star" className="text-yellow-500" />
+                  <Icon icon="mdi:star" className="text-yellow-500" />
+                  {index === 2 ? (
+                    <Icon icon="mdi:star-half" className="text-yellow-500" />
+                  ) : (
+                    <Icon icon="mdi:star" className="text-yellow-500" />
+                  )}
                 </div>
               </div>
-              <p className="text-black/80 italic">
-                "Our company switched to Tee Rex last year, and we couldn't be
-                happier. Their attention to detail and strategic tax planning
-                advice has saved us significant amounts. They're not just
-                accountants; they're business partners."
-              </p>
-              <div className="mt-4 flex">
-                <Icon icon="mdi:star" className="text-yellow-500" />
-                <Icon icon="mdi:star" className="text-yellow-500" />
-                <Icon icon="mdi:star" className="text-yellow-500" />
-                <Icon icon="mdi:star" className="text-yellow-500" />
-                <Icon icon="mdi:star" className="text-yellow-500" />
-              </div>
-            </div>
-
-            {/* Testimonial 3 */}
-            <div className="bg-white p-8 rounded-xl shadow-md">
-              <div className="flex items-center mb-6">
-                <div className="mr-4">
-                  <div className="w-12 h-12 rounded-full bg-[#f2efe8] flex items-center justify-center text-2xl font-bold">
-                    R
-                  </div>
-                </div>
-                <div>
-                  <h4 className="font-bold">Rajesh Kumar</h4>
-                  <p className="text-black/60 text-sm">Individual Client</p>
-                </div>
-              </div>
-              <p className="text-black/80 italic">
-                "Filing taxes used to be such a headache for me until I found
-                Tee Rex. They make the process painless and are always available
-                to answer my questions. The peace of mind they provide is
-                priceless."
-              </p>
-              <div className="mt-4 flex">
-                <Icon icon="mdi:star" className="text-yellow-500" />
-                <Icon icon="mdi:star" className="text-yellow-500" />
-                <Icon icon="mdi:star" className="text-yellow-500" />
-                <Icon icon="mdi:star" className="text-yellow-500" />
-                <Icon icon="mdi:star-half" className="text-yellow-500" />
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

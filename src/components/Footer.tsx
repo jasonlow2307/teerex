@@ -30,7 +30,7 @@ const Footer = () => {
               <img
                 src="/logo_square.svg"
                 alt="Tee Rex & Associates Logo"
-                className="w-12 h-12 rounded-lg"
+                className="w-20 h-12 rounded-lg"
                 onClick={() => handleNavigation("/")}
                 style={{ cursor: "pointer" }}
               />
