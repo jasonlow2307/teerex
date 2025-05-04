@@ -74,6 +74,19 @@
     "contactForService": "Contact us today to schedule a consultation about your service needs.",
     "otherServices": "Other Services You Might Need",
     "learnMore": "Learn More",
+    "exploreServices": "Explore These Services",
+    "categories": {
+      "taxFiling": "Tax Filing",
+      "businessServices": "Business Services",
+      "licensing": "Licensing Services",
+      "auditTax": "Audit & Tax Services"
+    },
+    "categoryDescriptions": {
+      "taxFiling": "Professional assistance with accurate preparation and filing of various tax forms for individuals and businesses.",
+      "businessServices": "Comprehensive business support including consultancy, secretarial services, and financial management.",
+      "licensing": "Expert guidance and assistance in obtaining various business permits and licenses.",
+      "auditTax": "Specialized audit services and tax advisory for businesses requiring professional review and compliance."
+    },
     "serviceDetails": {
       "formBEM": {
         "title": "Tax Filing - Form BE, E, M",
@@ -238,6 +251,286 @@
           "Corporate tax planning for future periods"
         ],
         "pricing": "Determined based on company size and complexity"
+      },
+      "businessConsultancy": {
+        "title": "Business Consultancy",
+        "description": "Strategic advice and guidance to help businesses optimize operations, improve performance, and achieve growth objectives.",
+        "details": [
+          {
+            "heading": "Strategic Business Planning",
+            "content": "We work with you to develop comprehensive business plans, market entry strategies, and growth roadmaps tailored to your specific industry and goals."
+          },
+          {
+            "heading": "Financial Analysis & Optimization",
+            "content": "Our experts analyze your financial structure, cash flow, and operational costs to identify opportunities for optimization and improved profitability."
+          },
+          {
+            "heading": "Business Process Improvement",
+            "content": "We help streamline your business processes, implement effective systems, and enhance operational efficiency to drive better results."
+          }
+        ],
+        "benefits": [
+          "Expert guidance from experienced business consultants",
+          "Customized solutions based on your specific business needs",
+          "Improved operational efficiency and cost management",
+          "Strategic growth planning with clear implementation roadmaps",
+          "Access to industry best practices and benchmarking",
+          "Enhanced decision-making through data-driven insights"
+        ],
+        "process": [
+          "Initial business assessment and needs analysis",
+          "Identification of key improvement opportunities",
+          "Development of customized strategic recommendations",
+          "Implementation planning and support",
+          "Regular progress reviews and strategy adjustments",
+          "Ongoing advisory support for sustainable results"
+        ],
+        "pricing": "Consultation packages starting from RM 1,500, based on business size and scope of services"
+      },
+      "secretarialService": {
+        "title": "Secretarial Service",
+        "description": "Comprehensive company secretarial services ensuring full compliance with statutory requirements and effective corporate governance.",
+        "details": [
+          {
+            "heading": "Company Formation & Registration",
+            "content": "We handle all aspects of company incorporation including name reservation, preparation of constitutional documents, and registration with relevant authorities."
+          },
+          {
+            "heading": "Statutory Compliance Management",
+            "content": "Our team ensures your company maintains compliance with all statutory requirements including annual returns, regulatory filings, and maintenance of statutory registers."
+          },
+          {
+            "heading": "Corporate Governance Support",
+            "content": "We provide guidance on corporate governance matters, prepare board resolutions, coordinate shareholder meetings, and maintain proper documentation of corporate decisions."
+          }
+        ],
+        "benefits": [
+          "Ensure full compliance with Companies Act and other regulations",
+          "Prevent penalties and legal issues from compliance failures",
+          "Professional management of all statutory documentation",
+          "Timely filing of all required returns and notifications",
+          "Expert advice on corporate governance best practices",
+          "Free up management time to focus on core business activities"
+        ],
+        "process": [
+          "Initial assessment of company structure and requirements",
+          "Preparation of compliance calendar and action plan",
+          "Coordination of necessary board and shareholder meetings",
+          "Preparation and filing of statutory documents",
+          "Regular updates on regulatory changes and implications",
+          "Maintenance of company statutory records and registers"
+        ],
+        "pricing": "Annual packages starting from RM 1,200, based on company size and structure"
+      },
+      "managementAccount": {
+        "title": "Management Accounting",
+        "description": "Detailed financial reporting and analysis that provides actionable insights to support effective business decision-making.",
+        "details": [
+          {
+            "heading": "Custom Management Reports",
+            "content": "We develop tailored financial reports that highlight key performance indicators relevant to your specific business needs and strategic objectives."
+          },
+          {
+            "heading": "Budgeting & Forecasting",
+            "content": "Our experts assist in creating realistic budgets and financial forecasts to guide planning, measure performance, and facilitate strategic decision-making."
+          },
+          {
+            "heading": "Financial Analysis & Interpretation",
+            "content": "We provide in-depth analysis of financial data, identifying trends, opportunities, and areas requiring attention to improve business performance."
+          }
+        ],
+        "benefits": [
+          "Clear visibility of financial performance and business health",
+          "Data-driven decision support for strategic planning",
+          "Early identification of financial issues and opportunities",
+          "Improved cash flow management and resource allocation",
+          "Enhanced accountability across business departments",
+          "Customized reporting tailored to your industry and goals"
+        ],
+        "process": [
+          "Assessment of business reporting needs and objectives",
+          "Design of customized management reporting templates",
+          "Implementation of data collection and analysis systems",
+          "Regular preparation and delivery of management reports",
+          "Review meetings to discuss insights and recommendations",
+          "Continuous refinement of reporting to meet evolving needs"
+        ],
+        "pricing": "Monthly service packages starting from RM 800, based on business complexity and reporting frequency"
+      },
+      "premiseLicense": {
+        "title": "Premise License",
+        "description": "Professional assistance in obtaining and maintaining business premise licenses required by local authorities.",
+        "details": [
+          {
+            "heading": "Local Council Business Licensing",
+            "content": "We guide you through the process of obtaining necessary local council licenses for your business premises, ensuring compliance with zoning regulations, health standards, and safety requirements."
+          },
+          {
+            "heading": "Specialized Premise Licensing",
+            "content": "For businesses with specific requirements such as food establishments, entertainment venues, or specialized retail, we handle the additional licensing requirements imposed by regulatory bodies."
+          },
+          {
+            "heading": "License Renewal & Compliance",
+            "content": "We manage the timely renewal of premise licenses and ensure ongoing compliance with changing regulations to prevent business disruptions or penalties."
+          }
+        ],
+        "benefits": [
+          "Expert navigation through complex licensing requirements",
+          "Properly prepared documentation to expedite approvals",
+          "Reduced risk of operating without proper licensing",
+          "Compliance with all local regulations and standards",
+          "Professional representation in dealings with authorities",
+          "Proactive management of license renewals and updates"
+        ],
+        "process": [
+          "Assessment of premise licensing requirements",
+          "Preparation and compilation of required documents",
+          "Coordination of necessary inspections and approvals",
+          "Submission of applications to relevant authorities",
+          "Follow-up on application status and addressing queries",
+          "Monitoring and management of license renewal timelines"
+        ],
+        "pricing": "Starting from RM 800, depending on license type and complexity"
+      },
+      "workerLicense": {
+        "title": "Worker License",
+        "description": "Comprehensive assistance with obtaining necessary worker licenses and permits for your employees across various industries.",
+        "details": [
+          {
+            "heading": "Foreign Worker Employment Licenses",
+            "content": "We handle the complex process of obtaining approvals, permits, and licenses required for legally employing foreign workers in Malaysia, ensuring compliance with immigration and labor regulations."
+          },
+          {
+            "heading": "Professional and Specialized Worker Permits",
+            "content": "For businesses requiring licensed professionals or specialized workers, we manage the licensing process with relevant regulatory bodies and professional associations."
+          },
+          {
+            "heading": "Compliance and Renewal Management",
+            "content": "We provide ongoing management of worker license compliance, including timely renewals, updates to changing requirements, and proper documentation maintenance."
+          }
+        ],
+        "benefits": [
+          "Professional management of complex worker licensing processes",
+          "Reduced risk of non-compliance with labor regulations",
+          "Properly documented workforce with valid authorizations",
+          "Efficient handling of renewals and permit extensions",
+          "Expert guidance on changing employment regulations",
+          "Minimized business disruptions from worker permit issues"
+        ],
+        "process": [
+          "Assessment of workforce licensing requirements",
+          "Preparation of worker and employer documentation",
+          "Submission of applications to relevant authorities",
+          "Tracking and follow-up on application progress",
+          "Coordination of medical screenings and other requirements",
+          "Management of license renewals and ongoing compliance"
+        ],
+        "pricing": "Starting from RM 500 per worker, with discounted rates for multiple applications"
+      },
+      "signboardLicense": {
+        "title": "Signboard License",
+        "description": "Expert assistance in obtaining the necessary permits and licenses for business signage and advertising displays.",
+        "details": [
+          {
+            "heading": "Signboard Application & Approval",
+            "content": "We guide you through the process of obtaining proper authorization for business signage, ensuring compliance with local council regulations regarding size, placement, content, and illumination."
+          },
+          {
+            "heading": "Advertising License Applications",
+            "content": "For businesses requiring special advertising displays, banners, or promotional signage, we handle the specific permits required for these temporary or permanent installations."
+          },
+          {
+            "heading": "License Renewal & Compliance",
+            "content": "We provide ongoing management of signboard licenses, including timely renewals, compliance with changing regulations, and resolution of any issues with local authorities."
+          }
+        ],
+        "benefits": [
+          "Properly licensed signage to avoid penalties and removal",
+          "Professional navigation of local advertising regulations",
+          "Expert preparation of technical documentation and plans",
+          "Representation in dealings with local authorities",
+          "Guidance on signage compliance and regulations",
+          "Efficient management of license renewals and fees"
+        ],
+        "process": [
+          "Assessment of signage requirements and location constraints",
+          "Preparation of technical specifications and visual plans",
+          "Compilation of required application documentation",
+          "Submission to relevant local authorities",
+          "Follow-up on application status and addressing queries",
+          "Management of approval process and license issuance"
+        ],
+        "pricing": "Starting from RM 400 per signboard, dependent on size, type, and location"
+      },
+      "auditServices": {
+        "title": "Audit Services",
+        "description": "Comprehensive audit solutions providing independent verification of financial statements and internal controls.",
+        "details": [
+          {
+            "heading": "Statutory Audit",
+            "content": "Our team conducts thorough statutory audits to meet legal requirements, providing independent verification of financial statements and ensuring compliance with relevant accounting standards."
+          },
+          {
+            "heading": "Internal Audit",
+            "content": "We offer internal audit services to evaluate your organization's risk management, control processes, and governance, identifying areas for improvement and helping prevent financial irregularities."
+          },
+          {
+            "heading": "Special Purpose Audits",
+            "content": "For specific requirements such as due diligence, grant compliance, or investigative purposes, we provide targeted audit services tailored to your unique needs and circumstances."
+          }
+        ],
+        "benefits": [
+          "Independent verification of financial accuracy and reporting",
+          "Enhanced credibility with stakeholders and financial institutions",
+          "Identification of financial reporting issues and weaknesses",
+          "Improved internal controls and risk management",
+          "Expert compliance with accounting standards and regulations",
+          "Valuable insights into financial management and efficiency"
+        ],
+        "process": [
+          "Initial planning and understanding of business operations",
+          "Risk assessment and determination of audit scope",
+          "Evaluation of internal controls and accounting systems",
+          "Substantive testing and verification procedures",
+          "Analysis and documentation of audit findings",
+          "Presentation of audit report and recommendations"
+        ],
+        "pricing": "Based on company size, complexity, and audit scope - please contact us for a customized quotation"
+      },
+      "taxServices": {
+        "title": "Tax Services",
+        "description": "Specialized tax advisory and planning services to optimize your tax position while ensuring full compliance with regulations.",
+        "details": [
+          {
+            "heading": "Tax Advisory & Planning",
+            "content": "Our tax experts provide strategic advice to optimize your tax position, identify applicable incentives, and develop effective tax structures aligned with your business goals while ensuring full compliance."
+          },
+          {
+            "heading": "Tax Dispute Resolution",
+            "content": "We offer professional representation and support in managing tax disputes, appeals, and audit defense, working to resolve issues efficiently with tax authorities."
+          },
+          {
+            "heading": "International Tax Planning",
+            "content": "For businesses with cross-border operations, we provide specialized international tax planning to manage global tax exposure, transfer pricing compliance, and multi-jurisdiction reporting requirements."
+          }
+        ],
+        "benefits": [
+          "Strategic tax planning to minimize tax liabilities legally",
+          "Expert navigation of complex tax regulations and incentives",
+          "Reduced risk of non-compliance and tax disputes",
+          "Professional representation in tax authority matters",
+          "Proactive advice on tax implications of business decisions",
+          "Updated guidance on changing tax legislation"
+        ],
+        "process": [
+          "Comprehensive assessment of current tax position",
+          "Identification of tax planning opportunities",
+          "Development of customized tax strategies",
+          "Implementation support and documentation",
+          "Regular reviews and updates to reflect changing regulations",
+          "Ongoing advisory support for tax-related decisions"
+        ],
+        "pricing": "Advisory packages starting from RM 1,000, based on complexity and scope of services"
       }
     }
   },
@@ -324,7 +617,15 @@
     "taxFilingP": "Tax Filing - Form P",
     "taxFilingB": "Tax Filing - Form B",
     "formBAccount": "Form B Account Management",
-    "formCPT": "Form C, Form PT"
+    "formCPT": "Form C, Form PT",
+    "businessConsultancy": "Business Consultancy",
+    "secretarialService": "Secretarial Service",
+    "managementAccount": "Management Accounting",
+    "premiseLicense": "Premise License",
+    "workerLicense": "Worker License",
+    "signboardLicense": "Signboard License",
+    "auditServices": "Audit Services",
+    "taxServices": "Tax Services"
   },
   "footer": {
     "description": "Professional accounting and business advisory services for businesses of all sizes.",

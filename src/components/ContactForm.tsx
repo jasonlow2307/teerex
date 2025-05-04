@@ -9,11 +9,42 @@ const ContactForm = ({ service }: ContactFormProps) => {
 
   // Map service IDs to select option values
   const serviceOptions = {
+    // Tax filing services
     "form-be-e-m": "BE",
     "form-p": "P",
     "form-b": "B",
     "form-b-account": "BA",
     "form-c-pt": "C",
+
+    // Business services
+    "business-consultancy": "BC",
+    "secretarial-service": "SS",
+    "management-account": "MA",
+
+    // Licensing services
+    "premise-license": "PL",
+    "worker-license": "WL",
+    "signboard-license": "SL",
+
+    // Audit and tax services
+    "audit-services": "AS",
+    "tax-services": "TS",
+  };
+
+  const serviceNameMap = {
+    BE: "contactForm.taxFilingBE",
+    P: "contactForm.taxFilingP",
+    B: "contactForm.taxFilingB",
+    BA: "contactForm.formBAccount",
+    C: "contactForm.formCPT",
+    BC: "contactForm.businessConsultancy",
+    SS: "contactForm.secretarialService",
+    MA: "contactForm.managementAccount",
+    PL: "contactForm.premiseLicense",
+    WL: "contactForm.workerLicense",
+    SL: "contactForm.signboardLicense",
+    AS: "contactForm.auditServices",
+    TS: "contactForm.taxServices",
   };
 
   // Get the value for the select element
@@ -52,13 +83,19 @@ const ContactForm = ({ service }: ContactFormProps) => {
             "message"
           ) as HTMLTextAreaElement;
 
-          // Format the WhatsApp message
+          // Get the full service name from the translation
+          const serviceCode = service.value;
+          const serviceTranslationKey =
+            serviceNameMap[serviceCode as keyof typeof serviceNameMap];
+          const fullServiceName = t(serviceTranslationKey);
+
+          // Format the WhatsApp message with full service name
           const whatsappMessage = encodeURIComponent(
             `*New Consultation Request*\n\n` +
               `*Name:* ${firstName.value} ${lastName.value}\n` +
               `*Email:* ${email.value}\n` +
               `*Phone:* ${phone.value}\n` +
-              `*Service:* ${service.value}\n\n` +
+              `*Service:* ${fullServiceName}\n\n` +
               `*Message:*\n${message.value}`
           );
 
@@ -132,11 +169,34 @@ const ContactForm = ({ service }: ContactFormProps) => {
             className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-black/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/50 bg-white"
             defaultValue={selectedValue}
           >
-            <option value="BE">{t("contactForm.taxFilingBE")}</option>
-            <option value="P">{t("contactForm.taxFilingP")}</option>
-            <option value="B">{t("contactForm.taxFilingB")}</option>
-            <option value="BA">{t("contactForm.formBAccount")}</option>
-            <option value="C">{t("contactForm.formCPT")}</option>
+            {/* Tax Filing Services */}
+            <optgroup label={t("services.categories.taxFiling")}>
+              <option value="BE">{t("contactForm.taxFilingBE")}</option>
+              <option value="P">{t("contactForm.taxFilingP")}</option>
+              <option value="B">{t("contactForm.taxFilingB")}</option>
+              <option value="BA">{t("contactForm.formBAccount")}</option>
+              <option value="C">{t("contactForm.formCPT")}</option>
+            </optgroup>
+
+            {/* Business Services */}
+            <optgroup label={t("services.categories.businessServices")}>
+              <option value="BC">{t("contactForm.businessConsultancy")}</option>
+              <option value="SS">{t("contactForm.secretarialService")}</option>
+              <option value="MA">{t("contactForm.managementAccount")}</option>
+            </optgroup>
+
+            {/* Licensing Services */}
+            <optgroup label={t("services.categories.licensing")}>
+              <option value="PL">{t("contactForm.premiseLicense")}</option>
+              <option value="WL">{t("contactForm.workerLicense")}</option>
+              <option value="SL">{t("contactForm.signboardLicense")}</option>
+            </optgroup>
+
+            {/* Audit & Tax Services */}
+            <optgroup label={t("services.categories.auditTax")}>
+              <option value="AS">{t("contactForm.auditServices")}</option>
+              <option value="TS">{t("contactForm.taxServices")}</option>
+            </optgroup>
           </select>
         </div>
 

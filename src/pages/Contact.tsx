@@ -33,7 +33,7 @@ const Contact = () => {
       <Header scrolled={scrolled} />
 
       {/* Page Title */}
-      <section className="pt-30 md:pt-28 pb-4 md:pb-12 bg-[#f2efe8]">
+      <section className="pt-30 md:pt-40 pb-4 md:pb-12 bg-[#f2efe8]">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6">

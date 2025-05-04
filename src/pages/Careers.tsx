@@ -26,7 +26,7 @@ const Careers = () => {
       <Header scrolled={scrolled} />
 
       {/* Hero Section */}
-      <section className="pb-12 pt-30 md:pt-24 flex flex-col items-center text-center bg-[#f2efe8] relative overflow-hidden">
+      <section className="pb-12 pt-30 md:pt-40 flex flex-col items-center text-center bg-[#f2efe8] relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#f2efe8]/90 to-[#f2efe8]/70 z-10"></div>
         <div className="absolute top-40 right-10 w-64 h-64 rounded-full bg-black/5 blur-3xl"></div>
         <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full bg-black/5 blur-3xl"></div>

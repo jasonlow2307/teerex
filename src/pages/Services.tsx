@@ -7,22 +7,81 @@ import Header from "../components/Header";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 
 // Define service translation keys mapping
+const serviceCategories = {
+  "tax-filing": {
+    translationKey: "taxFiling",
+    services: [
+      "form-be-e-m",
+      "form-p",
+      "form-b",
+      "form-b-account",
+      "form-c-pt",
+    ],
+  },
+  "business-services": {
+    translationKey: "businessServices",
+    services: [
+      "business-consultancy",
+      "secretarial-service",
+      "management-account",
+    ],
+  },
+  licensing: {
+    translationKey: "licensing",
+    services: ["premise-license", "worker-license", "signboard-license"],
+  },
+  "audit-tax": {
+    translationKey: "auditTax",
+    services: ["audit-services", "tax-services"],
+  },
+};
+
 const serviceTranslationKeys = {
+  // Tax filing services
   "form-be-e-m": "formBEM",
   "form-p": "formP",
   "form-b": "formB",
   "form-b-account": "formBAccount",
   "form-c-pt": "formCPT",
+
+  // Business services
+  "business-consultancy": "businessConsultancy",
+  "secretarial-service": "secretarialService",
+  "management-account": "managementAccount",
+
+  // Licensing services
+  "premise-license": "premiseLicense",
+  "worker-license": "workerLicense",
+  "signboard-license": "signboardLicense",
+
+  // Audit and tax services
+  "audit-services": "auditServices",
+  "tax-services": "taxServices",
 };
 
 // Define service icon mapping
 const getServiceIcon = (serviceId: string): string => {
   const iconMap: { [key: string]: string } = {
+    // Tax filing services
     "form-be-e-m": "mdi:file-document-outline",
     "form-p": "mdi:file-document-multiple",
     "form-b": "mdi:file-account",
     "form-b-account": "mdi:account-cash",
     "form-c-pt": "mdi:office-building",
+
+    // Business services
+    "business-consultancy": "mdi:briefcase-outline",
+    "secretarial-service": "mdi:notebook-outline",
+    "management-account": "mdi:chart-bar",
+
+    // Licensing services
+    "premise-license": "mdi:store",
+    "worker-license": "mdi:account-hard-hat",
+    "signboard-license": "mdi:sign-caution",
+
+    // Audit and tax services
+    "audit-services": "mdi:clipboard-check-outline",
+    "tax-services": "mdi:calculator",
   };
   return iconMap[serviceId] || "mdi:file-document-outline";
 };
@@ -46,6 +105,7 @@ interface TranslatedService {
 
 const Services = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [activeCategory, setActiveCategory] = useState("tax-filing");
   const [activeService, setActiveService] = useState("form-be-e-m");
   const [visibleService, setVisibleService] = useState("form-be-e-m");
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -56,8 +116,17 @@ const Services = () => {
 
   useDocumentTitle();
 
-  // List of available service IDs
-  const serviceIds = Object.keys(serviceTranslationKeys);
+  // List of all service IDs
+  const allServiceIds = Object.keys(serviceTranslationKeys);
+
+  // Helper function to get translated category name
+  const getTranslatedCategoryName = (
+    categoryId: keyof typeof serviceCategories
+  ) => {
+    return t(
+      `services.categories.${serviceCategories[categoryId].translationKey}`
+    );
+  };
 
   // Helper function to get translated service data
   const getTranslatedService = (
@@ -118,15 +187,21 @@ const Services = () => {
     const queryParams = new URLSearchParams(location.search);
     const serviceParam = queryParams.get("service");
 
-    if (
-      serviceParam &&
-      serviceIds.includes(serviceParam) &&
-      serviceParam !== activeService
-    ) {
-      setActiveService(serviceParam);
-      setVisibleService(serviceParam);
+    if (serviceParam && allServiceIds.includes(serviceParam)) {
+      // Find which category contains this service
+      const category = Object.keys(serviceCategories).find((catId) =>
+        serviceCategories[
+          catId as keyof typeof serviceCategories
+        ].services.includes(serviceParam)
+      );
+
+      if (category) {
+        setActiveCategory(category);
+        setActiveService(serviceParam);
+        setVisibleService(serviceParam);
+      }
     }
-  }, [location.search, serviceIds, activeService]);
+  }, [location.search, allServiceIds]);
 
   // Handle scroll effect
   useEffect(() => {
@@ -142,18 +217,55 @@ const Services = () => {
   const handleServiceChange = (serviceId: string) => {
     if (serviceId === activeService) return; // Skip if already on this service
 
+    // Find which category this service belongs to
+    const category = Object.keys(serviceCategories).find((catId) =>
+      serviceCategories[
+        catId as keyof typeof serviceCategories
+      ].services.includes(serviceId)
+    );
+
+    if (!category) return;
+
     // Start transition - fade out
     setIsTransitioning(true);
 
     // Update URL immediately
     navigate(`/services?service=${serviceId}`, { replace: true });
 
-    // After fade out completes, change the actual content
+    // After fade out completes, change the category and service
     setTimeout(() => {
+      setActiveCategory(category);
       setVisibleService(serviceId);
       setActiveService(serviceId);
 
       // After content is changed, start fade in
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 50);
+    }, 200);
+  };
+
+  // Function to change category
+  const handleCategoryChange = (categoryId: string) => {
+    if (categoryId === activeCategory) return;
+
+    // Start transition
+    setIsTransitioning(true);
+
+    // Get the first service of the selected category
+    const firstServiceInCategory =
+      serviceCategories[categoryId as keyof typeof serviceCategories]
+        .services[0];
+
+    // Update URL
+    navigate(`/services?service=${firstServiceInCategory}`, { replace: true });
+
+    // After fade out completes, change category and service
+    setTimeout(() => {
+      setActiveCategory(categoryId);
+      setVisibleService(firstServiceInCategory);
+      setActiveService(firstServiceInCategory);
+
       setTimeout(() => {
         setIsTransitioning(false);
       }, 50);
@@ -178,33 +290,60 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Services Navigation - with consistent icon coloring */}
+      {/* Categories Navigation */}
       <section className="pt-4 md:pt-6 pb-2 md:pb-4 sticky top-[66px] md:top-[104px] bg-[#f2efe8]/95 backdrop-blur-sm z-40 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="flex flex-nowrap gap-2 md:gap-4 justify-start md:justify-center overflow-x-auto pb-2 scrollbar-hide">
-            {serviceIds.map((serviceId) => {
+            {Object.keys(serviceCategories).map((categoryId) => (
+              <button
+                key={categoryId}
+                className={`px-3 md:px-6 py-2 md:py-3 rounded-lg transition-all duration-300 whitespace-nowrap text-sm md:text-base font-medium ${
+                  activeCategory === categoryId
+                    ? "bg-black text-white shadow-md transform -translate-y-1 border-2 border-white"
+                    : "bg-white/80 hover:bg-white hover:shadow-md text-black/80 hover:text-black border border-black/10"
+                }`}
+                onClick={() => handleCategoryChange(categoryId)}
+              >
+                {getTranslatedCategoryName(
+                  categoryId as keyof typeof serviceCategories
+                )}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Navigation - with consistent icon coloring */}
+      <section className="pt-2 md:pt-3 pb-2 md:pb-3 bg-[#f2efe8]/80 backdrop-blur-sm z-30 transition-all duration-300 border-t border-black/5">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="flex flex-nowrap gap-2 md:gap-3 justify-start md:justify-center overflow-x-auto pb-1 scrollbar-hide">
+            {serviceCategories[
+              activeCategory as keyof typeof serviceCategories
+            ].services.map((serviceId) => {
               const service = getTranslatedService(
                 serviceId as keyof typeof serviceTranslationKeys
               );
               return (
                 <button
                   key={serviceId}
-                  className={`px-3 md:px-6 py-2 md:py-3 rounded-lg transition-all duration-300 whitespace-nowrap text-sm md:text-base font-medium ${
+                  className={`px-3 md:px-5 py-1.5 md:py-2 rounded-lg transition-all duration-300 whitespace-nowrap text-sm md:text-base ${
                     activeService === serviceId
-                      ? "bg-black text-white shadow-md transform -translate-y-1 border-2 border-white"
-                      : "bg-white/80 hover:bg-white hover:shadow-md text-black/80 hover:text-black border border-black/10"
+                      ? "bg-black/90 text-white shadow-sm"
+                      : "bg-white/60 hover:bg-white hover:shadow-sm text-black/70 hover:text-black"
                   }`}
                   onClick={() => handleServiceChange(serviceId)}
                 >
                   <div className="flex items-center gap-2">
-                    {activeService === serviceId && (
-                      <Icon
-                        icon={service.icon}
-                        width="16"
-                        height="16"
-                        className="text-white/70"
-                      />
-                    )}
+                    <Icon
+                      icon={service.icon}
+                      width="16"
+                      height="16"
+                      className={
+                        activeService === serviceId
+                          ? "text-white/70"
+                          : "text-black/70"
+                      }
+                    />
                     <span>{service.title}</span>
                   </div>
                 </button>
@@ -224,7 +363,7 @@ const Services = () => {
             }`}
             style={{ minHeight: "600px" }} // Ensure consistent height to prevent layout shifts
           >
-            {serviceIds.map((serviceId) => {
+            {allServiceIds.map((serviceId) => {
               const service = getTranslatedService(
                 serviceId as keyof typeof serviceTranslationKeys
               );
@@ -422,19 +561,25 @@ const Services = () => {
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-            {serviceIds
-              .filter((serviceId) => serviceId !== activeService)
+            {Object.keys(serviceCategories)
+              .filter((catId) => catId !== activeCategory)
               .slice(0, 3)
-              .map((serviceId) => {
+              .map((categoryId) => {
+                // Get the first service from each category
+                const firstServiceId =
+                  serviceCategories[
+                    categoryId as keyof typeof serviceCategories
+                  ].services[0];
                 const service = getTranslatedService(
-                  serviceId as keyof typeof serviceTranslationKeys
+                  firstServiceId as keyof typeof serviceTranslationKeys
                 );
+
                 return (
                   <div
-                    key={serviceId}
+                    key={categoryId}
                     className="p-5 md:p-8 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center cursor-pointer"
                     onClick={() => {
-                      handleServiceChange(serviceId);
+                      handleCategoryChange(categoryId);
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
                   >
@@ -449,20 +594,28 @@ const Services = () => {
                       </div>
                     </div>
                     <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">
-                      {service.title}
+                      {getTranslatedCategoryName(
+                        categoryId as keyof typeof serviceCategories
+                      )}
                     </h3>
                     <p className="text-sm md:text-base text-black/70 mb-4 md:mb-6">
-                      {service.description}
+                      {t(
+                        `services.categoryDescriptions.${
+                          serviceCategories[
+                            categoryId as keyof typeof serviceCategories
+                          ].translationKey
+                        }`
+                      )}
                     </p>
                     <button
                       className="text-black font-medium text-sm md:text-base hover:underline"
                       onClick={(e) => {
-                        e.stopPropagation(); // Prevent double event firing
-                        handleServiceChange(serviceId);
+                        e.stopPropagation();
+                        handleCategoryChange(categoryId);
                         window.scrollTo({ top: 0, behavior: "smooth" });
                       }}
                     >
-                      {t("services.learnMore")} →
+                      {t("services.exploreServices")} →
                     </button>
                   </div>
                 );
