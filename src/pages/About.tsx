@@ -67,6 +67,10 @@ const About = () => {
                 {t("about.storyPart2")}
               </p>
 
+              <p className="mb-4 md:mb-6 text-base md:text-lg">
+                {t("about.storyPart4")}
+              </p>
+
               <p className="text-base md:text-lg">{t("about.storyPart3")}</p>
             </div>
           </div>
@@ -127,7 +131,7 @@ const About = () => {
       </section>
 
       {/* Our Team */}
-      <section className="py-10 md:py-16">
+      {/* <section className="py-10 md:py-16">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -190,7 +194,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Our Approach */}
       <section className="py-10 md:py-16 bg-[#f2efe8]/70">
@@ -302,7 +306,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Credentials */}
+      {/* Certifications */}
       <section className="py-10 md:py-16">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center mb-10 md:mb-16">
@@ -315,7 +319,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
             <div className="bg-white p-5 md:p-6 rounded-xl shadow-md hover:shadow-lg transition-all text-center">
               <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-3 md:mb-4 flex items-center justify-center">
                 <Icon
@@ -345,7 +349,9 @@ const About = () => {
               <h3 className="font-bold mb-2 text-base md:text-lg">
                 Association of Chartered Certified Accountants
               </h3>
-              <p className="text-black/70 text-xs md:text-sm">ACCA Members</p>
+              <p className="text-black/70 text-xs md:text-sm">
+                ACCA Qualified | FCCA Member | MIA Recognized
+              </p>
             </div>
 
             <div className="bg-white p-5 md:p-6 rounded-xl shadow-md hover:shadow-lg transition-all text-center">
@@ -363,6 +369,21 @@ const About = () => {
               <p className="text-black/70 text-xs md:text-sm">
                 Certified Tax Professionals
               </p>
+            </div>
+
+            <div className="bg-white p-5 md:p-6 rounded-xl shadow-md hover:shadow-lg transition-all text-center">
+              <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-3 md:mb-4 flex items-center justify-center">
+                <Icon
+                  icon="mdi:finance"
+                  width="56"
+                  height="56"
+                  className="md:w-16 md:h-16"
+                />
+              </div>
+              <h3 className="font-bold mb-2 text-base md:text-lg">
+                CFA Institute
+              </h3>
+              <p className="text-black/70 text-xs md:text-sm">CFA Qualified</p>
             </div>
           </div>
         </div>
