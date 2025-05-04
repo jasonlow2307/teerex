@@ -95,12 +95,20 @@ const Contact = () => {
                     <p className="text-xs md:text-sm font-medium text-black/60 mb-1">
                       {t("common.phone")}
                     </p>
-                    <a
-                      href="tel:+60128186343"
-                      className="text-sm md:text-base hover:underline"
-                    >
-                      +60 12-818 6343
-                    </a>
+                    <div className="flex flex-col gap-2">
+                      <a
+                        href="tel:+60128186343"
+                        className="text-sm md:text-base hover:underline"
+                      >
+                        +60 12-818 6343
+                      </a>
+                      <a
+                        href="tel:+60137786343"
+                        className="text-sm md:text-base hover:underline"
+                      >
+                        +60 13-778 6343
+                      </a>
+                    </div>
                   </div>
                 </div>
 
