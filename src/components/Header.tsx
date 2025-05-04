@@ -85,14 +85,14 @@ const Header = ({ scrolled }: HeaderProps) => {
             onClick={() => handleNavigation("/")}
           >
             <img
-              src="/dino.png"
-              width={70}
-              alt="Tee Rex Logo"
-              className="w-[55px] md:w-[70px]"
+              src="/logo.svg"
+              width={100}
+              alt="Logo"
+              className="w-[55px] md:w-[400px]"
             />
-            <div className="text-lg md:text-2xl font-semibold">
-              {t("common.title")}
-            </div>
+            {/* <div className="text-lg md:text-2xl font-semibold">
+              {t("common.subtitle")}
+            </div> */}
           </div>
 
           {/* Desktop Navigation */}

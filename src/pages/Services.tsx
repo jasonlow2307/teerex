@@ -166,7 +166,7 @@ const Services = () => {
       <Header scrolled={scrolled} />
 
       {/* Hero Section */}
-      <section className="pb-8 md:pb-12 pt-30 md:pt-24 flex flex-col items-center text-center bg-[#f2efe8] relative overflow-hidden">
+      <section className="pb-8 md:pb-12 pt-30 md:pt-40 flex flex-col items-center text-center bg-[#f2efe8] relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#f2efe8]/90 to-[#f2efe8]/70 z-10"></div>
         <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-20">
           <h1 className="text-3xl md:text-5xl font-bold mx-auto mb-4 md:mb-6 max-w-3xl leading-tight">
