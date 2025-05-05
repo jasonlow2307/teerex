@@ -3,8 +3,8 @@ import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
 // Import translations
-import enTranslation from "./locales/en/translation.json";
-import zhTranslation from "./locales/zh/translation.json";
+import enTranslation from "./locales/en/en.json";
+import zhTranslation from "./locales/cn/cn.json";
 
 // Configure i18n
 i18n

@@ -38,27 +38,41 @@ function App() {
       <Header scrolled={scrolled} />
 
       {/* Hero Section */}
-      <section className="pb-12 pt-30 md:pt-70 flex flex-col items-center text-center bg-[#f2efe8] relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#f2efe8]/90 to-[#f2efe8]/70 z-10"></div>
-        <div className="absolute top-40 right-10 w-64 h-64 rounded-full bg-black/5 blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full bg-black/5 blur-3xl"></div>
+      <section className="pb-30 pt-30 md:pt-70 flex flex-col items-center text-center relative overflow-hidden">
+        {/* Background image with overlay */}
+        <div
+          className="absolute inset-0 bg-cover bg-center z-0"
+          style={{
+            backgroundImage: "url('/hero-backdrop.svg')",
+            backgroundBlendMode: "overlay",
+          }}
+        ></div>
+
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f2efe8]/95 to-[#f2efe8]/80 z-10"></div>
+
+        {/* Decorative elements */}
+        <div className="absolute top-40 right-10 w-64 h-64 rounded-full bg-black/5 blur-3xl z-10"></div>
+        <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full bg-black/5 blur-3xl z-10"></div>
+
+        {/* Content */}
         <div className="max-w-7xl mx-auto px-8 relative z-20">
-          <h1 className="text-5xl font-bold mx-auto mb-6 max-w-3xl leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold mx-auto mb-4 md:mb-6 max-w-3xl leading-tight">
             {t("home.hero.title")}
           </h1>
-          <p className="text-xl mx-auto mb-10 max-w-2xl text-black/70 leading-relaxed">
+          <p className="text-lg md:text-xl mx-auto mb-8 md:mb-10 max-w-2xl text-black/70 leading-relaxed">
             {t("home.hero.subtitle")}
           </p>
-          <div className="flex flex-wrap gap-6 justify-center">
+          <div className="flex flex-wrap gap-4 md:gap-6 justify-center">
             <a
               href="/contact"
-              className="px-10 py-5 bg-black !text-white rounded-lg hover:bg-black/90 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium"
+              className="px-8 md:px-10 py-4 md:py-5 bg-black !text-white rounded-lg hover:bg-black/90 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium"
             >
               {t("common.scheduleConsultation")}
             </a>
             <a
               href="/services"
-              className="px-10 py-5 border-2 border-black text-black rounded-lg hover:bg-black/5 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium"
+              className="px-8 md:px-10 py-4 md:py-5 border-2 border-black text-black rounded-lg hover:bg-black/5 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl font-medium"
             >
               {t("common.exploreServices")}
             </a>
