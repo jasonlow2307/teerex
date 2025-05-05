@@ -41,6 +41,24 @@ const LanguageSwitcher = ({ onLanguageChange }: LanguageSwitcherProps) => {
       >
         中
       </button>
+      <button
+        className={`px-2 py-1 text-sm ${
+          currentLang === "ms" ? "bg-black text-white" : "bg-transparent"
+        }`}
+        onClick={() => handleLanguageChange("ms")}
+        aria-label="Switch to Malay"
+      >
+        MS
+      </button>
+      <button
+        className={`px-2 py-1 text-sm ${
+          currentLang === "ta" ? "bg-black text-white" : "bg-transparent"
+        }`}
+        onClick={() => handleLanguageChange("ta")}
+        aria-label="Switch to Tamil"
+      >
+        TA
+      </button>
     </div>
   );
 };

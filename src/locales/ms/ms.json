@@ -1,0 +1,501 @@
+{
+  "common": {
+    "home": "Laman Utama",
+    "title": "Tee Rex & Rakan",
+    "subtitle": "Perundingan Perniagaan & Perakaunan",
+    "services": "Perkhidmatan",
+    "aboutUs": "Tentang Kami",
+    "contact": "Hubungi",
+    "careers": "Kerjaya",
+    "testimonials": "Testimoni",
+    "scheduleConsultation": "Jadualkan Perundingan",
+    "exploreServices": "Terokai Perkhidmatan Kami",
+    "email": "E-mel",
+    "phone": "Telefon",
+    "office": "Pejabat Kami",
+    "submit": "Hantar Permintaan",
+    "firstName": "Nama Pertama",
+    "lastName": "Nama Akhir",
+    "message": "Mesej",
+    "serviceInterestedIn": "Perkhidmatan Yang Diminati",
+    "learnMore": "Ketahui Lebih Lanjut",
+    "language": "Bahasa"
+  },
+  "home": {
+    "hero": {
+      "title": "Perkhidmatan Perakaunan & Nasihat Perniagaan Profesional",
+      "subtitle": "Membantu perniagaan berkembang melalui perancangan kewangan strategik dan penyelesaian perakaunan pakar",
+      "clientSatisfaction": "Kepuasan Pelanggan",
+      "satisfiedClients": "Pelanggan Berpuas Hati",
+      "dedicatedService": "Perkhidmatan Berdedikasi"
+    },
+    "services": {
+      "title": "Perkhidmatan Kami",
+      "subtitle": "Perkhidmatan perakaunan dan nasihat perniagaan komprehensif untuk membantu perniagaan anda berkembang dalam pasaran yang kompetitif hari ini",
+      "service1Description": "Pemfailan cukai untuk pendapatan individu termasuk pekerjaan, perniagaan, dan sumber pendapatan campuran.",
+      "service2Description": "Perkhidmatan pemfailan cukai komprehensif untuk pemilik tunggal dan perkongsian.",
+      "service3Description": "Penyelesaian pemfailan dan pematuhan cukai untuk syarikat dan entiti korporat."
+    },
+    "about": {
+      "title": "Tentang Tee Rex & Rakan",
+      "desc1": "Di Tee Rex & Rakan, kami menggabungkan kepakaran dengan pendekatan peribadi dalam perkhidmatan perakaunan dan nasihat perniagaan. Pasukan profesional kami yang bertauliah berdedikasi untuk membantu perniagaan anda mencapai kejayaan kewangan.",
+      "desc2": "Setelah melayani perniagaan di pelbagai industri, kami memahami cabaran dan peluang unik yang hadir dengan pengurusan kewangan dalam persekitaran perniagaan yang dinamik hari ini.",
+      "desc3": "Misi kami adalah untuk menyediakan panduan kewangan yang jelas dan strategik yang membolehkan perniagaan membuat keputusan yang bijak dan mencapai matlamat mereka.",
+      "certifiedProfessionals": "Profesional Bertauliah",
+      "industryExpertise": "Kepakaran Industri",
+      "personalizedService": "Perkhidmatan Peribadi",
+      "timelyDelivery": "Penghantaran Tepat Masa"
+    },
+    "testimonials": {
+      "title": "Apa Kata Pelanggan Kami",
+      "subtitle": "Jangan hanya percaya kata-kata kami. Inilah apa yang pelanggan kami katakan tentang perkhidmatan kami.",
+      "clients": [
+        {
+          "name": "Lee Siao Mei",
+          "position": "Pemilik Perniagaan Kecil",
+          "initial": "L",
+          "text": "Tee Rex telah mengendalikan cukai perniagaan saya selama 5 tahun sekarang. Pasukan mereka selalu profesional, cepat, dan membantu saya memaksimumkan penjimatan cukai. Sangat disyorkan!"
+        },
+        {
+          "name": "Tan Wei Ming",
+          "position": "Pelanggan Korporat",
+          "initial": "T",
+          "text": "Syarikat kami beralih ke Tee Rex tahun lepas, dan kami sangat gembira dengan keputusan tersebut. Perhatian mereka terhadap perincian dan nasihat perancangan cukai strategik telah menjimatkan jumlah yang besar. Mereka bukan sekadar akauntan; mereka adalah rakan perniagaan."
+        },
+        {
+          "name": "Rajesh Kumar",
+          "position": "Pelanggan Individu",
+          "initial": "R",
+          "text": "Memfailkan cukai dulu menjadi sakit kepala bagi saya sehingga saya menemui Tee Rex. Mereka menjadikan proses itu mudah dan sentiasa tersedia untuk menjawab soalan saya. Ketenangan fikiran yang mereka berikan sangat berharga."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Hubungi Kami",
+      "subtitle": "Bersedia untuk membawa pengurusan kewangan perniagaan anda ke tahap seterusnya? Hubungi kami hari ini untuk menjadualkan perundingan.",
+      "infoTitle": "Maklumat Hubungan"
+    }
+  },
+  "services": {
+    "title": "Perkhidmatan Pemfailan Cukai & Perakaunan Kami",
+    "subtitle": "Penyelesaian pemfailan cukai dan perakaunan komprehensif yang disesuaikan dengan keperluan khusus anda",
+    "pricing": "Harga",
+    "inquireService": "Tanya Tentang Perkhidmatan Ini",
+    "benefits": "Faedah",
+    "process": "Proses Kami",
+    "faq": "Soalan Lazim",
+    "deadline": "Bilakah tarikh akhir untuk memfailkan borang ini?",
+    "deadlineAnswer": "Tarikh akhir pemfailan bergantung pada struktur perniagaan anda. Bagi kebanyakan pembayar cukai individu, tarikh akhir adalah 30 April selepas tahun cukai. Bagi syarikat, ia adalah 7 bulan selepas penutupan tempoh perakaunan.",
+    "documents": "Apakah dokumen yang perlu saya sediakan?",
+    "documentsAnswer": "Anda perlu menyediakan penyata pendapatan, resit perbelanjaan, pulangan cukai terdahulu, penyata kewangan perniagaan, dan sebarang dokumentasi sokongan yang berkaitan untuk potongan atau kredit yang anda tuntut.",
+    "timeProcess": "Berapa lama proses ini mengambil masa?",
+    "timeProcessAnswer": "Masa pemprosesan berbeza bergantung pada kerumitan situasi cukai anda. Secara umum, kami menyelesaikan kebanyakan pemfailan cukai dalam masa 1-2 minggu selepas menerima semua dokumentasi yang diperlukan.",
+    "readyStart": "Bersedia untuk bermula?",
+    "contactForService": "Hubungi kami hari ini untuk menjadualkan perundingan tentang keperluan perkhidmatan anda.",
+    "otherServices": "Perkhidmatan Lain Yang Mungkin Anda Perlukan",
+    "learnMore": "Ketahui Lebih Lanjut",
+    "exploreServices": "Terokai Perkhidmatan Ini",
+    "categories": {
+      "taxFiling": "Pemfailan Cukai",
+      "businessServices": "Perkhidmatan Perniagaan",
+      "licensing": "Perkhidmatan Pelesenan",
+      "auditTax": "Perkhidmatan Audit & Cukai"
+    },
+    "categoryDescriptions": {
+      "taxFiling": "Bantuan profesional dalam penyediaan dan pemfailan pelbagai borang cukai yang tepat untuk individu dan perniagaan.",
+      "businessServices": "Sokongan perniagaan komprehensif termasuk perundingan, perkhidmatan kesetiausahaan, dan pengurusan kewangan.",
+      "licensing": "Panduan pakar dan bantuan dalam mendapatkan pelbagai permit dan lesen perniagaan.",
+      "auditTax": "Perkhidmatan audit khusus dan nasihat cukai untuk perniagaan yang memerlukan semakan profesional dan pematuhan."
+    },
+    "serviceDetails": {
+      "formBEM": {
+        "title": "Pemfailan Cukai - Borang BE, E, M",
+        "description": "Bantuan profesional dalam pemfailan borang BE, E, dan M, memastikan penyerahan yang tepat dan pematuhan dengan peraturan cukai untuk individu dan perniagaan.",
+        "details": [],
+        "benefits": [
+          "Pemaksimuman potongan dan pelepasan cukai",
+          "Pematuhan dengan peraturan cukai terkini",
+          "Pengurangan penalti dan risiko audit",
+          "Pengendalian profesional situasi cukai yang kompleks",
+          "E-filing untuk pemprosesan lebih cepat"
+        ],
+        "process": [
+          "Perundingan awal untuk memahami situasi kewangan anda",
+          "Pengumpulan dan pengorganisasian semua dokumen kewangan yang relevan",
+          "Pengenalpastian potongan dan kredit cukai yang berkenaan",
+          "Penyediaan dan pengesahan borang cukai",
+          "E-filing dengan LHDN",
+          "Sokongan pasca-penyerahan dan perwakilan"
+        ],
+        "pricing": "Bermula dari RM 50, bergantung pada kerumitan"
+      },
+      "formP": {
+        "title": "Pemfailan Cukai - Borang P",
+        "description": "Bantuan profesional dalam pemfailan Borang P, memastikan pematuhan dengan peraturan cukai dan penyerahan yang tepat untuk perkongsian dan entiti lain.",
+        "details": [],
+        "benefits": [
+          "Peruntukan tepat keuntungan dan kerugian perkongsian",
+          "Dokumentasi yang betul untuk sumbangan dan pengagihan rakan kongsi",
+          "Perancangan cukai strategik untuk perkongsian",
+          "Pematuhan dengan peraturan cukai perkongsian",
+          "Meminimumkan beban cukai melalui pengoptimuman yang sah"
+        ],
+        "process": [
+          "Semakan perjanjian dan struktur perkongsian",
+          "Analisis terperinci pendapatan dan perbelanjaan perkongsian",
+          "Peruntukan pendapatan dan kerugian mengikut kepentingan perkongsian",
+          "Penyediaan dan pengesahan Borang P",
+          "E-filing dengan pihak berkuasa cukai",
+          "Penyelarasan pemfailan cukai rakan kongsi individu"
+        ],
+        "pricing": "Bermula dari RM 150, berdasarkan kerumitan perkongsian dan bilangan rakan kongsi"
+      },
+      "formB": {
+        "title": "Pemfailan Cukai - Borang B",
+        "description": "Bantuan profesional dalam pemfailan Borang B untuk pemilik tunggal dan perkongsian, memastikan penyerahan yang tepat dan pematuhan dengan peraturan cukai.",
+        "details": [],
+        "benefits": [
+          "Potongan perbelanjaan perniagaan yang komprehensif",
+          "Pelaporan tepat pendapatan dari pelbagai sumber perniagaan",
+          "Perancangan cukai strategik untuk pemilik perniagaan",
+          "Dokumentasi yang betul untuk menyokong potongan yang dituntut",
+          "Panduan mengenai pembayaran cukai anggaran dan perancangan"
+        ],
+        "process": [
+          "Semakan dan analisis kewangan perniagaan",
+          "Pengkategorian dan pengesahan perbelanjaan perniagaan",
+          "Pengiraan dan dokumentasi pendapatan",
+          "Pengenalpastian potongan perniagaan yang berkenaan",
+          "Penyediaan dan penyerahan Borang B",
+          "Perancangan cukai sepanjang tahun dan perundingan"
+        ],
+        "pricing": "Bermula dari RM 50, bergantung pada saiz dan kerumitan perniagaan"
+      },
+      "formBAccount": {
+        "title": "Pengurusan Akaun Borang B",
+        "description": "Pengurusan profesional akaun Borang B, memastikan pematuhan dengan peraturan cukai dan pelaporan kewangan yang tepat untuk pemilik tunggal dan perkongsian.",
+        "details": [],
+        "benefits": [
+          "Keterlihatan kewangan masa nyata untuk keputusan perniagaan yang lebih baik",
+          "Rekod kewangan yang diselenggarakan dengan baik yang bertahan dari pemeriksaan",
+          "Pengurangan masa dan kos penyediaan cukai",
+          "Pengenalpastian awal peluang penjimatan cukai",
+          "Penyata kewangan yang disediakan secara profesional untuk permohonan pembiayaan",
+          "Sokongan perancangan cukai dan kewangan sepanjang tahun"
+        ],
+        "process": [
+          "Penyediaan dan organisasi sistem kewangan awal",
+          "Penyimpanan buku dan pengkategorian transaksi secara tetap",
+          "Penyediaan dan semakan penyata kewangan suku tahunan",
+          "Perancangan cukai dan perundingan berterusan",
+          "Penyediaan penyata kewangan akhir tahun",
+          "Penyediaan Borang B berdasarkan rekod kewangan yang dikendalikan"
+        ],
+        "pricing": "Bermula dari RM 300, berdasarkan jumlah transaksi dan kerumitan perniagaan"
+      },
+      "formCPT": {
+        "title": "Borang C, Borang PT",
+        "description": "Bantuan komprehensif dalam pemfailan Borang C dan Borang PT, memastikan pematuhan dengan peraturan cukai korporat dan penyerahan yang tepat untuk syarikat.",
+        "details": [],
+        "benefits": [
+          "Pengendalian profesional hal cukai korporat yang kompleks",
+          "Pengetahuan cukai khusus industri dan pengenalpastian insentif",
+          "Perancangan dan pengoptimuman cukai korporat strategik",
+          "Pematuhan dengan keperluan pemfailan korporat",
+          "Perwakilan semasa audit cukai korporat",
+          "Pengurangan risiko penalti dan isu pematuhan"
+        ],
+        "process": [
+          "Semakan komprehensif penyata kewangan korporat",
+          "Analisis peruntukan cukai dan insentif yang berkenaan",
+          "Pengiraan elaun modal dan pelarasan cukai",
+          "Penyediaan dan pengesahan Borang C atau Borang PT",
+          "E-filing dengan Lembaga Hasil Dalam Negeri",
+          "Perancangan cukai korporat untuk tempoh masa depan"
+        ],
+        "pricing": "Ditentukan berdasarkan saiz dan kerumitan syarikat"
+      },
+      "businessConsultancy": {
+        "title": "Perundingan Perniagaan",
+        "description": "Nasihat dan panduan strategik untuk membantu perniagaan mengoptimumkan operasi, meningkatkan prestasi, dan mencapai objektif pertumbuhan.",
+        "details": [],
+        "benefits": [
+          "Panduan pakar dari perunding perniagaan berpengalaman",
+          "Penyelesaian khusus berdasarkan keperluan perniagaan anda",
+          "Kecekapan operasi dan pengurusan kos yang ditingkatkan",
+          "Perancangan pertumbuhan strategik dengan pelan pelaksanaan yang jelas",
+          "Akses kepada amalan terbaik industri dan penanda aras",
+          "Pembuatan keputusan yang dipertingkatkan melalui wawasan berdasarkan data"
+        ],
+        "process": [
+          "Penilaian perniagaan awal dan analisis keperluan",
+          "Pengenalpastian peluang peningkatan utama",
+          "Pembangunan cadangan strategik yang disesuaikan",
+          "Perancangan dan sokongan pelaksanaan",
+          "Semakan kemajuan tetap dan pelarasan strategi",
+          "Sokongan penasihat berterusan untuk hasil yang mampan"
+        ],
+        "pricing": "Pakej perundingan bermula dari RM 1,500, berdasarkan saiz perniagaan dan skop perkhidmatan"
+      },
+      "secretarialService": {
+        "title": "Perkhidmatan Kesetiausahaan",
+        "description": "Perkhidmatan kesetiausahaan syarikat komprehensif memastikan pematuhan penuh dengan keperluan berkanun dan tadbir urus korporat yang berkesan.",
+        "details": [],
+        "benefits": [
+          "Memastikan pematuhan penuh dengan Akta Syarikat dan peraturan lain",
+          "Mencegah penalti dan isu undang-undang dari kegagalan pematuhan",
+          "Pengurusan profesional semua dokumentasi berkanun",
+          "Pemfailan tepat masa semua pulangan dan pemberitahuan yang diperlukan",
+          "Nasihat pakar mengenai amalan terbaik tadbir urus korporat",
+          "Membebaskan masa pengurusan untuk fokus pada aktiviti perniagaan teras"
+        ],
+        "process": [
+          "Penilaian awal struktur dan keperluan syarikat",
+          "Penyediaan kalendar pematuhan dan pelan tindakan",
+          "Penyelarasan mesyuarat lembaga dan pemegang saham yang diperlukan",
+          "Penyediaan dan pemfailan dokumen berkanun",
+          "Kemas kini tetap mengenai perubahan peraturan dan implikasi",
+          "Penyelenggaraan rekod berkanun dan daftar syarikat"
+        ],
+        "pricing": "Pakej tahunan bermula dari RM 1,200, berdasarkan saiz dan struktur syarikat"
+      },
+      "managementAccount": {
+        "title": "Perakaunan Pengurusan",
+        "description": "Pelaporan dan analisis kewangan terperinci yang memberikan wawasan boleh dilaksanakan untuk menyokong pembuatan keputusan perniagaan yang berkesan.",
+        "details": [],
+        "benefits": [
+          "Keterlihatan yang jelas terhadap prestasi kewangan dan kesihatan perniagaan",
+          "Sokongan keputusan berdasarkan data untuk perancangan strategik",
+          "Pengenalpastian awal isu kewangan dan peluang",
+          "Pengurusan aliran tunai dan peruntukan sumber yang ditingkatkan",
+          "Akauntabiliti yang dipertingkatkan di seluruh jabatan perniagaan",
+          "Pelaporan khusus yang disesuaikan dengan industri dan matlamat anda"
+        ],
+        "process": [
+          "Penilaian keperluan pelaporan perniagaan dan objektif",
+          "Reka bentuk templat pelaporan pengurusan yang disesuaikan",
+          "Pelaksanaan sistem pengumpulan dan analisis data",
+          "Penyediaan dan penyampaian laporan pengurusan secara tetap",
+          "Mesyuarat kajian untuk membincangkan wawasan dan cadangan",
+          "Peningkatan berterusan pelaporan untuk memenuhi keperluan yang berkembang"
+        ],
+        "pricing": "Pakej perkhidmatan bulanan bermula dari RM 800, berdasarkan kerumitan perniagaan dan kekerapan pelaporan"
+      },
+      "premiseLicense": {
+        "title": "Lesen Premis",
+        "description": "Bantuan profesional dalam mendapatkan dan mengekalkan lesen premis perniagaan yang diperlukan oleh pihak berkuasa tempatan.",
+        "details": [],
+        "benefits": [
+          "Navigasi pakar melalui keperluan pelesenan yang kompleks",
+          "Dokumentasi yang disediakan dengan betul untuk mempercepatkan kelulusan",
+          "Pengurangan risiko beroperasi tanpa pelesenan yang betul",
+          "Pematuhan dengan semua peraturan dan standard tempatan",
+          "Perwakilan profesional dalam urusan dengan pihak berkuasa",
+          "Pengurusan proaktif pembaharuan lesen dan kemas kini"
+        ],
+        "process": [
+          "Penilaian keperluan pelesenan premis",
+          "Penyediaan dan pengumpulan dokumen yang diperlukan",
+          "Penyelarasan pemeriksaan dan kelulusan yang diperlukan",
+          "Penyerahan permohonan kepada pihak berkuasa yang berkaitan",
+          "Tindak susulan status permohonan dan menangani pertanyaan",
+          "Pemantauan dan pengurusan garis masa pembaharuan lesen"
+        ],
+        "pricing": "Bermula dari RM 800, bergantung pada jenis lesen dan kerumitan"
+      },
+      "workerLicense": {
+        "title": "Lesen Pekerja",
+        "description": "Bantuan komprehensif dalam mendapatkan lesen dan permit pekerja yang diperlukan untuk pekerja anda di pelbagai industri.",
+        "details": [],
+        "benefits": [
+          "Pengurusan profesional proses pelesenan pekerja yang kompleks",
+          "Pengurangan risiko ketidakpatuhan dengan peraturan buruh",
+          "Tenaga kerja yang didokumentasikan dengan betul dengan kebenaran yang sah",
+          "Pengendalian cekap pembaharuan dan pelanjutan permit",
+          "Panduan pakar mengenai perubahan peraturan pekerjaan",
+          "Gangguan perniagaan yang diminimumkan dari isu permit pekerja"
+        ],
+        "process": [
+          "Penilaian keperluan pelesenan tenaga kerja",
+          "Penyediaan dokumentasi pekerja dan majikan",
+          "Penyerahan permohonan kepada pihak berkuasa yang berkaitan",
+          "Menjejak dan menindaklanjuti kemajuan permohonan",
+          "Penyelarasan pemeriksaan perubatan dan keperluan lain",
+          "Pengurusan pembaharuan lesen dan pematuhan berterusan"
+        ],
+        "pricing": "Bermula dari RM 500 setiap pekerja, dengan kadar diskaun untuk pelbagai permohonan"
+      },
+      "signboardLicense": {
+        "title": "Lesen Papan Tanda",
+        "description": "Bantuan pakar dalam mendapatkan permit dan lesen yang diperlukan untuk papan tanda perniagaan dan paparan iklan.",
+        "details": [],
+        "benefits": [
+          "Papan tanda berlesen dengan betul untuk mengelakkan penalti dan pembuangan",
+          "Navigasi profesional peraturan pengiklanan tempatan",
+          "Penyediaan pakar dokumentasi teknikal dan pelan",
+          "Perwakilan dalam urusan dengan pihak berkuasa tempatan",
+          "Panduan tentang pematuhan papan tanda dan peraturan",
+          "Pengurusan cekap pembaharuan lesen dan bayaran"
+        ],
+        "process": [
+          "Penilaian keperluan papan tanda dan kekangan lokasi",
+          "Penyediaan spesifikasi teknikal dan pelan visual",
+          "Pengumpulan dokumentasi permohonan yang diperlukan",
+          "Penyerahan kepada pihak berkuasa tempatan yang berkaitan",
+          "Tindak susulan status permohonan dan menangani pertanyaan",
+          "Pengurusan proses kelulusan dan pengeluaran lesen"
+        ],
+        "pricing": "Bermula dari RM 400 setiap papan tanda, bergantung pada saiz, jenis, dan lokasi"
+      },
+      "auditServices": {
+        "title": "Perkhidmatan Audit",
+        "description": "Penyelesaian audit komprehensif yang menyediakan pengesahan bebas penyata kewangan dan kawalan dalaman.",
+        "details": [],
+        "benefits": [
+          "Pengesahan bebas ketepatan kewangan dan pelaporan",
+          "Kredibiliti yang dipertingkatkan dengan pihak berkepentingan dan institusi kewangan",
+          "Pengenalpastian isu dan kelemahan pelaporan kewangan",
+          "Kawalan dalaman dan pengurusan risiko yang ditingkatkan",
+          "Pematuhan pakar dengan standard perakaunan dan peraturan",
+          "Wawasan berharga ke dalam pengurusan kewangan dan kecekapan"
+        ],
+        "process": [
+          "Perancangan awal dan pemahaman operasi perniagaan",
+          "Penilaian risiko dan penentuan skop audit",
+          "Penilaian kawalan dalaman dan sistem perakaunan",
+          "Ujian substantif dan prosedur pengesahan",
+          "Analisis dan dokumentasi penemuan audit",
+          "Pembentangan laporan audit dan cadangan"
+        ],
+        "pricing": "Berdasarkan saiz syarikat, kerumitan, dan skop audit - sila hubungi kami untuk sebut harga yang disesuaikan"
+      },
+      "taxServices": {
+        "title": "Perkhidmatan Cukai",
+        "description": "Perkhidmatan penasihat dan perancangan cukai khusus untuk mengoptimumkan kedudukan cukai anda sambil memastikan pematuhan penuh dengan peraturan.",
+        "details": [],
+        "benefits": [
+          "Perancangan cukai strategik untuk meminimumkan liabiliti cukai secara sah",
+          "Navigasi pakar peraturan cukai yang kompleks dan insentif",
+          "Pengurangan risiko ketidakpatuhan dan pertikaian cukai",
+          "Perwakilan profesional dalam hal berkaitan pihak berkuasa cukai",
+          "Nasihat proaktif mengenai implikasi cukai keputusan perniagaan",
+          "Panduan terkini mengenai perubahan undang-undang cukai"
+        ],
+        "process": [
+          "Penilaian komprehensif kedudukan cukai semasa",
+          "Pengenalpastian peluang perancangan cukai",
+          "Pembangunan strategi cukai yang disesuaikan",
+          "Sokongan pelaksanaan dan dokumentasi",
+          "Kajian dan kemas kini tetap untuk mencerminkan peraturan yang berubah",
+          "Sokongan penasihat berterusan untuk keputusan berkaitan cukai"
+        ],
+        "pricing": "Pakej penasihat bermula dari RM 1,000, berdasarkan kerumitan dan skop perkhidmatan"
+      }
+    }
+  },
+  "about": {
+    "title": "Tentang Tee Rex & Rakan",
+    "subtitle": "Perkhidmatan perakaunan dan kewangan pakar yang direka untuk membantu perniagaan berjaya",
+    "ourStory": "Kisah Kami",
+    "storyPart1": "Ditubuhkan pada 2023, Tee Rex & Rakan bermula dengan misi sederhana: untuk menyediakan perniagaan dengan panduan kewangan yang jelas dan strategik yang membolehkan membuat keputusan termaklum dan pertumbuhan mampan.",
+    "storyPart2": "Apa yang bermula sebagai amalan kecil telah berkembang menjadi rakan kewangan yang dipercayai untuk perniagaan di pelbagai industri. Pertumbuhan kami berpunca dari komitmen yang teguh pada perkhidmatan peribadi dan kecemerlangan teknikal.",
+    "storyPart3": "Hari ini, Tee Rex & Rakan terus menegakkan prinsip asas ini sambil menyesuaikan diri dengan landskap kewangan yang sentiasa berubah dan menerapkan teknologi inovatif untuk lebih baik melayani pelanggan kami.",
+    "storyPart4": "Percikan yang mencetuskan firma kami datang dari visi untuk membina sesuatu yang berbeza – amalan perakaunan yang menggabungkan kepakaran profesional dengan perhatian tulen untuk kejayaan pelanggan. Walaupun terdapat cabaran dalam menubuhkan firma baru, kami telah mengalami pertumbuhan yang ketara dengan memberi tumpuan kepada penciptaan impak yang bermakna untuk perniagaan yang kami layani.",
+    "ourValues": "Nilai Teras Kami",
+    "valuesSubtitle": "Prinsip-prinsip ini memandu segala yang kami lakukan dan membentuk cara kami melayani pelanggan kami",
+    "integrity": "Integriti",
+    "integrityDesc": "Kami menegakkan standard etika tertinggi dalam semua urusan kami, menyediakan nasihat jujur dan mengekalkan kerahsiaan maklumat pelanggan.",
+    "clientFocus": "Fokus Pelanggan",
+    "clientFocusDesc": "Kami mengutamakan memahami keperluan dan matlamat unik setiap pelanggan, mencipta penyelesaian yang disesuaikan yang sejajar dengan keadaan khusus mereka.",
+    "excellence": "Kecemerlangan",
+    "excellenceDesc": "Kami berusaha untuk mencapai kecemerlangan dalam semua aspek perkhidmatan kami, secara berterusan meningkatkan pengetahuan, proses, dan pengalaman pelanggan kami.",
+    "meetTeam": "Kenali Pasukan Kami",
+    "teamSubtitle": "Pasukan profesional bertauliah kami membawa kepakaran dan dedikasi kepada setiap penglibatan pelanggan",
+    "founder": "Pengasas & Pengarah Urusan",
+    "founderDesc": "Dengan pengalaman lebih 20 tahun, Sarah memimpin pasukan kami dengan kepakaran dalam hal cukai kompleks dan penasihat perniagaan.",
+    "taxDirector": "Pengarah Cukai",
+    "taxDirectorDesc": "Darren mengkhususkan diri dalam perancangan cukai korporat dan pematuhan, membantu perniagaan mengoptimumkan kedudukan cukai mereka.",
+    "accountingManager": "Pengurus Perakaunan",
+    "accountingManagerDesc": "Jessica menyelia perkhidmatan perakaunan kami, memastikan pelaporan kewangan yang tepat dan analisis perniagaan yang mendalam.",
+    "ourApproach": "Pendekatan Kami",
+    "step1": "Memahami Keperluan Anda",
+    "step1Desc": "Kami bermula dengan mendengar dengan teliti untuk memahami konteks perniagaan, matlamat, dan cabaran unik anda.",
+    "step2": "Penyelesaian Yang Disesuaikan",
+    "step2Desc": "Pasukan kami membangunkan strategi dan penyelesaian yang disesuaikan sejajar dengan keperluan dan objektif khusus anda.",
+    "step3": "Pelaksanaan",
+    "step3Desc": "Kami melaksanakan dengan ketepatan, memastikan semua hal kewangan dan cukai dikendalikan dengan tepat dan cekap.",
+    "step4": "Sokongan Berterusan",
+    "step4Desc": "Kami menyediakan panduan berterusan, memastikan anda dikemas kini mengenai perubahan relevan dan membantu anda menyesuaikan diri mengikut keperluan.",
+    "credentials": "Kelayakan Kami",
+    "credentialsSubtitle": "Pasukan kami mengekalkan standard profesional tertinggi melalui pendidikan dan pensijilan berterusan",
+    "readyToWork": "Bersedia Untuk Bekerja Dengan Kami?",
+    "readyToWorkDesc": "Mari kita bincangkan bagaimana perkhidmatan profesional kami dapat membantu perniagaan anda berjaya",
+    "exploreServices": "Terokai Perkhidmatan Kami"
+  },
+  "careers": {
+    "title": "Sertai Pasukan Kami",
+    "subtitle": "Bina kerjaya anda dengan Tee Rex & Rakan, di mana bakat bertemu peluang",
+    "whyJoin": "Mengapa Sertai Tee Rex & Rakan?",
+    "whyJoinSubtitle": "Kami menawarkan persekitaran yang menyokong di mana anda boleh berkembang secara profesional sambil membuat impak yang bermakna",
+    "profGrowth": "Pertumbuhan Profesional",
+    "profGrowthDesc": "Latihan berterusan, bimbingan, dan peluang untuk mengembangkan kemahiran dan kepakaran anda dalam perakaunan dan kewangan.",
+    "collabCulture": "Budaya Kolaboratif",
+    "collabCultureDesc": "Bekerja dengan pasukan berbakat yang menghargai kerjasama, hormat bersama, dan inovasi dalam menyelesaikan cabaran kewangan yang kompleks.",
+    "clientImpact": "Impak Pelanggan",
+    "clientImpactDesc": "Buat perbezaan sebenar dengan membantu perniagaan berkembang maju melalui panduan kewangan strategik dan kepakaran.",
+    "ourCulture": "Budaya Kami",
+    "cultureDesc1": "Di Tee Rex & Rakan, kami memupuk budaya kecemerlangan, integriti, dan pembelajaran berterusan. Kami percaya bahawa orang kami adalah aset terbesar kami, dan kami melabur dalam pembangunan profesional dan kesejahteraan mereka.",
+    "cultureDesc2": "Pasukan kami menikmati persekitaran kerja yang menyokong yang menggalakkan inovasi, kerjasama, dan keseimbangan kerja-kehidupan. Kami meraikan kepelbagaian dan percaya bahawa perspektif yang berbeza mendorong penyelesaian yang lebih baik untuk pelanggan kami.",
+    "profDev": "Pembangunan Profesional",
+    "workLifeBalance": "Keseimbangan Kerja-Kehidupan",
+    "teamCollab": "Kerjasama Pasukan",
+    "recognition": "Pengiktirafan & Ganjaran",
+    "howApply": "Cara Memohon",
+    "howApplySubtitle": "Kami sentiasa mencari individu berbakat untuk menyertai pasukan kami",
+    "step1": "Hantar Permohonan Anda",
+    "step1Desc": "Hantar resume dan surat motivasi anda kepada pasukan pengambilan kami",
+    "step1Details": "Sila sertakan jawatan yang anda minat dalam subjek.",
+    "step2": "Proses Temuduga",
+    "step2Desc": "Pasukan pengambilan kami akan menyemak permohonan anda dan menghubungi calon yang layak untuk temuduga. Proses ini biasanya termasuk pemeriksaan telefon awal diikuti dengan temuduga bersemuka atau maya.",
+    "step3": "Sertai Pasukan Kami",
+    "step3Desc": "Calon yang berjaya akan menerima tawaran untuk menyertai pasukan kami. Kami mengalu-alukan bakat baru yang berkongsi nilai kami dan komitmen kepada kecemerlangan.",
+    "nextStep": "Bersedia Untuk Mengambil Langkah Seterusnya?",
+    "nextStepDesc": "Emel resume dan surat motivasi anda hari ini untuk meneroka peluang kerjaya dengan Tee Rex & Rakan",
+    "emailApplication": "Emel Permohonan Anda"
+  },
+  "orderButton": {
+    "scheduleConsultation": "Jadualkan Perundingan",
+    "title": "Jadualkan Perundingan"
+  },
+  "contactForm": {
+    "enterFirstName": "Masukkan nama pertama anda",
+    "enterLastName": "Masukkan nama akhir anda",
+    "enterEmail": "Masukkan alamat e-mel anda",
+    "enterPhone": "Masukkan nombor telefon anda",
+    "messagePlaceholder": "Beritahu kami tentang keperluan anda",
+    "taxFilingBE": "Pemfailan Cukai - Borang BE, E, M",
+    "taxFilingP": "Pemfailan Cukai - Borang P",
+    "taxFilingB": "Pemfailan Cukai - Borang B",
+    "formBAccount": "Pengurusan Akaun Borang B",
+    "formCPT": "Borang C, Borang PT",
+    "businessConsultancy": "Perundingan Perniagaan",
+    "secretarialService": "Perkhidmatan Kesetiausahaan",
+    "managementAccount": "Perakaunan Pengurusan",
+    "premiseLicense": "Lesen Premis",
+    "workerLicense": "Lesen Pekerja",
+    "signboardLicense": "Lesen Papan Tanda",
+    "auditServices": "Perkhidmatan Audit",
+    "taxServices": "Perkhidmatan Cukai"
+  },
+  "footer": {
+    "description": "Perkhidmatan perakaunan profesional dan nasihat perniagaan untuk perniagaan pelbagai saiz.",
+    "services": "Perkhidmatan",
+    "company": "Syarikat",
+    "copyright": "© {{year}} Tee Rex & Rakan. Hak cipta terpelihara."
+  },
+  "languageSwitcher": {
+    "english": "English",
+    "mandarin": "中文",
+    "tamil": "தமிழ்"
+  }
+}

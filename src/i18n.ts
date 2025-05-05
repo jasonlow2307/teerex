@@ -5,6 +5,8 @@ import LanguageDetector from "i18next-browser-languagedetector";
 // Import translations
 import enTranslation from "./locales/en/en.json";
 import zhTranslation from "./locales/cn/cn.json";
+import msTranslation from "./locales/ms/ms.json";
+import taTranslation from "./locales/ta/ta.json";
 
 // Configure i18n
 i18n
@@ -25,6 +27,12 @@ i18n
       },
       zh: {
         translation: zhTranslation,
+      },
+      ms: {
+        translation: msTranslation,
+      },
+      ta: {
+        translation: taTranslation,
       },
     },
     detection: {
