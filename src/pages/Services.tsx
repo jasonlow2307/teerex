@@ -291,7 +291,7 @@ const Services = () => {
       </section>
 
       {/* Categories Navigation */}
-      <section className="pt-4 md:pt-6 pb-2 md:pb-4 sticky top-[66px] md:top-[104px] bg-[#f2efe8]/95 backdrop-blur-sm z-40 transition-all duration-300">
+      <section className="pt-4 md:pt-6 pb-2 md:pb-4 sticky top-[66px] md:top-[75px] bg-[#f2efe8]/95 backdrop-blur-sm z-40 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="flex flex-nowrap gap-2 md:gap-4 justify-start md:justify-center overflow-x-auto pb-2 scrollbar-hide">
             {Object.keys(serviceCategories).map((categoryId) => (
