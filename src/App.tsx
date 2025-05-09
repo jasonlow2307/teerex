@@ -48,6 +48,16 @@ function App() {
           }}
         ></div>
 
+        {/*Background image for mobile */}
+        <div
+          className="absolute inset-0 bg-cover bg-center z-0 md:hidden"
+          style={{
+            backgroundImage: "url('/hero-full-backdrop.png')",
+            backgroundSize: "cover",
+            opacity: "0.34", // Lower opacity for mobile
+          }}
+        ></div>
+
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#f2efe8]/95 to-[#f2efe8]/80 z-10"></div>
 
