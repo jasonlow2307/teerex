@@ -8,7 +8,7 @@ import { useDocumentTitle } from "./hooks/useDocumentTitle";
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   useDocumentTitle();
 
@@ -33,7 +33,7 @@ function App() {
   }) as Client[];
 
   return (
-    <div className="w-full font-sans">
+    <div className="w-full font-sans overflow-hidden">
       {/* Header */}
       <Header scrolled={scrolled} />
 
@@ -273,7 +273,11 @@ function App() {
       <section className="py-16" id="testimonials">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">
+            <h2
+              className={`font-bold mb-4 ${
+                i18n.language === "ta" ? "text-3xl" : "text-4xl"
+              }`}
+            >
               {t("home.testimonials.title")}
             </h2>
             <div className="w-24 h-1 bg-black mx-auto mb-6"></div>
