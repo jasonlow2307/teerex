@@ -88,7 +88,7 @@ const Header = ({ scrolled }: HeaderProps) => {
               src="/logo.svg"
               width={100}
               alt="Logo"
-              className="w-[55px] md:w-[400px]"
+              className="w-[350px] md:w-[400px]"
             />
             {/* <div className="text-lg md:text-2xl font-semibold">
               {t("common.subtitle")}
@@ -134,7 +134,7 @@ const Header = ({ scrolled }: HeaderProps) => {
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-3">
             {/* Mobile Language Switcher - Explicit implementation for mobile */}
-            <div className="flex items-center border border-black/10 rounded-md overflow-hidden">
+            {/* <div className="flex items-center border border-black/10 rounded-md overflow-hidden">
               <button
                 className={`px-2 py-1 text-sm ${
                   currentLang === "en"
@@ -157,7 +157,7 @@ const Header = ({ scrolled }: HeaderProps) => {
               >
                 中
               </button>
-            </div>
+            </div> */}
 
             <button
               className="p-2 focus:outline-none touch-manipulation"
@@ -193,7 +193,15 @@ const Header = ({ scrolled }: HeaderProps) => {
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="px-6 py-6 flex flex-col gap-2">
+        <div className="px-6 py-6 pb-2 flex flex-col gap-2">
+          {/* Home link */}
+          <div
+            className="py-4 border-b border-black/10 font-medium flex items-center gap-3 active:bg-gray-50"
+            onClick={() => handleNavigation("/")}
+          >
+            <Icon icon="mdi:home-outline" width="24" height="24" />
+            <span>{t("common.home")}</span>
+          </div>
           <div
             className="py-4 border-b border-black/10 font-medium flex items-center gap-3 active:bg-gray-50"
             onClick={() => handleNavigation("/services")}
@@ -227,17 +235,8 @@ const Header = ({ scrolled }: HeaderProps) => {
             <span>{t("common.careers")}</span>
           </div>
 
-          {/* Home link */}
-          <div
-            className="py-4 border-b border-black/10 font-medium flex items-center gap-3 active:bg-gray-50"
-            onClick={() => handleNavigation("/")}
-          >
-            <Icon icon="mdi:home-outline" width="24" height="24" />
-            <span>{t("common.home")}</span>
-          </div>
-
           {/* Mobile Language Switcher in the menu as well */}
-          <div className="py-4 border-b border-black/10 font-medium">
+          <div className="py-4  font-medium">
             <p className="mb-2 text-black/60 text-sm flex items-center gap-2">
               <Icon icon="mdi:translate" width="20" height="20" />
               {t("common.language")}
@@ -262,6 +261,26 @@ const Header = ({ scrolled }: HeaderProps) => {
                 onClick={() => handleLanguageChange("zh")}
               >
                 中文
+              </button>
+              <button
+                className={`px-4 py-2 rounded-md text-sm ${
+                  currentLang === "ms"
+                    ? "bg-black text-white"
+                    : "bg-black/5 hover:bg-black/10 active:bg-black/15"
+                }`}
+                onClick={() => handleLanguageChange("ms")}
+              >
+                Bahasa Melayu
+              </button>
+              <button
+                className={`px-4 py-2 rounded-md text-sm ${
+                  currentLang === "ta"
+                    ? "bg-black text-white"
+                    : "bg-black/5 hover:bg-black/10 active:bg-black/15"
+                }`}
+                onClick={() => handleLanguageChange("ta")}
+              >
+                தமிழ்
               </button>
             </div>
           </div>
